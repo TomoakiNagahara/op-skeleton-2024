@@ -49,8 +49,7 @@ call_user_func(function(){
 		RootPath('app'  , $app_root);
 
 		//	Alias root.
-		$app_root   = ConvertPath('app:/');
-		$alias_root = realpath($app_root).'/'; // ConvertPath is automatically add slash to tail.
+		$alias_root = realpath($app_root);
 		if( $app_root !== $alias_root ){
 			RootPath('alias', $alias_root);
 		};
