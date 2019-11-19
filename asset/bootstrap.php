@@ -49,8 +49,8 @@ call_user_func(function(){
 		RootPath('app'  , $app_root);
 
 		//	Alias root.
-		$alias_root = realpath($app_root);
-		if( $app_root !== $alias_root ){
+		$alias_root = $_SERVER['DOCUMENT_ROOT'] . explode('?',$_SERVER['REQUEST_URI'])[0];
+		if( $app_root.'/' !== $alias_root ){
 			RootPath('alias', $alias_root);
 		};
 
