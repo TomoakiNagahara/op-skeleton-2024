@@ -9,10 +9,14 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
-/** namespace
+/** Application root directory.
  *
+ * @created  2019-11-18
  */
-namespace OP;
+$_SERVER['APP_ROOT'] = __DIR__;
 
-//	...
-include('asset/app.php');
+/** Dispatch.
+ *
+ * @created  2019-11-18
+ */
+require('asset/app.php');
