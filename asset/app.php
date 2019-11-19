@@ -26,18 +26,15 @@ try {
 	//	Load configuration files.
 	require(__DIR__.'/config.php');
 
+	/* @var $app IF_APP */
+	$app = Unit::Singleton('App');
+
 	//	Launch application.
-	Unit::Instantiate('App')->Auto();
+	$app->Auto();
 
 	//	Output memory usage.
 	if( Env::isAdmin() and (Env::Mime() === 'text/html') ){
-		$ex   = (microtime(true) - $st);
-		$used = memory_get_usage()      / 1000;
-		$peak = memory_get_peak_usage() / 1000;
-		echo "<div>";
-		echo "<p>execute time: {$ex}</p>";
-		echo "<p>momory usage: {$used}KB (max: {$peak}KB)</p>";
-		echo "</div>";
+		$app->Template('app.phtml',['st'=>$st]);
 	};
 
 } catch ( \Throwable $e ){
