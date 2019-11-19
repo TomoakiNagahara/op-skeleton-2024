@@ -9,12 +9,6 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
-/** Application root directory.
- *
- * @created  2019-11-18
- */
-$_SERVER['APP_ROOT'] = __DIR__;
-
 /** Dispatch.
  *
  * @created  2019-11-18
