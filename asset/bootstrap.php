@@ -40,8 +40,10 @@ call_user_func(function(){
 		};
 
 		//	Entry point file is app.php. This file path is in $_SERVER['SCRIPT_FILENAME'].
-		$asset_root = dirname($_SERVER['SCRIPT_FILENAME']);
 		$app_root = dirname($_SERVER['SCRIPT_FILENAME']);
+
+		//	Current file directory.
+		$asset_root = __DIR__;
 
 		//	Entry each root directory.
 		RootPath('asset', $asset_root);
