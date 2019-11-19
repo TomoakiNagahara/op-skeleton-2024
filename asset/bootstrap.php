@@ -47,7 +47,6 @@ call_user_func(function(){
 		RootPath('op'   , $asset_root.'/core');
 		RootPath('doc'  , $_SERVER['DOCUMENT_ROOT']);
 		RootPath('app'  , $_SERVER['APP_ROOT']);
-		RootPath('unit' , $asset_root.'/unit');
 
 		//	Alias root.
 		$app_root   = ConvertPath('app:/');
