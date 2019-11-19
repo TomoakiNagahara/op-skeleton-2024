@@ -1,0 +1,65 @@
+<?php
+/**
+ * app-skeleton-2018-nep:/asset/bootstrap/op/rewrite-apache.phtml
+ *
+ * @creation  2016-11-25
+ * @version   1.0
+ * @package   app-skeleton
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+//	...
+$rewrite_base = explode('?', $_SERVER['REQUEST_URI'])[0];
+
+//	...
+$app_root = rtrim($_SERVER['DOCUMENT_ROOT'],'/') . rtrim($rewrite_base,'/').'/';
+
+//	...
+$i    = 0;
+$file = fopen('.htaccess', 'r');
+while( $line = fgets($file) ){
+	//	...
+	$i++;
+
+	//	...
+	if( preg_match('/RewriteEngine/', $line) ){
+		$n1 = $i;
+	};
+
+	//	...
+	if( preg_match('/RewriteBase/', $line) ){
+		$n2 = $i;
+	};
+};
+?>
+<h1>How to boot the onepiece-framework at the Apache web server.</h1>
+<ol>
+	<li>
+		<p>Open <b data-i18n="false">"<?= $app_root ?>.htaccess"</b> file.</p>
+		<p><i><b>Attention!</b> This file is invisible file.</i></p>
+	</li>
+	<li>
+		<p>
+			Look for line <?= $n1 ?>.<br/>
+			Change the value of <b data-i18n="false">"RewriteEngine"</b> to <b data-i18n="false">"On"</b> from <b data-i18n="false">"Off"</b>.
+		</p>
+	</li>
+	<?php if( $rewrite_base !== '/' ): ?>
+	<li>
+		<p>
+			Look for line <?= $n2 ?>.<br/>
+			Change the value of <b data-i18n="false">"RewriteBase"</b> to <b data-i18n="false">"<?= $rewrite_base ?>"</b> from <b data-i18n="false">"/"</b>.
+		</p>
+	</li>
+	<?php endif; ?>
+	<li>
+		<p>
+			Save <b data-i18n="false">.htaccess</b> file.
+		</p>
+	</li>
+	<li>
+		<p>
+			Please reload this page.
+		</p>
+	</li>
+</ol>

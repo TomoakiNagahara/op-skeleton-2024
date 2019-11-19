@@ -1,0 +1,11 @@
+
+<h1>HTTP Server port check</h1>
+<pre><code>
+sudo lsof -nP -iTCP:80 -sTCP:LISTEN
+</code></pre>
+
+<h1>PHP-FPM port check</h1>
+<pre><code>
+sudo lsof -nP -iTCP:9000 -sTCP:LISTEN
+sudo lsof -Pni4 | grep LISTEN | grep php
+</code></pre>

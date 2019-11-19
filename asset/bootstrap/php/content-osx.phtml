@@ -1,0 +1,40 @@
+<?php
+/**
+ * app-skeleton-2018-nep:/asset/bootstrap/php/content-osx.phtml
+ *
+ * @creation  2018-11-13
+ * @version   1.0
+ * @package   app-skeleton
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+//	Correspond to  Eclipse undefined error.
+if( false ){
+	$module = null;
+};
+
+//	...
+$t = explode('.', PHP_VERSION);
+$v = $t[0].$t[1];
+
+//	...
+if( preg_match('/apache/', PHP_SAPI) ){
+	$target = 'apache2';
+}else if( preg_match('/cgi/', PHP_SAPI) ){
+	$target = "php{$v}-fpm";
+}else{
+	$target = null;
+}
+?>
+<?php if(file_exists('/opt/local/var/macports/pingtimes')): ?>
+	<section>
+		<h2 style="margin-left: 0.5em;">MacPorts</h2>
+		<pre><code><?= null /* PHP Zend Engine will remove EOL. */ ?>
+sudo port install php<?= $v ?>-<?= $module.PHP_EOL ?>
+<?php if( $target ): ?>
+sudo port unload <?= $target.PHP_EOL ?>
+sudo port load <?= $target ?>
+<?php endif; ?>
+		</code></pre>
+	</section>
+<?php endif; ?>
