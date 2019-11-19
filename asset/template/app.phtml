@@ -1,0 +1,24 @@
+<?php
+/**
+ * app-skeleton-2019-nep:/asset/template/app.phtml
+ *
+ * @creation  2019-11-19
+ * @version   1.0
+ * @package   app-skeleton-2019-nep
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+/** namespace
+ *
+ */
+namespace OP;
+
+/* @var integer $st */
+$ex   = (microtime(true) - $st);
+$used = memory_get_usage()      / 1000;
+$peak = memory_get_peak_usage() / 1000;
+echo "<div>";
+echo "<p>execute time: {$ex}</p>";
+echo "<p>momory usage: {$used}KB (max: {$peak}KB)</p>";
+echo "</div>";
