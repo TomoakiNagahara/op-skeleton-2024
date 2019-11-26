@@ -19,9 +19,4 @@ namespace OP;
 ?>
 <header>
 	<a href="<?= $app->URL('app:/') ?>"><?= Env::Get('app')['title'] ?? 'TOP' ?></a>
-	<?php
-	if( Env::Get('gdpr') ){
-		$app->Unit('gdpr')->Auto();
-	}
-	?>
 </header>
