@@ -54,7 +54,12 @@ call_user_func(function(){
 			RootPath('alias', $alias_root);
 		};
 
-		//	...
+		//	Load env config.
+		call_user_func(function(){
+			include(__DIR__."/config/env.php");
+		});
+
+		//	IDE notice.
 		if( false ){
 			var_dump($module);
 		};
