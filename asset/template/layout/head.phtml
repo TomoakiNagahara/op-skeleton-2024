@@ -1,0 +1,55 @@
+<?php
+/**
+ * app-skeleton-2019-nep:/asset/template/head.php
+ *
+ * @creation  2018-04-12
+ * @version   1.0
+ * @package   app-skeleton-2019-nep
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+/** namespace
+ *
+ */
+namespace OP;
+
+/* @var $app    \OP\UNIT\App */
+$app_root= $app->CDN('app:/');
+$charset = Env::Get('app')   ['charset'] ?? 'utf-8';
+$layout  = Env::Get('layout')['name']    ??  null;
+
+//	...
+$hash_js  = Unit::Singleton('WebPack')->FileContentHash('js');
+$hash_css = Unit::Singleton('WebPack')->FileContentHash('css');
+
+?>
+
+	<!-- Charset -->
+	<meta charset="<?= $charset ?>" />
+	<meta http-equiv="Content-Type"  content="text/html; charset=<?= $charset ?>" />
+
+	<?php if( Browser::SmartPhone() ): ?>
+	<!-- For SmartPhone -->
+	<meta name="viewport"            content="width=device-width,initial-scale=1" />
+	<meta name="format-detection"    content="telephone=no" />
+	<?php endif; ?>
+
+	<!-- Canonical -->
+	<link rel="canonical" href="<?= $app->Canonical() ?>" />
+
+	<!-- Icon -->
+	<link type="image/x-icon" href="<?= "{$app_root}img/icon.png" ?>" rel="icon" />
+	<?php if( Browser::iPhone() ): ?>
+	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>" rel="apple-touch-icon" />
+	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>" rel="apple-touch-icon-precomposed" />
+	<?php endif; ?>
+
+	<!-- Stylesheet -->
+	<link type="text/css" href="<?= "{$app_root}webpack/css/?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet" media="print" onload="this.media='all'">
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
+
+	<!-- title -->
+	<title><?= $app->Title() ?></title>

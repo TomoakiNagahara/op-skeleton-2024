@@ -1,0 +1,24 @@
+<?php
+/**
+ * app-skeleton-2019-nep:/asset/template/layout/footer.phtml
+ *
+ * @creation  2018-04-12
+ * @version   1.0
+ * @package   app-skeleton-2019-nep
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+/** namespace
+ *
+ * @creation  2019-04-03
+ */
+namespace OP;
+
+/* @var $app UNIT\App */
+$app->Template('analytics/google.phtml');
+
+?>
+<footer>
+	<?= Env::Get('app')['copyright'] ?? null ?>
+</footer>

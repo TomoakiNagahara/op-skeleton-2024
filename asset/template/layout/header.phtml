@@ -1,0 +1,27 @@
+<?php
+/**
+ * app-skeleton-2018-nep:/asset/template/layout/header.phtml
+ *
+ * @creation  2018-04-12
+ * @version   1.0
+ * @package   app-skeleton
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+/** namespace
+ *
+ * @creation  2019-03-01
+ */
+namespace OP;
+
+/* @var $app \OP\UNIT\App */
+?>
+<header>
+	<a href="<?= $app->URL('app:/') ?>"><?= Env::Get('app')['title'] ?? 'TOP' ?></a>
+	<?php
+	if( Env::Get('gdpr') ){
+		$app->Unit('gdpr')->Auto();
+	}
+	?>
+</header>

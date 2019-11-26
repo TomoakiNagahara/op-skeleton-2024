@@ -19,6 +19,6 @@ $ex   = (microtime(true) - $st);
 $used = memory_get_usage()      / 1000;
 $peak = memory_get_peak_usage() / 1000;
 echo "<div>";
-echo "<p>execute time: {$ex}</p>";
-echo "<p>momory usage: {$used}KB (max: {$peak}KB)</p>";
+echo "execute time: {$ex}<br/>";
+echo "momory usage: {$used}KB (max: {$peak}KB)";
 echo "</div>";
