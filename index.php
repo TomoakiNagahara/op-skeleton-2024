@@ -17,7 +17,8 @@ namespace OP;
 
  /************************************************/
 //	.htaccess file has not been initialized.	//
-if(!isset($app) or !is_subclass_of($app, 'IF_APP') ){
+/* @var $app UNIT\App */
+if( empty($app) ){
 	include(__DIR__.'/app.php');
 	exit(__FILE__.' #'.__LINE__);
 }
