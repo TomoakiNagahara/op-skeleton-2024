@@ -46,7 +46,7 @@ $hash_css = Unit::Singleton('WebPack')->FileContentHash('css');
 	<?php endif; ?>
 
 	<!-- Stylesheet -->
-	<link type="text/css" href="<?= "{$app_root}webpack/css/?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet" media="print" onload="this.media='all'">
+	<link type="text/css" href="<?= "{$app_root}webpack/css/?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
 
 	<!-- JavaScript -->
 	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
