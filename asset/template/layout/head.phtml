@@ -14,8 +14,11 @@
  */
 namespace OP;
 
-/* @var $app    \OP\UNIT\App */
-$app_root= $app->CDN('app:/');
+/* @var $app UNIT\App */
+
+//	...
+$fqdn    = $app->CDN();
+$app_root= $fqdn . ConvertURL('app:/');
 $charset = Env::Get('app')   ['charset'] ?? 'utf-8';
 $layout  = Env::Get('layout')['name']    ??  null;
 
