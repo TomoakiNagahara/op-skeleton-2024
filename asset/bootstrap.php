@@ -47,10 +47,10 @@ call_user_func(function(){
 		 * Web Application needs a link path.
 		 * Don't be generate real path.
 		 */
+		RootPath('doc'  , $_SERVER['DOCUMENT_ROOT']);
 		RootPath('app'  , dirname($_SERVER['SCRIPT_FILENAME']));
 		RootPath('asset', __DIR__);
 		RootPath('op'   , __DIR__.'/core');
-		RootPath('doc'  , $_SERVER['DOCUMENT_ROOT']);
 
 		//	Check if symbolic link.
 		if( is_link(rtrim(ConvertPath('app:/'),'/')) ){
