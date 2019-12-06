@@ -14,10 +14,15 @@
  */
 namespace OP;
 
+/** use
+ *
+ */
+use OP\UNIT\App;
+
 /* @var $app UNIT\App */
 
 //	...
-$fqdn    = $app->CDN();
+$fqdn    = App::CDN();
 $app_root= $fqdn . ConvertURL('app:/');
 $charset = Env::Get('app')   ['charset'] ?? 'utf-8';
 $layout  = Env::Get('layout')['name']    ??  null;
@@ -40,7 +45,7 @@ $hash_css = Unit::Singleton('WebPack')->FileContentHash('css');
 	<?php endif; ?>
 
 	<!-- Canonical -->
-	<link rel="canonical" href="<?= $app->Canonical() ?>" />
+	<link rel="canonical" href="<?= App::Canonical() ?>" />
 
 	<!-- Icon -->
 	<link type="image/x-icon" href="<?= "{$app_root}img/favicon.ico" ?>" rel="icon" />
@@ -56,4 +61,4 @@ $hash_css = Unit::Singleton('WebPack')->FileContentHash('css');
 	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
 
 	<!-- title -->
-	<title><?= $app->Title() ?></title>
+	<title><?= App::Title() ?></title>
