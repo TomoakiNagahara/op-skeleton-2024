@@ -1,4 +1,4 @@
-onepiece-framework app skeleton 2020
+New Enforce Power
 ===
 
  Welcome to "onepiece-framework" app "skeleton" 2020.
@@ -17,7 +17,7 @@ onepiece-framework app skeleton 2020
  1. ORM
  1. Form
  1. Selftest
- 1. g11n, i18n, m17n
+ 1. g11n, i18n, m17n, l10n
  1. Iceage
  1. Cookie
  1. Session
@@ -35,3 +35,16 @@ onepiece-framework app skeleton 2020
  1. Intuitive help.
  1. Easy debugging.
  1. Rolling update.
+
+# Installation instructions
+
+ 1. Git clone or Download from github.com <div>
+    1. Git
+    1. Download
+    </div>
+ 1. HTTP Server configuration <div>
+    1. Apache
+    1. Nginx
+    1. PHP Built-in Server
+    </div>
+ 1. Access to installation page by your browser
