@@ -39,20 +39,18 @@ call_user_func(function(){
 			require(__DIR__.'/bootstrap/php/index.phtml');
 		};
 
-		//	Entry point file is app.php. This file path is in $_SERVER['SCRIPT_FILENAME'].
-		$app_root = dirname($_SERVER['SCRIPT_FILENAME']);
-
-		//	Entry each root directory.
+		/** About the app directory.
+		 *
+		 * Care should be taken if the directory is a link.
+		 * A link is called an alias on Mac and a shortcut on Windows.
+		 * "SCRIPT_FILENAME" is path of URL.
+		 * Web Application needs a link path.
+		 * Don't be generate real path.
+		 */
+		RootPath('app'  , dirname($_SERVER['SCRIPT_FILENAME']));
 		RootPath('asset', __DIR__);
 		RootPath('op'   , __DIR__.'/core');
 		RootPath('doc'  , $_SERVER['DOCUMENT_ROOT']);
-		RootPath('app'  , $app_root);
-
-		//	Alias root.
-		$alias_root = $_SERVER['DOCUMENT_ROOT'] . explode('?',$_SERVER['REQUEST_URI'])[0];
-		if( $app_root.'/' !== $alias_root ){
-			RootPath('alias', $alias_root);
-		};
 
 		//	Load env config.
 		call_user_func(function(){
