@@ -52,6 +52,12 @@ call_user_func(function(){
 		RootPath('op'   , __DIR__.'/core');
 		RootPath('doc'  , $_SERVER['DOCUMENT_ROOT']);
 
+		//	Check if symbolic link.
+		if( is_link(rtrim(ConvertPath('app:/'),'/')) ){
+			// Register real path.
+			RootPath('link' , dirname(__DIR__));
+		}
+
 		//	Load env config.
 		call_user_func(function(){
 			include(__DIR__."/config/env.php");
