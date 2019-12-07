@@ -28,6 +28,7 @@ $app->Title('Welcome');
 }
 </style>
 <section id="welcome">
+	<!-- Introduction -->
 	<h2>Welcome to the onepiece-framework!!</h2>
 	<img src="<?= ConvertURL('app:/img/icon.png') ?>" />
 	<p>
@@ -42,10 +43,14 @@ $app->Title('Welcome');
 		The "NEW WORLD" is a new world.
 		Please enjoy this non stress and comfortable world.
 	</p>
-	<h3>Feature</h3>
-	<ul>
-		<li><a href="html_pass_through.html">Html pass through</a></li>
-	</ul>
+
+	<!-- Feature -->
+	<section class="float left">
+		<h3>Feature</h3>
+		<ul>
+			<li><a href="html_pass_through.html">Html pass through</a></li>
+		</ul>
+	</section>
 </section>
 <?php
 if(!Env::isLocalhost() ){
