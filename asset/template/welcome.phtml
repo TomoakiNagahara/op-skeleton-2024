@@ -84,9 +84,13 @@ $list = GetLinkList();
 	<h2>Built-in Service</h2>
 	<ul>
 	<?php foreach( $list as $name => $path ): ?>
-		<?php if( $path !== false ): ?>
-			<li><a href="<?= $path ?>"><?= $name ?></a></li>
-		<?php endif; ?>
+			<li class="<?= $path ? '':'gray' ?>">
+				<?php if( $path ): ?>
+					<a href="<?= $path ?>"><?= $name ?></a>
+				<?php else: ?>
+					<span class="gray"><?= $name ?></span>
+				<?php endif; ?>
+			</li>
 	<?php endforeach; ?>
 	</ul>
 </section>
@@ -95,7 +99,7 @@ $list = GetLinkList();
 <?php if( array_search(false, $list, true) ): ?>
 <section>
 <h2>Example</h2>
-<pre><code>
+<pre><code><?php /* pre tag designe is feces */ ?>
 cd <?= $app_root ?><br/>
 <?php
 foreach( $list as $name => $path ){
