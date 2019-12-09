@@ -51,6 +51,7 @@ $app->Title('Welcome');
 			<li><a href="html_pass_through.html">Html pass through</a></li>
 		</ul>
 	</section>
+	<br class="float clear both"/>
 </section>
 <?php
 if(!Env::isLocalhost() ){
@@ -84,7 +85,7 @@ foreach( scandir($app_root) as $file ){
 };
 
 //	...
-echo '<hr style="clear:both;" />';
+echo '<hr class="float clear both"/>';
 
 //	...
 $asset_root = (ConvertPath('app:/asset/') === ConvertPath('asset:/')) ? './asset/': ConvertPath('asset:/');
