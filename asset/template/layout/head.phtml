@@ -27,14 +27,15 @@ $hash_js  = Unit::Singleton('WebPack')->FileContentHash('js');
 $hash_css = Unit::Singleton('WebPack')->FileContentHash('css');
 
 ?>
-
 	<!-- Charset -->
 	<meta charset="<?= $charset ?>" />
 	<meta http-equiv="Content-Type"  content="text/html; charset=<?= $charset ?>" />
 
 	<?php if( Browser::SmartPhone() ): ?>
 	<!-- For SmartPhone -->
-	<meta name="viewport"            content="width=device-width,initial-scale=1" />
+	<!-- Disable auto scaling -->
+	<meta name="viewport"            content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+	<!-- Disable phone number highlight -->
 	<meta name="format-detection"    content="telephone=no" />
 	<?php endif; ?>
 
