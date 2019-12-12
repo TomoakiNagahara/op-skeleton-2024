@@ -1,6 +1,6 @@
 <?php
 /**
- * app-skeleton-2019-nep:/asset/config/20_layout.php
+ * app-skeleton-2020-nep:/asset/config/20_layout.php
  *
  * @created   2019-02-22
  * @version   1.0
