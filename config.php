@@ -1,10 +1,11 @@
 <?php
 /**
- * app-skeleton-2020-nep:/asset/config.php
+ * app-skeleton-2020-nep:/config.php
  *
  * @created   2019-04-09   asset:/config/app.php
  * @moved     2019-11-20   asset:/config/app.php --> asset:/config/env.php
  * @moved     2019-12-12   asset:/config/env.php --> asset:/config.php
+ * @moved     2019-12-12   asset:/config.php     --> app:/config.php
  * @version   1.0
  * @package   app-skeleton-2019-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
