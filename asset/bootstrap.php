@@ -58,11 +58,6 @@ call_user_func(function(){
 			RootPath('link' , dirname(__DIR__));
 		}
 
-		//	Load env config.
-		call_user_func(function(){
-			include(__DIR__."/config/env.php");
-		});
-
 		//	IDE notice.
 		if( false ){
 			var_dump($module);
