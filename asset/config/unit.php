@@ -15,7 +15,11 @@
  */
 namespace OP;
 
-//	...
-Env::Set('unit',[
-	'directory'=>'asset:/unit',
-]);
+/** Return config array.
+ *
+ * @created   2019-12-12
+ * @return    array        $config
+ */
+return [
+	'directory' => 'asset:/unit',
+];

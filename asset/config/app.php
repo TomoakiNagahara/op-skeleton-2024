@@ -9,11 +9,12 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
-//	...
-$app = [];
-$app['title']     = 'onepiece-framework app skeleton 2020';
-$app['copyright'] = 'Copyright 2009 All right reserved.';
-
-//	...
-return $app;
-
+/** Return config array.
+ *
+ * @created   2019-12-12
+ * @return    array        $config
+ */
+return [
+	'title'     => 'onepiece-framework app skeleton 2020',
+	'copyright' => 'Copyright 2009 All right reserved.',
+];

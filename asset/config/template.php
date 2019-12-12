@@ -15,8 +15,11 @@
  */
 namespace OP;
 
-//	...
-Env::Set('template',[
+/** Return config array.
+ *
+ * @created   2019-12-12
+ * @return    array        $config
+ */
+return [
 	'directory' => 'asset:/template',
-	'cache'     => 'asset:/cache',
-]);
+];

@@ -15,17 +15,13 @@
  */
 namespace OP;
 
-//	...
-Env::Set('layout',[
+/** Return config array.
+ *
+ * @created   2019-12-12
+ * @return    array        $config
+ */
+return [
 	'directory' => 'asset:/layout/',
 	'execute'   =>  true,
 	'name'      => 'white',
-]);
-
-//	...
-/*
-if( $layout = Env::Get('layout') ){
-	$path   = ConvertPath($layout['directory']) . $layout['name'];
-	RootPath('layout', $path);
-};
-*/
+];
