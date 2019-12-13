@@ -40,24 +40,29 @@ function GetLinkList(){
 	//	Change app root directory.
 	chdir($app_root);
 
-	//	...
+	//	Scan app root.
 	foreach( scandir($app_root) as $file ){
-		//	...
+		//	Check if link.
 		if(!is_link($file)){
+			//	Is link.
 			continue;
 		}
 
-		//	...
+		//	Get real file path.
 		$name = realpath($file);
+
+		//	Get real file name.
 		$name = basename($name);
 
-		//	...
-		if(!isset($list[$name]) ){
-			continue;
-		}
-
-		//	...
-		$list[$name] = $file;
+		//	Loop at $list keys.
+		foreach( array_keys($list) as $key ){
+			//	Check if match a part real file name at key. ex: module-testcase-2020
+			if( strpos($name, $key) !== false ){
+				//	$file is alias file name.
+				$list[$key] = $file;
+				break;
+			}
+		};
 	}
 
 	//	Change back to original directory.
