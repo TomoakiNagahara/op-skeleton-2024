@@ -1,6 +1,6 @@
 <?php
 /**
- * app-skeleton-2019-nep:/index.php
+ * app-skeleton-2020-nep:/index.php
  *
  * @created   2019-02-18
  * @version   1.0

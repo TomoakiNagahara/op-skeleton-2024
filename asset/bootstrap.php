@@ -1,6 +1,6 @@
 <?php
 /**
- * app-skeleton-2019-nep:/asset/bootstrap.php
+ * app-skeleton-2020-nep:/asset/bootstrap.php
  *
  * @creation  2018-03-27
  * @version   1.0
