@@ -31,7 +31,7 @@ $asset_path = null;
 
 //	Calc asset path.
 if( strpos($asset_root, $app_root) === 0 ){
-	$asset_path = substr($asset_root, strlen($app_root) -1);
+	$asset_path = substr($asset_root, strlen($app_root));
 }else{
 	$asset_path = $asset_root;
 }
