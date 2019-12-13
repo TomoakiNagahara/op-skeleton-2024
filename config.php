@@ -18,26 +18,15 @@
  */
 namespace OP;
 
-//	...
-call_user_func(function(){
-	try{
-		//	Seed
-		$seed = __FILE__;
+//	Seed
+$seed = __FILE__;
 
-		//	Calc App ID.
-		$app_id = substr(md5($seed), 0, 8);
+//	Calc App ID.
+$app_id = substr(md5($seed), 0, 8);
 
-		//	Set App ID.
-		Env::AppID($app_id);
+//	Set App ID.
+Env::AppID($app_id);
 
-		//	Locale
-		Env::Country('jp');
-		Env::Language('en');
-
-	} catch ( \Throwable $e ){
-		$file    = $e->getFile();
-		$line    = $e->getLine();
-		$message = $e->getMessage();
-		exit("$file #$line, $message");
-	};
-});
+//	Locale
+Env::Country('jp');
+Env::Language('en');
