@@ -39,6 +39,11 @@ call_user_func(function(){
 			require(__DIR__.'/bootstrap/php/index.phtml');
 		};
 
+		/** The document root is directly under the FQDN.
+		 *
+		 */
+		RootPath('doc'  , $_SERVER['DOCUMENT_ROOT']);
+
 		/** About the app directory.
 		 *
 		 * Care should be taken if the directory is a link.
@@ -47,10 +52,29 @@ call_user_func(function(){
 		 * Web Application needs a link path.
 		 * Don't be generate real path.
 		 */
-		RootPath('doc'  , $_SERVER['DOCUMENT_ROOT']);
-		RootPath('app'  , dirname($_SERVER['SCRIPT_FILENAME']));
-		RootPath('asset', __DIR__);
-		RootPath('op'   , __DIR__.'/core');
+		$app_root = dirname($_SERVER['SCRIPT_FILENAME']);
+		RootPath('app'  , $app_root);
+
+		/** Asset root would including application asset.
+		 *  core, unit, template, layout, config
+		 *
+		 * @updated   2019-12-16   Correspond link.
+		 */
+		//	Check if the asset directory is under the app root.
+		if( strpos(__DIR__, realpath($app_root)) === 0 ){
+			//	The asset directory is under the app root.
+			$asset_root = $app_root . '/' . basename(__DIR__);
+		}else{
+			//	The asset directory is not under the app root.
+			$asset_root = __DIR__;
+		}
+		RootPath('asset', $asset_root);
+
+		/** The onepiece-framework's core is under the asset root.
+		 *
+		 * @updated   2019-12-16
+		 */
+		RootPath('op'   , $asset_root . '/core');
 
 		//	Check if symbolic link.
 		if( is_link(rtrim(ConvertPath('app:/'),'/')) ){
