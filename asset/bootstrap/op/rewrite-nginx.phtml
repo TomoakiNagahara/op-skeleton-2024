@@ -52,9 +52,11 @@ http {
 
         #   Transfer to onepiece-framework app-skeleton
         location <?= $app_name ?> {
-            include         fastcgi.conf;
+            #   Include default fastcgi_params settings.
+            include         fastcgi_params;
             <span style="color:red;">root            <?= $doc_root ?>;</span>
             <span style="color:red;">fastcgi_pass    127.0.0.1:9000;</span>
+            #   Overwrite fastcgi_params file settings.
             fastcgi_param   SCRIPT_FILENAME $document_root<?= $app_root ?>asset/app.php;
             fastcgi_param   PHP_VALUE       "catch_workers_output=no; display_errors=on";
             fastcgi_param   REDIRECT_STATUS $status;
