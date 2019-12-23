@@ -4,6 +4,22 @@ The onepiece-framework 2020 "New Enforce Power"
  Welcome to "onepiece-framework" app "skeleton" 2020.
  The "onepiece-framework" is insanely great!!
 
+# indexes
+
+ * Overview
+ * Function
+ * Installation
+
+# Overview
+
+ 1. Intuitive URL.
+ 1. Intuitive routing from URL.
+ 1. Intuitive config.
+ 1. Intuitive error handling.
+ 1. Intuitive help.
+ 1. Intuitive debugging.
+ 1. Rolling update.
+
 # Function
 
  The "onepiece-framework" has everything.
@@ -27,24 +43,42 @@ The onepiece-framework 2020 "New Enforce Power"
 
 </div>
 
-# Feature
+# Installation guide
 
- 1. Intuitive routing.
- 1. Intuitive config.
- 1. Intuitive error handling.
- 1. Intuitive help.
- 1. Easy debugging.
- 1. Rolling update.
-
-# Installation instructions
-
- 1. Git clone or Download from github.com <div>
+ 1. Do download or git clone from github.com.
     1. Git
     1. Download
-    </div>
- 1. HTTP Server configuration <div>
+ 1. HTTP Server configuration.
     1. Apache
     1. Nginx
     1. PHP Built-in Server
-    </div>
- 1. Access to installation page by your browser
+ 1. Access to installation page by your browser.
+
+## Prerequisites
+
+ 1. PHP version is 7.0 later.
+ 1. Document-Root path is "/var/www/html/".
+ 1. Application-root is "/var/www/html/app-skeleton-2020-nep/".
+ 1. Server domain name is "localhost".
+ 1. Application URL is "http://localhost/app-skeleton-2020-nep/".
+
+## Installation instructions
+
+ 1. Do download or git clone from github.com.
+    1. Download
+       1. Access to https://github.com/onepiece-framework
+       1. Click download button.
+       1. Copy to ~/Download/app-skeleton-2020-nep /var/www/html
+    1. Git clone
+       1. `cd /var/www/html` -- This directory is example.
+       1. `git clone https://github.com/onepiece-framework/app-skeleton-2020-nep.git`
+ 2. HTTP Server configuration
+    1. Apache
+       - No configuration is required.
+    1. Nginx
+       - No configuration is required.
+    1. PHP Built-in server
+       1. ```
+          php -S localhost:80 /var/www/html/app-skeleton-2020-nep/app.php
+          ```
+ 3. Access to "http://localhost/app-skeleton-2020-nep" by your browser.
