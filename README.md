@@ -4,13 +4,13 @@ The onepiece-framework 2020 "New Enforce Power"
  Welcome to "onepiece-framework" app "skeleton" 2020.
  The "onepiece-framework" is insanely great!!
 
-# indexes
+# Indexes
 
- * Overview
- * Function
- * Installation
+ * <a href="#overview">Overview</a>
+ * <a href="#function">Function
+ * <a href="#install" >Installation guide
 
-# Overview
+# <a name="overview">Overview</a>
 
  1. Intuitive URL.
  1. Intuitive routing from URL.
@@ -20,7 +20,7 @@ The onepiece-framework 2020 "New Enforce Power"
  1. Intuitive debugging.
  1. Rolling update.
 
-# Function
+# <a name="function">Function</a>
 
  The "onepiece-framework" has everything.
 
@@ -43,7 +43,7 @@ The onepiece-framework 2020 "New Enforce Power"
 
 </div>
 
-# Installation guide
+# <a name="install">Installation guide</a>
 
  1. Do download or git clone from github.com.
     1. Git
@@ -66,9 +66,9 @@ The onepiece-framework 2020 "New Enforce Power"
 
  1. Do download or git clone from github.com.
     1. Download
-       1. Access to https://github.com/onepiece-framework
+       1. Access to https://github.com/onepiece-framework/app-skeleton-2020-nep
        1. Click download button.
-       1. Copy to ~/Download/app-skeleton-2020-nep /var/www/html
+       1. Copy "app-skeleton-2020-nep" directory inside to "/var/www/html" directory.
     1. Git clone
        1. `cd /var/www/html` -- This directory is example.
        1. `git clone https://github.com/onepiece-framework/app-skeleton-2020-nep.git`
