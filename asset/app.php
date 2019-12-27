@@ -21,10 +21,10 @@ try {
 	$st = microtime(true);
 
 	//	Bootstrap - Initialize onepiece-framework application.
-	require(__DIR__.'/bootstrap.php');
+	require('bootstrap.php');
 
-	//	Load configuration files.
-	require(__DIR__.'/config.php');
+	//	Config -- Application environment config.
+	require('config.php');
 
 	/* @var $app IF_APP */
 	$app = Unit::Singleton('App');
@@ -39,5 +39,5 @@ try {
 
 } catch ( \Throwable $e ){
 	Notice::Set($e);
-	require(__DIR__.'/bootstrap/op/failed.phtml');
+	require('bootstrap/op/failed.phtml');
 }
