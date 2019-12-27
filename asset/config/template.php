@@ -1,10 +1,10 @@
 <?php
 /**
- * app-skeleton-2020-nep:/asset/config/20_template.php
+ * app-skeleton-2020-nep:/asset/config/template.php
  *
  * @created   2019-02-22
  * @version   1.0
- * @package   app-skeleton-2019-nep
+ * @package   app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
