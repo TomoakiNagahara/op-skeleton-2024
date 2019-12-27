@@ -1,0 +1,39 @@
+[submodule "asset/core"]
+	path = asset/core
+	url = https://github.com/onepiece-framework/core.git
+[submodule "webpack"]
+	path = webpack
+	url = https://github.com/onepiece-framework/module-webpack.git
+[submodule "asset/layout/white"]
+	path = asset/layout/white
+	url = https://github.com/onepiece-framework/layout-white.git
+[submodule "asset/unit/app"]
+	path = asset/unit/app
+	url = https://github.com/onepiece-framework/unit-app.git
+[submodule "asset/unit/layout"]
+	path = asset/unit/layout
+	url = https://github.com/onepiece-framework/unit-layout.git
+[submodule "asset/unit/notice"]
+	path = asset/unit/notice
+	url = https://github.com/onepiece-framework/unit-notice.git
+[submodule "asset/unit/router"]
+	path = asset/unit/router
+	url = https://github.com/onepiece-framework/unit-router.git
+[submodule "asset/unit/template"]
+	path = asset/unit/template
+	url = https://github.com/onepiece-framework/unit-template.git
+[submodule "asset/unit/webpack"]
+	path = asset/unit/webpack
+	url = https://github.com/onepiece-framework/unit-webpack.git
+[submodule "asset/unit/dump"]
+	path = asset/unit/dump
+	url = https://github.com/onepiece-framework/unit-dump.git
+[submodule "asset/testcase"]
+	path = asset/testcase
+	url = https://github.com/onepiece-framework/module-testcase-2018.git
+[submodule "asset/reference"]
+	path = asset/reference
+	url = https://github.com/onepiece-framework/module-reference.git
+[submodule "asset/develop"]
+	path = asset/develop
+	url = https://github.com/onepiece-framework/module-develop.git
