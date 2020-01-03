@@ -29,5 +29,12 @@ if( date('m', Env::Time()) == '10' ){
 	Unit::Singleton('WebPack')->Auto( ConvertPath('app:/webpack/css/common/404.css') );
 }
 
-//	...
+//	Display 404 page.
 $app->Template($path);
+
+//	404 Error notice.
+if( Config::Get('notfound')['execute'] ?? null ){
+	Unit::Singleton('NotFound')->Auto();
+}else{
+	throw new \Exception("404 Error");
+}
