@@ -23,7 +23,33 @@
 		</style>
 	</head>
 	<body>
-	<?php include(__DIR__.'/content.phtml') ?>
+		<section>
+			<h1>Does not install php-<?= _OP_APP_BOOTSTRAP_ ?> module.</h1>
+			<p>Please install php-<?= _OP_APP_BOOTSTRAP_ ?> module.</p>
+			<?php
+			switch( PHP_OS ){ // PHP 7.2.0 --> PHP_OS_FAMILY
+				case 'MacOS':
+				case 'Darwin':
+					include('module-osx.phtml');
+					break;
+
+				case 'WIN32':
+				case 'WINNT':
+					include('module-win.phtm.phtml');
+					break;
+
+				case 'AIX':
+				case 'Linux':
+				case 'SunOS':
+					include('module-unix.phtml');
+					break;
+
+				default:
+					var_dump(PHP_OS);
+					break;
+			}
+			?>
+		</section>
 	</body>
 </html>
 <?php
