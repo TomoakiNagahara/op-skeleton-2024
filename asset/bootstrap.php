@@ -66,13 +66,13 @@ call_user_func(function(){
 
 		//	Check mbstring installed.
 		if(!function_exists('mb_language') ){
-			$module = 'mbstring';
+			define('_OP_APP_BOOTSTRAP_', 'mbstring');
 			require(__DIR__.'/bootstrap/php/module.phtml');
 		}
 
 		//	Check openssl installed.
 		if(!defined('OPENSSL_VERSION_NUMBER') ){
-			$module = 'openssl';
+			define('_OP_APP_BOOTSTRAP_', 'openssl');
 			require(__DIR__.'/bootstrap/php/module.phtml');
 		};
 
