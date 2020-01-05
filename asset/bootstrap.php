@@ -21,24 +21,6 @@ call_user_func(function(){
 		//	Bootstrap the onepiece-framework's core.
 		require(__DIR__.'/core/Bootstrap.php');
 
-		//	Checking rewrite setting.
-		if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
-			//	Has not been setting rewrite.
-			require(__DIR__.'/bootstrap/op/rewrite.php');
-		}
-
-		//	Check mbstring installed.
-		if(!function_exists('mb_language') ){
-			$module = 'mbstring';
-			require(__DIR__.'/bootstrap/php/index.phtml');
-		}
-
-		//	Check openssl installed.
-		if(!defined('OPENSSL_VERSION_NUMBER') ){
-			$module = 'openssl';
-			require(__DIR__.'/bootstrap/php/index.phtml');
-		};
-
 		/** The document root is directly under the FQDN.
 		 *
 		 */
@@ -82,10 +64,24 @@ call_user_func(function(){
 			RootPath('link' , dirname(__DIR__));
 		}
 
-		//	IDE notice.
-		if( false ){
-			var_dump($module);
+		//	Check mbstring installed.
+		if(!function_exists('mb_language') ){
+			$module = 'mbstring';
+			require(__DIR__.'/bootstrap/php/module.phtml');
+		}
+
+		//	Check openssl installed.
+		if(!defined('OPENSSL_VERSION_NUMBER') ){
+			$module = 'openssl';
+			require(__DIR__.'/bootstrap/php/module.phtml');
 		};
+
+		//	Checking rewrite setting.
+		if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
+			//	Has not been setting rewrite.
+			require(__DIR__.'/bootstrap/op/rewrite.php');
+		}
+
 	} catch ( \Throwable $e ){
 		$file    = $e->getFile();
 		$line    = $e->getLine();
