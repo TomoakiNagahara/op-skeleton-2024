@@ -16,6 +16,15 @@ $app_root = substr(__FILE__, 0, strpos(__FILE__, '/asset/')).'/';
 $app_root = substr($app_root, strlen($doc_root)-1);
 $app_name = '@app-skeleton';
 
+//	Switch fast-cgi params file name.
+switch( PHP_OS ){
+	case 'Darwin':
+		$fastcgi_params = 'fastcgi.conf';
+		break;
+	default:
+		$fastcgi_params = 'fastcgi_params';
+}
+
 ?>
 <h1 data-i18n="true">How to boot the onepiece-framework at the Nginx web server.</h1>
 <p data-i18n="true">
@@ -53,7 +62,7 @@ http {
         #   Transfer to onepiece-framework app-skeleton
         location <?= $app_name ?> {
             #   Include default fastcgi_params settings.
-            include         fastcgi_params;
+            include         <?= $fastcgi_params ?>;
             <span style="color:red;">root            <?= $doc_root ?>;</span>
             <span style="color:red;">fastcgi_pass    127.0.0.1:9000;</span>
             #   Overwrite fastcgi_params file settings.
