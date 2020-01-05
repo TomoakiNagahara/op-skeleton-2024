@@ -8,13 +8,20 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-//	...
+//	Init
 $name     = $_SERVER['SERVER_NAME'];
 $port     = $_SERVER['SERVER_PORT'];
-$doc_root = $_SERVER['DOCUMENT_ROOT'].'/';
-$app_root = substr(__FILE__, 0, strpos(__FILE__, '/asset/')).'/';
-$app_root = substr($app_root, strlen($doc_root)-1);
-$app_name = '@app-skeleton';
+$doc_root = $_SERVER['DOCUMENT_ROOT'];
+$app_name   = '@app-skeleton';
+$app_root   = OP\RootPath('app');
+$asset_root = OP\RootPath('asset');
+
+//	Calc asset/app.php file path.
+if( strpos($asset_root, $doc_root) === 0 ){
+	$app_root   = substr($app_root, strlen($doc_root));
+	$asset_root = '$document_root' . $app_root;
+	$asset_url  = $app_root . 'asset/';
+}
 
 //	Switch fast-cgi params file name.
 switch( PHP_OS ){
@@ -42,7 +49,7 @@ http {
             #   Inside location at location
 
             #   Inaccessible pages
-            location ~ ([^\w]\.ht|<?= $doc_root.'asset/' ?>) {
+            location ~ ([^\w]\.ht<?php if( isset($asset_url) ): ?>>|<?= $asset_url ?><?php endif; ?>) {
                 error_page  403     @app-skeleton;
                 deny        all;
             }
@@ -66,7 +73,7 @@ http {
             <span style="color:red;">root            <?= $doc_root ?>;</span>
             <span style="color:red;">fastcgi_pass    127.0.0.1:9000;</span>
             #   Overwrite fastcgi_params file settings.
-            fastcgi_param   SCRIPT_FILENAME $document_root<?= $app_root ?>asset/app.php;
+            fastcgi_param   SCRIPT_FILENAME <?= $asset_root ?>app.php;
             fastcgi_param   PHP_VALUE       "catch_workers_output=no; display_errors=on";
             fastcgi_param   REDIRECT_STATUS $status;
         }
