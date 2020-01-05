@@ -32,13 +32,14 @@ The onepiece-framework 2020 "New Enforce Power"
  1. SQL
  1. ORM
  1. Form
+ 1. Debug
  1. Selftest
- 1. g11n, i18n, m17n, l10n
  1. Iceage
  1. Cookie
  1. Session
  1. Security
  1. HTML pass through
+ 1. g11n, i18n, m17n, l10n
  1. Shell execution
 
 </div>
@@ -71,7 +72,7 @@ The onepiece-framework 2020 "New Enforce Power"
        1. Copy "app-skeleton-2020-nep" directory inside to "/var/www/html" directory.
     1. Git clone
        1. `cd /var/www/html` -- This directory is example.
-       1. `git clone https://github.com/onepiece-framework/app-skeleton-2020-nep.git`
+       1. `git clone --recursive https://github.com/onepiece-framework/app-skeleton-2020-nep.git` -- Use recursive option.
  2. HTTP Server configuration
     1. Apache
        - No configuration is required.
