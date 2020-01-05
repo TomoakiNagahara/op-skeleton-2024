@@ -8,11 +8,6 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-//	Correspond to  Eclipse undefined error.
-if( false ){
-	$module = null;
-};
-
 //	...
 $t = explode('.', PHP_VERSION);
 $v = $t[0].$t[1];
@@ -30,7 +25,7 @@ if( preg_match('/apache/', PHP_SAPI) ){
 	<section>
 		<h2 style="margin-left: 0.5em;">MacPorts</h2>
 		<pre><code><?= null /* PHP Zend Engine will remove EOL. */ ?>
-sudo port install php<?= $v ?>-<?= $module.PHP_EOL ?>
+sudo port install php<?= $v ?>-<?= _OP_APP_BOOTSTRAP_ . PHP_EOL ?>
 <?php if( $target ): ?>
 sudo port unload <?= $target.PHP_EOL ?>
 sudo port load <?= $target ?>
