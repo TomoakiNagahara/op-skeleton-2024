@@ -21,8 +21,9 @@ namespace OP;
  *
  * @created
  * @moved     2019-12-12   asset:/app.php --> app:/app.php
+ * @changed   2019-01-03   $st --> _OP_APP_START_
  */
-$st = microtime(true);
+define('_OP_APP_START_', microtime(true));
 
 /** Launch onepiece-framework core.
  *
@@ -58,7 +59,7 @@ try {
 
 	//	Output memory usage.
 	if( Env::isAdmin() and (Env::Mime() === 'text/html') ){
-		$app->Template('app.phtml',['st'=>$st]);
+		$app->Template('app.phtml');
 	};
 
 } catch ( \Throwable $e ){
