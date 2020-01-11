@@ -21,6 +21,11 @@ call_user_func(function(){
 		//	Bootstrap the onepiece-framework's core.
 		require(__DIR__.'/core/Bootstrap.php');
 
+		/** Real path.
+		 *
+		 */
+		RootPath('real', realpath(dirname($_SERVER['SCRIPT_FILENAME'])));
+
 		/** The document root is directly under the FQDN.
 		 *
 		 */
