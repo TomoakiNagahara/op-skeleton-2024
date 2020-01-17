@@ -1,3 +1,4 @@
+![icon@48](https://user-images.githubusercontent.com/1668339/72398593-cb0d1900-3786-11ea-863c-418ff8d48f43.png)
 The onepiece-framework 2020 "New Enforce Power"
 ===
 
@@ -59,7 +60,7 @@ The onepiece-framework 2020 "New Enforce Power"
 
  1. PHP version is 7.0 later.
  1. Document-Root path is "/var/www/html/".
- 1. Application-root is "/var/www/html/app-skeleton-2020-nep/".
+ 1. Application-root path is "/var/www/html/app-skeleton-2020-nep/".
  1. Server domain name is "localhost".
  1. Application URL is "http://localhost/app-skeleton-2020-nep/".
 
