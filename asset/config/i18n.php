@@ -10,9 +10,13 @@
  */
 
 //	...
-$url = '//onepiece-framework.com/en:US/i18n/js';
+$from = OP\Env::Locale();
+$to   = OP\Env::Get('locale');
+$url  = "//onepiece-framework.com/en:US/i18n/js";
 
 //	...
 return [
-	'url' => $url,
+	'from' => $from,
+	'to'   => $to,
+	'url'  => $url,
 ];
