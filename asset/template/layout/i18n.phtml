@@ -1,0 +1,49 @@
+<?php
+/**
+ * app-skeleton-2020-nep:/asset/template/layout/footer.phtml
+ *
+ * @created   2020-01-20
+ * @version   1.0
+ * @package   app-skeleton-2020-nep
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+/** namespace
+ *
+ * @created   2020-01-20
+ */
+namespace OP;
+
+?>
+<section>
+	<nav>
+		<div id="unit-i18n-language">
+			<div class="language-area"></div>
+		</div>
+	</nav>
+</section>
+<script>
+window.addEventListener('DOMContentLoaded', function(event){
+	if( $OP.i18n.Language ){
+		$OP.i18n.Language('en:us', true);
+	}
+});
+</script>
+<style>
+#unit-i18n-language .language-area {
+	margin:  1px;
+	padding: 1px;
+	border:  1px solid black;
+}
+
+#unit-i18n-language .language-area span {
+	margin-right: 1em;
+	border: 1px solid white;
+	display: inline-block;
+}
+
+#unit-i18n-language .language-area span:hover {
+	border: 1px solid black;
+}
+</style>
