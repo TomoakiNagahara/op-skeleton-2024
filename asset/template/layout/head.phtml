@@ -4,7 +4,7 @@
  *
  * @creation  2018-04-12
  * @version   1.0
- * @package   app-skeleton-2019-nep
+ * @package   app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -60,7 +60,12 @@ $hash_css = Unit::Singleton('WebPack')->FileContentHash('css');
 	<!-- JavaScript -->
 	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
 	<?php if( $i18n = Env::Get('i18n') ): ?>
-	<script type="text/javascript" src="<?= $i18n['url'] ?>" defer></script>
+	<?php
+	$from = $i18n['from'];
+	$to   = $i18n['to'];
+	$url  = $i18n['url'] . "?locale[from]={$from}&locale[to]={$to}";
+	?>
+	<script type="text/javascript" src="<?= $url ?>" defer></script>
 	<?php endif; ?>
 
 	<!-- title -->
