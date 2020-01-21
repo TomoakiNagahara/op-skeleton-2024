@@ -25,8 +25,8 @@ namespace OP;
 </section>
 <script>
 window.addEventListener('DOMContentLoaded', function(event){
-	if( $OP.i18n.Language ){
-		$OP.i18n.Language('en:us', true);
+	if( $OP.i18n.GetLanguageList ){
+		$OP.i18n.GetLanguageList($OP.i18n.SelectedLanguageCode('en:us'), true);
 	}
 });
 </script>
