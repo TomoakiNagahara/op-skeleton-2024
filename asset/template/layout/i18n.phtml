@@ -19,22 +19,26 @@ namespace OP;
 <section>
 	<nav>
 		<div id="unit-i18n-language">
-			<div class="language-area"></div>
+			<div class="language-outline">
+				<div class="language-area"></div>
+				<div class="language-toggle" data-i18n-language-icon-show='▼' data-i18n-language-icon-hide='▲'>●</div><br style="clear:both;"/>
+			</div>
 		</div>
 	</nav>
 </section>
 <script>
 window.addEventListener('DOMContentLoaded', function(event){
-	if( $OP.i18n.GetLanguageList ){
-		$OP.i18n.GetLanguageList($OP.i18n.SelectedLanguageCode('en:us'), true);
-	}
 });
 </script>
 <style>
-#unit-i18n-language .language-area {
+#unit-i18n-language .language-outline {
 	margin:  1px;
 	padding: 1px;
 	border:  1px solid black;
+}
+
+#unit-i18n-language .language-area {
+
 }
 
 #unit-i18n-language .language-area span {
@@ -45,5 +49,10 @@ window.addEventListener('DOMContentLoaded', function(event){
 
 #unit-i18n-language .language-area span:hover {
 	border: 1px solid black;
+}
+
+#unit-i18n-language .language-toggle {
+	margin: 0.5em;
+	float: right;
 }
 </style>
