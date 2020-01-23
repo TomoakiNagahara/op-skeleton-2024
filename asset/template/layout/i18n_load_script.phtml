@@ -1,0 +1,30 @@
+<?php
+/**
+ * layout-white:/i18n.phtml
+ *
+ * @created   2020-01-21
+ * @version   1.0
+ * @package   layout-white
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+/** namespace
+ *
+ * @created   2020-01-21
+ */
+namespace OP;
+
+//	Get i18n config.
+if(!$i18n = Env::Get('i18n') ){
+	return;
+}
+
+//	Initialize.
+$from = $i18n['from'];
+$to   = $i18n['to'];
+$url  = $i18n['url'] . "?locale[from]={$from}&locale[to]={$to}";
+
+?>
+<!-- layout/white/html.phtml -->
+<script type="text/javascript" src="<?= $url ?>" defer></script>
