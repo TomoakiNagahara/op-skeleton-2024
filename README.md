@@ -8,8 +8,9 @@ The onepiece-framework 2020 "New Enforce Power"
 # Indexes
 
  * <a href="#overview">Overview</a>
- * <a href="#function">Function
- * <a href="#install" >Installation guide
+ * <a href="#function">Function</a>
+ * <a href="#install" >Installation guide</a>
+ * <a href="#usage"   >Usage</a>
 
 # <a name="overview">Overview</a>
 
@@ -41,7 +42,7 @@ The onepiece-framework 2020 "New Enforce Power"
  1. Security
  1. HTML pass through
  1. g11n, i18n, m17n, l10n
- 1. Shell execution
+ 1. Shell
 
 </div>
 
@@ -84,3 +85,51 @@ The onepiece-framework 2020 "New Enforce Power"
           php -S localhost:80 /var/www/html/app-skeleton-2020-nep/app.php
           ```
  3. Access to "http://localhost/app-skeleton-2020-nep" by your browser.
+
+## <a name="usage">Usage</a>
+
+ 1. End-Point
+ 1. Template
+ 1. Layout
+ 1. Unit
+ 1. Config
+
+### End-Point
+
+ Always execute "index.php" file.
+
+### Template
+
+ Put the template file in the "asset/template" directory.
+ Can be called from anywhere.
+
+```php
+$app->Template('foo/bar/file_name.phtml');
+```
+
+### Layout
+
+ Layout builds a sense of unity throughout the site.
+ Layout files are in "asset/layout".
+ You can switch layout to use.
+ The configuration file is "asset/config/layout.php".
+
+### Unit
+
+ You can add features such as Form and Database.
+
+### Config
+
+ Set the behavior of the unit.
+
+```php
+$config = Config::Get('unit_name');
+$config['foo'] = 'bar';
+Config::Set('unit_name', $config);
+```
+
+ You can make private settings by adding an underscore to the beginning of the file name.
+
+```sh
+cp asset/config/unit_name.php asset/config/_unit_name.php
+```
