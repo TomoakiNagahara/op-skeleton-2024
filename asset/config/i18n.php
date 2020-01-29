@@ -9,14 +9,18 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/*
 //	...
 $from = OP\Env::Locale();
 $to   = OP\Env::Get('locale');
+*/
 $url  = "//onepiece-framework.com/en:US/i18n/js";
 
 //	...
 return [
+	/*
 	'from' => $from,
 	'to'   => $to,
+	*/
 	'url'  => $url,
 ];
