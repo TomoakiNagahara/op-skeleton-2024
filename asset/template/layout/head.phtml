@@ -62,14 +62,7 @@ $hash_css = Unit::Singleton('WebPack')->FileContentHash('css');
 
 	<!-- JavaScript -->
 	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
-	<?php if( $i18n = Env::Get('i18n') ): ?>
-	<?php
-	$from = $i18n['from'];
-	$to   = $i18n['to'];
-	$url  = $i18n['url'] . "?locale[from]={$from}&locale[to]={$to}";
-	?>
-	<script type="text/javascript" src="<?= $url ?>" defer></script>
-	<?php endif; ?>
+	<?php App::Template('i18n_load_script.phtml'); ?>
 
 	<!-- title -->
 	<title><?= App::Title() ?></title>
