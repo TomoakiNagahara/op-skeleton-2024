@@ -20,17 +20,13 @@ namespace OP;
 	<nav>
 		<div id="unit-i18n-language">
 			<div class="language-outline">
+				<div class="language-message" data-i18n="true" data-i18n-locale="en:us">Please choose your use language</div>
 				<div class="language-area"></div>
 				<div class="language-toggle" data-i18n-language-icon-show='▼' data-i18n-language-icon-hide='▲'>●</div><br style="clear:both;"/>
 			</div>
 		</div>
 	</nav>
 </section>
-<script>
-window.addEventListener('DOMContentLoaded', function(event){
-
-});
-</script>
 <style>
 #unit-i18n-language .language-outline {
 	margin:  1px;
@@ -38,9 +34,15 @@ window.addEventListener('DOMContentLoaded', function(event){
 	border:  1px solid black;
 }
 
+#unit-i18n-language .language-message {
+	font-weight: bold;
+	float: left;
+}
+
 #unit-i18n-language .language-area {
 	padding-top:  0.5em;
 	padding-left: 1.0em;
+	float: left;
 }
 
 #unit-i18n-language .language-area span {
