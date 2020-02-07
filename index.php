@@ -29,10 +29,17 @@ $args = $app->Args();
 
 //	Does if has arguments?
 if( empty($args) ){
-	//	Access is top page.
-	//	Welcome page is in asset/template directory.
+
+	/** Welcome page file is in "asset/template" directory.
+	 *
+	 */
 	$app->Template('welcome.phtml');
+
 }else{
-	//	Execute 404.php
+
+	/** 404.php file is in current directory.
+	 *
+	 */
 	$app->Template('404.php');
+
 }
