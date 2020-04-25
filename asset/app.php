@@ -29,10 +29,10 @@ try {
 	 * @moved     2019-12-27   app-skeleton-2020-nep:/app.php --> asset/app.php
 	 */
 	foreach(['config.php','_config.php'] as $file){
-		//	...
+		//	Build full path.
 		$file = __DIR__.'/'.$file;
 
-		//	...
+		//	Include file into closure.
 		if( file_exists($file) ){
 			call_user_func(function($file){
 				include($file);
