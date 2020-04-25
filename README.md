@@ -1,8 +1,8 @@
 ![icon@48](https://user-images.githubusercontent.com/1668339/72398593-cb0d1900-3786-11ea-863c-418ff8d48f43.png)
-The onepiece-framework 2020 "New Enforce Power"
+The onepiece-framework 2020 - New Enforce Power
 ===
 
- Welcome to "onepiece-framework" app "skeleton" 2020.
+ Welcome to "onepiece-framework" app "skeleton" 2020 on New Enforce Power.
  The "onepiece-framework" is insanely great!!
 
 # Indexes
@@ -14,6 +14,7 @@ The onepiece-framework 2020 "New Enforce Power"
 
 # <a name="overview">Overview</a>
 
+ 1. Microsoft Windows product is not support.
  1. Intuitive URL.
  1. Intuitive routing from URL.
  1. Intuitive config.
@@ -21,6 +22,16 @@ The onepiece-framework 2020 "New Enforce Power"
  1. Intuitive help.
  1. Intuitive debugging.
  1. Rolling update.
+
+## About Microsoft Windows
+
+ Support of Windows has one incident.
+ It is file path separator character.
+ We do not use DIRECTORY_SEPARATOR constant.
+ Because to keep the clean source code and easy to readable.
+ So use a UNIX-based OS.
+
+ But I think so...,  Not far future, Windows kernel is change to Linux kernel.
 
 # <a name="function">Function</a>
 
