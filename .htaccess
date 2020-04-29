@@ -13,6 +13,8 @@
 #
 DirectoryIndex index.php index.html
 ErrorDocument  404 https://onepiece-framework.com/reference/bootstrap/app
+RedirectMatch  404 /\.git # Deny access .git directory and files.
+RedirectMatch  404 /\..*$ # Deny access dot files.
 
 ## PHP's settings.
 #  Server error when PHP module is not installed.
