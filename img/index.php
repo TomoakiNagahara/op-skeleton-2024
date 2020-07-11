@@ -1,13 +1,18 @@
 <?php
-/**
- * app-skeleton-2018-nep:/img/index.php
+/** op-app-skeleton-2020-nep:/img/index.php
  *
- * @creation  2018-05-21
+ * @created   2018-05-21
  * @version   1.0
- * @package   app-skeleton
+ * @package   op-app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
+
+/** namespace
+ *
+ */
+namespace OP;
+
 /* @var $app \OP\UNIT\App */
 
 //	Get "SmartURL" Arguments.
@@ -21,8 +26,11 @@ if( $file === '403' or $file === '404' ){
 	$file .= '.png'; // Add file extension.
 }
 
+//	Get Layout name.
+$layout = Config::Get('layout')['name'] ?? null;
+
 //	Convert to full file path from meta path.
-$path = \OP\ConvertPath("layout:/img/$file");
+$path = \OP\ConvertPath("asset:/layout/$layout/img/$file");
 
 //	Is file exists?
 if(!file_exists($path) ){
@@ -58,7 +66,7 @@ switch( $ext ){
 $app->Layout(false);
 
 //	Set MIME.
-OP\Env::Mime($mime);
+Env::Mime($mime);
 
 //	Load image file.
 echo file_get_contents($path);
