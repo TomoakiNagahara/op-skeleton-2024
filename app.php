@@ -37,8 +37,8 @@ require('asset/app.php');
  * @moved     2019-12-12   asset:/app.php --> app:/app.php
  */
 try {
-	/* @var $app IF_APP */
-	$app = Unit::Singleton('App');
+	/* @var $app UNIT\App */
+	$app = Unit('App');
 
 	//	Launch application.
 	$app->Auto();
