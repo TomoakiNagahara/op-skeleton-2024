@@ -1,30 +1,27 @@
 <?php
 /**
- * app-skeleton-2020-nep:/asset/template/welcome.phtml
+ * op-app-skeleton-2020-nep:/asset/function/welcome.php
  *
  * @created   2019-12-09
  * @version   1.0
- * @package   app-skeleton-2019-nep
+ * @package   op-app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
 /** namespace
  *
- * @created   2019-12-09
  */
 namespace OP\APP\FUNC;
 
 /** use
  *
- * @created   2019-12-09
  */
 use function OP\ConvertPath;
 use function OP\CompressPath;
 
 /** Get link list.
  *
- * @created   2019-12-09
  * @return    array
  */
 function GetLinkList(){
