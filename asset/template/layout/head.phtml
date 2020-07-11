@@ -39,23 +39,19 @@ $hash_css = Unit('WebPack')->FileContentHash('css');
 	<meta charset="<?= $charset ?>" />
 	<meta http-equiv="Content-Type"  content="text/html; charset=<?= $charset ?>" />
 
-	<?php if( Browser::SmartPhone() ): ?>
 	<!-- For SmartPhone -->
 	<!-- Disable auto scaling -->
 	<meta name="viewport"            content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 	<!-- Disable phone number highlight -->
 	<meta name="format-detection"    content="telephone=no" />
-	<?php endif; ?>
 
 	<!-- Canonical -->
 	<link rel="canonical" href="<?= App::Canonical() ?>" />
 
 	<!-- Icon -->
 	<link type="image/x-icon" href="<?= "{$app_root}img/favicon.ico" ?>" rel="icon" />
-	<?php if( Browser::iPhone() ): ?>
-	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>" rel="apple-touch-icon" />
-	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>" rel="apple-touch-icon-precomposed" />
-	<?php endif; ?>
+	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>"    rel="apple-touch-icon" />
+	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>"    rel="apple-touch-icon-precomposed" />
 
 	<!-- Stylesheet -->
 	<link type="text/css" href="<?= "{$app_root}webpack/css/?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
