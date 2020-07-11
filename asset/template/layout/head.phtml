@@ -31,8 +31,8 @@ $charset = Env::Get('app')   ['charset'] ?? 'utf-8';
 $layout  = Env::Get('layout')['name']    ??  null;
 
 //	...
-$hash_js  = Unit::Singleton('WebPack')->FileContentHash('js');
-$hash_css = Unit::Singleton('WebPack')->FileContentHash('css');
+$hash_js  = Unit('WebPack')->FileContentHash('js');
+$hash_css = Unit('WebPack')->FileContentHash('css');
 
 ?>
 	<!-- Charset -->
