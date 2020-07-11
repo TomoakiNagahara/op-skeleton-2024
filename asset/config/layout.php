@@ -22,5 +22,5 @@ namespace OP;
  */
 return [
 	'execute'   =>  true,
-	'name'      => 'white',
+	'name'      => 'uqunie',
 ];
