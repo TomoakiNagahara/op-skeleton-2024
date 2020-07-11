@@ -22,10 +22,6 @@ use OP\UNIT\App;
 /* @var $app UNIT\App */
 
 //	...
-/*
-$fqdn    = App::CDN();
-$app_root= $fqdn . ConvertURL('app:/');
-*/
 $app_root= ConvertURL('app:/');
 $charset = Env::Get('app')   ['charset'] ?? 'utf-8';
 $layout  = Env::Get('layout')['name']    ??  null;
