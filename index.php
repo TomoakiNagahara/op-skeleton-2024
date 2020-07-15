@@ -1,10 +1,9 @@
 <?php
-/**
- * app-skeleton-2020-nep:/index.php
+/** op-app-skeleton-2020-nep:/index.php
  *
  * @created   2019-02-18
  * @version   1.0
- * @package   app-skeleton-2019-nep
+ * @package   op-app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -19,7 +18,7 @@ namespace OP;
 //	.htaccess file has not been initialized.	//
 /* @var $app UNIT\App */
 if( empty($app) ){
-	include(__DIR__.'/app.php');
+	include('app.php');
 	exit(__FILE__.' #'.__LINE__);
 }
 //	You should leave this logic. It's for you.	//

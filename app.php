@@ -1,12 +1,11 @@
 <?php
-/**
- * app-skeleton-2020-nep:/app.php
+/** op-app-skeleton-2020-nep:/app.php
  *
  * @created   2014-02-24
  * @updated   2016-11-22
  * @updated   2019-11-18
  * @version   1.0
- * @package   app-skeleton-2019-nep
+ * @package   op-app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -18,7 +17,7 @@
 namespace OP;
 
 /** PHP Setting
- * 
+ *
  */
 ini_set('short_open_tag','On' );
 ini_set('display_errors','On' );
