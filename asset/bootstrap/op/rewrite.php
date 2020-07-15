@@ -1,10 +1,9 @@
 <?php
-/**
- * app-skeleton-2018-nep:/asset/bootstrap/op/rewrite.php
+/** op-app-skeleton-2020-nep:/asset/bootstrap/op/rewrite.php
  *
- * @creation  2016-11-25
+ * @created   2016-11-25
  * @version   1.0
- * @package   app-skeleton
+ * @package   op-app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */

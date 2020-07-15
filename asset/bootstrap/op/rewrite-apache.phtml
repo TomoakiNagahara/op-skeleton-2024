@@ -1,20 +1,23 @@
 <?php
-/**
- * app-skeleton-2018-nep:/asset/bootstrap/op/rewrite-apache.phtml
+/** op-app-skeleton-2020-nep:/asset/bootstrap/op/rewrite-apache.phtml
  *
- * @creation  2016-11-25
+ * @created   2016-11-25
  * @version   1.0
- * @package   app-skeleton
+ * @package   op-app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-//	...
+
+//	Remove URL Query.
 $rewrite_base = explode('?', $_SERVER['REQUEST_URI'])[0];
 
-//	...
+//	Remove file name.
+$rewrite_base = dirname($rewrite_base);
+
+//	Calc app root.
 $app_root = rtrim($_SERVER['DOCUMENT_ROOT'],'/') . rtrim($rewrite_base,'/').'/';
 
-//	...
+//	Search .htaccess.
 $i    = 0;
 $file = fopen('.htaccess', 'r');
 while( $line = fgets($file) ){
