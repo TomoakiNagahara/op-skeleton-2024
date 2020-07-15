@@ -15,10 +15,10 @@ DirectoryIndex index.php index.html
 ErrorDocument  404 https://onepiece-framework.com/reference/bootstrap/app
 
 ## PHP's settings.
-#
-php_flag  short_open_tag  On
-php_flag  display_errors  On
-php_flag  log_errors      Off
+#  Server error when PHP module is not installed.
+# php_flag  short_open_tag  On
+# php_flag  display_errors  On
+# php_flag  log_errors      Off
 
 ## onepiece-framework's execute option.
 #
