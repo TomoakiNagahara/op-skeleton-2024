@@ -27,10 +27,7 @@ $app_id = substr(md5($seed), 0, 8);
 //	Set App ID.
 Env::AppID($app_id);
 
-/** Locale is move to asset:/config/locale.php
- *
- * @moved     2020-01-17
-//	Locale
-Env::Country('jp');
-Env::Language('en');
-*/
+//	...
+$config = Config::Get('admin');
+Env::Set(Env::_ADMIN_IP_  , $config['ip-addr']);
+Env::Set(Env::_ADMIN_MAIL_, $config['e-mail'] );
