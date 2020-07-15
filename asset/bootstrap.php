@@ -19,7 +19,11 @@ namespace OP;
 call_user_func(function(){
 	try{
 		//	Bootstrap the onepiece-framework's core.
-		require(__DIR__.'/core/Bootstrap.php');
+		$path = __DIR__.'/core/Bootstrap.php';
+		if(!file_exists($path) ){
+			require(__DIR__.'/bootstrap/app/gitsubmodule.phtml');
+		}
+		require($path);
 
 		/** Real path.
 		 *
