@@ -97,7 +97,7 @@ The onepiece-framework 2020 - New Enforce Power
           ```
  3. Access to "http://localhost/app-skeleton-2020-nep" by your browser.
 
-## <a name="usage">Usage</a>
+# <a name="usage">Usage</a>
 
  1. End-Point
  1. Template
