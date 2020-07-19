@@ -11,8 +11,22 @@
 //	Remove URL Query.
 $rewrite_base = explode('?', $_SERVER['REQUEST_URI'])[0];
 
-//	Remove file name.
-$rewrite_base = dirname($rewrite_base);
+//	Search app.php.
+do{
+	//	Check if document root.
+	if( $rewrite_base === '/' ){
+		break;
+	}
+
+	//	Generate app.php path.
+	$path =  $_SERVER['DOCUMENT_ROOT'] . rtrim($rewrite_base,'/') .'/app.php';
+
+	//	Check app.php path.
+	if( file_exists($path) ){
+		break;
+	}
+
+}while( $rewrite_base = dirname($rewrite_base) );
 
 //	Calc app root.
 $app_root = rtrim($_SERVER['DOCUMENT_ROOT'],'/') . rtrim($rewrite_base,'/').'/';
