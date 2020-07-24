@@ -12,7 +12,10 @@
  *
  * @return    array        $config
  */
+/*
 return [
-	'e-mail'  => 'info@onepiece-framework.com',
-	'ip-addr' => '127.0.0.1',
+	OP\Env::_ADMIN_IP_   => '127.0.0.1',
+	OP\Env::_ADMIN_MAIL_ => 'info@onepiece-framework.com',
+	OP\Env::_MAIL_FROM_  => 'noreply@onepiece-framework.com',
 ];
+*/
