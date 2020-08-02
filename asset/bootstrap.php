@@ -1,7 +1,7 @@
 <?php
 /** op-app-skeleton-2020-nep:/asset/bootstrap.php
  *
- * @creation  2018-03-27
+ * @created   2018-03-27
  * @version   1.0
  * @package   op-app-skeleton-2020-nep
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
@@ -10,7 +10,7 @@
 
 /** namespace
  *
- * @creation  2019-02-23
+ * @created   2019-02-23
  */
 namespace OP;
 
