@@ -26,7 +26,16 @@ $app_id = substr(md5($seed), 0, 8);
 //	Set App ID.
 Env::AppID($app_id);
 
-//	...
+//	Get admin config.
 $config = Config::Get('admin');
-Env::Set(Env::_ADMIN_IP_  , $config[Env::_ADMIN_IP_]   );
-Env::Set(Env::_ADMIN_MAIL_, $config[Env::_ADMIN_MAIL_] );
+
+//	Set Admin IP-Address and Admin E-Mail Address.
+foreach( ['_ADMIN_IP_' => Env::_ADMIN_IP_, '_ADMIN_MAIL_' => Env::_ADMIN_MAIL_] as $label => $key ){
+	//	...
+	if(!$val = $config[$key] ?? null ){
+		throw new \Exception("`{$label}` is not set.");
+	}
+
+	//	...
+	Env::Set($key, $val);
+}
