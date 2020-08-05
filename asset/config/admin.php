@@ -12,10 +12,13 @@
  *
  * @return    array        $config
  */
+$config = [
 /*
-return [
 	OP\Env::_ADMIN_IP_   => '127.0.0.1',
 	OP\Env::_ADMIN_MAIL_ => 'info@onepiece-framework.com',
 	OP\Env::_MAIL_FROM_  => 'noreply@onepiece-framework.com',
-];
 */
+];
+
+//	...
+return $config;
