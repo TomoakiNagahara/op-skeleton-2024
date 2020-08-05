@@ -30,10 +30,11 @@ Env::AppID($app_id);
 $config = Config::Get('admin');
 
 //	Set Admin IP-Address and Admin E-Mail Address.
-foreach( ['_ADMIN_IP_' => Env::_ADMIN_IP_, '_ADMIN_MAIL_' => Env::_ADMIN_MAIL_] as $label => $key ){
+foreach( [Env::_ADMIN_IP_, Env::_ADMIN_MAIL_] as $key ){
 	//	...
 	if(!$val = $config[$key] ?? null ){
-		throw new \Exception("`{$label}` is not set.");
+		include(__DIR__.'/bootstrap/app/config-admin.phtml');
+		exit;
 	}
 
 	//	...
