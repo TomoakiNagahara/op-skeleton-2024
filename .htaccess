@@ -27,7 +27,7 @@ ErrorDocument  404 https://onepiece-framework.com/reference/bootstrap/app
 Options +FollowSymLinks +ExecCGI -Indexes
 
 ## Dispatch settings.
-#
+#  .htaccess "RewriteEngine" value is change to "On" from "Off".
 #  If used Apache's version is not v2.4, Change to [L] from [END].
 #
 <IfModule mod_rewrite.c>
