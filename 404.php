@@ -35,5 +35,12 @@ $app->Template($path);
 if( Config::Get('notfound')['execute'] ?? null ){
 	Unit('NotFound')->Auto();
 }else{
-	throw new \Exception("404 Error");
+	//	...
+	$scheme = $_SERVER['REQUEST_SCHEME'] ?? '(empty)';
+	$host   = $_SERVER['HTTP_HOST']      ?? null;
+	$url    = $_SERVER['REQUEST_URI']    ?? null;
+	$url    = $scheme .'://'. $host . $url;
+
+	//	...
+	throw new \Exception("404 Not Found Error - $url");
 }
