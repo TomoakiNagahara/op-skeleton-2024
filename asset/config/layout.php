@@ -21,7 +21,6 @@ namespace OP;
  * @return    array        $config
  */
 return [
-	'directory' => 'asset:/layout/',
 	'execute'   =>  true,
 	'name'      => 'white',
 ];
