@@ -28,5 +28,5 @@ Env::AppID($app_id);
 
 //	...
 $config = Config::Get('admin');
-Env::Set(Env::_ADMIN_IP_  , $config['ip-addr']);
-Env::Set(Env::_ADMIN_MAIL_, $config['e-mail'] );
+Env::Set(Env::_ADMIN_IP_  , $config[Env::_ADMIN_IP_]   );
+Env::Set(Env::_ADMIN_MAIL_, $config[Env::_ADMIN_MAIL_] );
