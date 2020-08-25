@@ -37,8 +37,8 @@ if( Config::Get('notfound')['execute'] ?? null ){
 }else{
 	//	...
 	$scheme = $_SERVER['REQUEST_SCHEME'] ?? '(empty)';
-	$host   = $_SERVER['HTTP_HOST']      ?? null;
-	$url    = $_SERVER['REQUEST_URI']    ?? null;
+	$host   = $_SERVER['HTTP_HOST']      ?? '(empty)';
+	$url    = $_SERVER['REQUEST_URI']    ?? '(empty)';
 	$url    = $scheme .'://'. $host . $url;
 
 	//	...
