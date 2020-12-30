@@ -24,6 +24,20 @@ do
 done
 cd ..
 
+# layout
+cd asset/layout
+for name in *; do
+	# Check file or directory.
+	if [ -f $name ] ; then
+		continue
+	fi
+
+	cd $name
+	git remote add origin repo:~/repo/op/layout/$name.git
+	cd ..
+done
+cd ../..
+
 # Unit
 cd asset/unit
 for unit in *; do
@@ -36,3 +50,4 @@ for unit in *; do
 	git remote add origin repo:~/repo/op/unit/$unit.git
 	cd ..
 done
+cd ../..
