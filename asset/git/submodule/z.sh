@@ -46,3 +46,6 @@ for unit in *; do
 	cd ..
 done
 cd ../..
+
+# Fetch origin
+git submodule foreach git fetch origin
