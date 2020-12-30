@@ -1,9 +1,4 @@
 
-# Change root remote name
-if [ ${1} ] ; then
-	git remote add origin ${1}
-fi
-
 # WebPack
 cd webpack
 git remote add origin repo:~/repo/op/module/webpack.git
