@@ -2,10 +2,10 @@
 # Change remote name and location
 
 # Source name
-A=${2:-origin}
+A=${1:-origin}
 
 # Distnation name
-B=${1:-github}
+B=${2:-github}
 
 # Rename origin name.
 git submodule foreach git remote rename $A $B
