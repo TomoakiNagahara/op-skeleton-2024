@@ -7,6 +7,10 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
+
+//	...
+namespace OP;
+
 ?>
 <!doctype html>
 <html>
@@ -26,20 +30,24 @@
 		</style>
 	</head>
 	<body>
+		<?php
+		//	...
+		$path = ConvertPath('asset:/config/admin.php');
+
+		//	...
+		$file = file_get_contents($path);
+		$file = Encode($file);
+		$file = preg_replace(['/\/\*\* .+/','/ \*.+/','/ \*/'], '', $file);
+		$file = preg_replace(['|//\t|','/\t/','/\n+/'], ['//  ','    ',"\n"], $file);
+		?>
 		<section>
 			<h1>The admin config file has not been set.</h1>
 
 			<p class="margin left">File path is</p>
-			<pre class="margin left">asset:/config/admin.php</pre>
+			<pre class="margin left"><code><?= $path ?></code></pre>
 
-			<p class="margin left">Description is</p>
-<pre class="margin left">&lt;?php
-return [
-  OP\Env::_ADMIN_IP_   => '127.0.0.1',
-  OP\Env::_ADMIN_MAIL_ => 'to_address@example.com',
-  OP\Env::_MAIL_FROM_  => 'from_address@example.com'
-];
-?&gt;</pre>
+			<p class="margin left">Configuration is</p>
+<pre class="margin left"><code><?= $file ?></code></pre>
 		</section>
 	</body>
 </html>
