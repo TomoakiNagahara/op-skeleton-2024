@@ -16,8 +16,10 @@ $config = [
 /*
 	//	Access with this IP address will enable developer mode.
 	OP\Env::_ADMIN_IP_   => '153.127.64.66',
+
 	//	An error message will be sent to this email address.
 	OP\Env::_ADMIN_MAIL_ => 'info@onepiece-framework.com',
+
 	//	This email address will be the from of the admin email.
 	OP\Env::_ADMIN_FROM_ => 'noreply@onepiece-framework.com',
 */
