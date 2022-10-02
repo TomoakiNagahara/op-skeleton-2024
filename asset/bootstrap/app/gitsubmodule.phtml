@@ -8,26 +8,13 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 ?>
-<!doctype html>
-<html>
-	<head>
-		<style>
-		pre {
-			margin:0 1em;
-			padding:0.5em;
-			background-color:#dfdfdf;
-			border: 1px solid #cfcfcf;
-			border-radius: 0.25em;
-		}
-		</style>
-	</head>
-	<body>
+<?php include(__DIR__.'/../html_head.phtml') ?>
 		<section>
 			<h1>Not initializing git submodule</h1>
 			<p>Execute the following command.</p>
-			<pre><code>sh <?php echo dirname($_SERVER['SCRIPT_FILENAME']) ?>/asset/git/submodule/init.sh</code></pre>
+			<div class="code">
+				<code>cd <?php echo dirname($_SERVER['SCRIPT_FILENAME']) ?></code>
+				<code>sh ./asset/git/submodule/init.sh</code>
+			</div>
 		</section>
-	</body>
-</html>
-<?php
-exit();
+<?php include(__DIR__.'/../html_foot.phtml') ?>

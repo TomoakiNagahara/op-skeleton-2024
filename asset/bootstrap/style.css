@@ -1,0 +1,56 @@
+
+/** op-module-bootstrap:/style.css
+ *
+ * @created   2022-10-02
+ * @version   1.0
+ * @package   op-module-bootstrap
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+body {
+	margin:  0;
+	padding: 1em;
+	background-color: white;
+	color: black;
+}
+
+h1 {
+	font-size: 1.5vw;
+}
+
+li {
+	margin-bottom: 1em;
+}
+
+pre {
+	margin: 0;
+}
+
+code {
+	display: block;
+	font-family: "Courier New", Consolas, Courier, Monaco, monospace;
+}
+
+.code {
+	padding:0.5em;
+	background-color:#dfdfdf;
+	border: 1px solid #cfcfcf;
+	border-radius: 0.25em;
+}
+
+.margin.top {
+	margin-top: 1em;
+}
+
+.margin.bottom {
+	margin-bottom: 1em;
+}
+
+.margin.left {
+	margin-left: 1em;
+}
+
+.margin.right {
+	margin-right: 1em;
+}

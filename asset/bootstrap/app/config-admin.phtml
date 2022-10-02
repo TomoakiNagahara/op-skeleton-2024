@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/bootstrap/app/config-admin.phtml
+/** op-module-bootstrap:/app/config-admin.phtml
  *
  * @created   2020-07-24
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-module-bootstrap
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -12,28 +12,7 @@
 namespace OP;
 
 ?>
-<!doctype html>
-<html>
-	<head>
-		<style>
-		pre {
-			margin:0 1em;
-			padding:0.5em;
-			background-color:#dfdfdf;
-			border: 1px solid #cfcfcf;
-			border-radius: 0.25em;
-		}
-
-		code {
-			font-family: "Courier New", Consolas, monospace;
-		}
-
-		.margin.left {
-			margin-left: 1em;
-		}
-		</style>
-	</head>
-	<body>
+<?php include(__DIR__.'/../html_head.phtml') ?>
 		<?php
 		//	...
 		$path = ConvertPath('asset:/config/admin.php');
@@ -41,19 +20,16 @@ namespace OP;
 		//	...
 		$file = file_get_contents($path);
 		$file = Encode($file);
-		$file = preg_replace(['/\/\*\* .+/','/ \*.+/','/ \*/'], '', $file);
-		$file = preg_replace(['|//\t|','/\t/','/\n+/'], ['//  ','    ',"\n"], $file);
+		$file = preg_replace(['|\/\*\* .+|','| \*.+|','| \*|','|\n/\*|','|\n\*/|'], '', $file);
+		$file = preg_replace(['|//\t|','|\t|','|\n+|','|,\n|','|,\n\n\]|'], ['//  ','    ',"\n",",\n\n",",\n]"], $file);
 		?>
 		<section>
 			<h1>The admin config file has not been set.</h1>
 
-			<p class="margin left">File path is</p>
-			<pre class="margin left"><code><?= $path ?></code></pre>
+			<p>File path is</p>
+			<div class="code"><code><?= $path ?></code></div>
 
-			<p class="margin left">Configuration is</p>
-<pre class="margin left"><code><?= $file ?></code></pre>
+			<p>Configuration is</p>
+			<div class="code"><pre><code><?= $file ?></code></pre></div>
 		</section>
-	</body>
-</html>
-<?php
-exit();
+<?php include(__DIR__.'/../html_foot.phtml') ?>
