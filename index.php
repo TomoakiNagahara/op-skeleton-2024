@@ -25,7 +25,7 @@ if( empty($app) ){
 /***********************************************/
 
 //	Get SmartURL arguments.
-$args = $app->Args();
+$args = OP::Router()->Args();
 
 //	Does if has arguments?
 if( empty($args) ){
@@ -33,13 +33,13 @@ if( empty($args) ){
 	/** Welcome page file is in "asset/template" directory.
 	 *
 	 */
-	$app->Template('welcome.phtml');
+	OP::Template('welcome.phtml');
 
 }else{
 
 	/** 404.php file is in current directory.
 	 *
 	 */
-	$app->Template('404.php');
+	OP::Template('404.php');
 
 }
