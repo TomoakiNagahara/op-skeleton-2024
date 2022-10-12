@@ -22,13 +22,6 @@ declare(strict_types=1);
  */
 namespace OP;
 
-/** PHP Setting
- *
- */
-ini_set('short_open_tag','On' );
-ini_set('display_errors','On' );
-ini_set('log_errors'    ,'Off');
-
 /**	Execute time.
  *
  * @created
@@ -36,6 +29,13 @@ ini_set('log_errors'    ,'Off');
  * @changed   2019-01-03   $st --> _OP_APP_START_
  */
 define('_OP_APP_START_', microtime(true));
+
+/** PHP Setting
+ *
+ */
+ini_set('short_open_tag','On' );
+ini_set('display_errors','On' );
+ini_set('log_errors'    ,'Off');
 
 /** Launch onepiece-framework core.
  *
