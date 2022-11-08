@@ -15,7 +15,7 @@
 namespace OP;
 
 //	...
-call_user_func(function(){
+//call_user_func(function(){
 	try{
 		//	Bootstrap the onepiece-framework's core.
 		$path = __DIR__.'/core/Bootstrap.php';
@@ -96,4 +96,4 @@ call_user_func(function(){
 		$message = $e->getMessage();
 		exit("$file #$line, $message");
 	};
-});
+//});
