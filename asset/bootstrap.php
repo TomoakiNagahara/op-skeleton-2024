@@ -23,6 +23,7 @@ namespace OP;
 		$path = __DIR__.'/core/Bootstrap.php';
 		if(!file_exists($path) ){
 			require(__DIR__.'/bootstrap/app/gitsubmodule.phtml');
+			exit(__LINE__);
 		}
 		require($path);
 
@@ -58,12 +59,14 @@ namespace OP;
 		if(!function_exists('mb_language') ){
 			define('_OP_APP_BOOTSTRAP_', 'mbstring');
 			require(__DIR__.'/bootstrap/php/module.phtml');
+			exit(__LINE__);
 		}
 
 		//	Check openssl installed.
 		if(!defined('OPENSSL_VERSION_NUMBER') ){
 			define('_OP_APP_BOOTSTRAP_', 'openssl');
 			require(__DIR__.'/bootstrap/php/module.phtml');
+			exit(__LINE__);
 		};
 
 		//	Checking Shell.
@@ -75,6 +78,7 @@ namespace OP;
 		if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
 			//	Has not been setting rewrite.
 			require(__DIR__.'/bootstrap/op/rewrite.php');
+			exit(__LINE__);
 		}
 	/*
 	} catch ( \Throwable $e ){
