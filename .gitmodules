@@ -56,6 +56,6 @@
 	branch = 2022
 [submodule "asset/webpack/js"]
 	path = asset/webpack/js
-	url = https://github.com/onepiece-framework/op-webpack-js
+	url = https://github.com/onepiece-framework/op-module-webpack-js.git
 	branch = 2022
 
