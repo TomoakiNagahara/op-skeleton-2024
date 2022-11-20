@@ -51,6 +51,7 @@ jobs:
 
       - uses: actions/cache@v2
         with:
+          path: ~/
           key: php-${{ hashFiles('.gitignore') }}
 
       - run: php app.php
