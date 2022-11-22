@@ -16,7 +16,9 @@ namespace OP;
 
 //	...
 //call_user_func(function(){
+	/*
 	try{
+	*/
 		//	Bootstrap the onepiece-framework's core.
 		$path = __DIR__.'/core/Bootstrap.php';
 		if(!file_exists($path) ){
@@ -69,11 +71,12 @@ namespace OP;
 			//	Has not been setting rewrite.
 			require(__DIR__.'/bootstrap/op/rewrite.php');
 		}
-
+	/*
 	} catch ( \Throwable $e ){
 		$file    = $e->getFile();
 		$line    = $e->getLine();
 		$message = $e->getMessage();
 		exit("$file #$line, $message");
 	};
+	*/
 //});
