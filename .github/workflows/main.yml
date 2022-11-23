@@ -66,6 +66,6 @@ jobs:
           ACCOUNT: secrets.ACCOUNT
         if: ${{ env.ACCOUNT != '' }}
         run: echo '${{ env.ACCOUNT }}'
-        run: sh asset/git/submodule/github.sh ${{ secrets.ACCOUNT }}
+      # run: sh asset/git/submodule/github.sh ${{ secrets.ACCOUNT }}
       - run: sh asset/git/submodule/init.sh   2022
       - run: php ci.php display=1
