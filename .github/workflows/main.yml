@@ -63,9 +63,9 @@ jobs:
       # https://qiita.com/martini3oz/items/975f2c4cf137e487fc3d
       - name: Change github account name
         env:
-          ACCOUNT: secrets.ACCOUNT
+          ACCOUNT: ${{ secrets.ACCOUNT }}
         if: ${{ env.ACCOUNT != '' }}
-        run: echo '${{ env.ACCOUNT }}'
-      # run: sh asset/git/submodule/github.sh ${{ secrets.ACCOUNT }}
+      # run: echo '${{ env.ACCOUNT }}'
+        run: sh asset/git/submodule/github.sh ${{ secrets.ACCOUNT }}
       - run: sh asset/git/submodule/init.sh   2022
       - run: php ci.php display=1
