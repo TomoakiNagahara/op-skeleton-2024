@@ -16,8 +16,5 @@ sed -i -e "s|/op-module-|/module/|g"   .gitmodules
 sed -i -e "s|/op-layout-|/layout/|g"   .gitmodules
 sed -i -e "s|/op-webpack-|/webpack/|g" .gitmodules
 
-# Delete garbage file.
-rm .gitmodules-e
-
 # Sync
 git submodule sync
