@@ -1,6 +1,6 @@
 
 # Copy backup.
-cp .gitmodules .gitmodules
+cp .gitmodules .gitmodules_original
 
 # --> sudo port install realpath
 HOME=$(realpath ~/)
@@ -18,3 +18,6 @@ sed -i -e "s|/op-webpack-|/webpack/|g" .gitmodules
 
 # Sync
 git submodule sync
+
+# Delete garbage files.
+rm .gitmodules-e
