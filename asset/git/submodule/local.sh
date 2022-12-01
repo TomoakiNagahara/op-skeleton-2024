@@ -1,6 +1,6 @@
 
 # Copy backup.
-cp .gitmodules .gitmodules_original
+cat .gitmodules > .gitmodules_originalll
 
 # --> sudo port install realpath
 HOME=$(realpath ~/)
