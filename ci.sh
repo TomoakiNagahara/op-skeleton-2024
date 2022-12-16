@@ -1,6 +1,13 @@
 
  ## op-app-skeleton-2020-nep:/ci.sh
  #
+ # <pre>
+ # How to use: `sh ci.sh`
+ #
+ # This file does a git stash save.
+ # Uncommitted files are not inspect.
+ # </pre>
+ #
  # @created   2022-10-31
  # @version   1.0
  # @package   op-app-skeleton-2020-nep
