@@ -55,6 +55,8 @@ namespace OP;
 		}
 		*/
 
+		//	Move to check.php
+		/*
 		//	Check mbstring installed.
 		if(!function_exists('mb_language') ){
 			define('_OP_APP_BOOTSTRAP_', 'mbstring');
@@ -80,6 +82,7 @@ namespace OP;
 			require(__DIR__.'/bootstrap/op/rewrite.php');
 			exit(__LINE__);
 		}
+		*/
 	/*
 	} catch ( \Throwable $e ){
 		$file    = $e->getFile();
