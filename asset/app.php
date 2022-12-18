@@ -22,8 +22,9 @@ try {
 	 * @updated   2017-??-??   Generate _config.php at app-skeleton2.
 	 * @updated   2019-12-16   Rebirth by app-skeleton-2020-nep.
 	 * @moved     2019-12-27   app-skeleton-2020-nep:/app.php --> asset/app.php
-	 * @moved     2022-10-30   bootstrap.php - Initialize onepiece-framework application.
-	 * @added     2022-10-30   rootpath.php
+	 * @moved     2022-10-30   bootstrap.php | Initialize onepiece-framework application.
+	 * @added     2022-10-30   rootpath.php  | Set meta root path file.
+	 * @added     2022-12-17   check.php     | Check php module install and apache setting.
 	 * @renamed   2023-01-01   app.php --> init.php
 	 */
 	foreach([
@@ -33,6 +34,7 @@ try {
 		'rootpath',
 		'config',
 		'_config',
+		'check',
 	] as $file){
 		//	Build full path.
 		$file = __DIR__.'/'.$file.'.php';
