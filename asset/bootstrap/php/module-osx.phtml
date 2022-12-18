@@ -8,8 +8,7 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 //	...
-$t = explode('.', PHP_VERSION);
-$v = $t[0].$t[1];
+$v = PHP_MAJOR_VERSION . PHP_MINOR_VERSION;
 
 //	...
 if( preg_match('/apache/', PHP_SAPI) ){
@@ -20,15 +19,11 @@ if( preg_match('/apache/', PHP_SAPI) ){
 	$target = null;
 }
 ?>
-<?php if(file_exists('/opt/local/var/macports/pingtimes')): ?>
 	<section>
 		<h2 style="margin-left: 0.5em;">MacPorts</h2>
 		<pre><code><?= null /* PHP Zend Engine will remove EOL. */ ?>
 sudo port install php<?= $v ?>-<?= _OP_APP_BOOTSTRAP_ . PHP_EOL ?>
-<?php if( $target ): ?>
 sudo port unload <?= $target.PHP_EOL ?>
 sudo port load <?= $target ?>
-<?php endif; ?>
 		</code></pre>
 	</section>
-<?php endif; ?>
