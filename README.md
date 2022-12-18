@@ -4,6 +4,8 @@ The onepiece-framework 2020 - New Enforce Power
 
 ![PHP-7.0 higher](https://img.shields.io/badge/PHP-7.0_higher-brightgreen)
 
+<img src="https://www.php.net/images/php8/logo_php8_2.svg" alt="php8.2" height="22" width="60">
+
  Welcome to "onepiece-framework" app "skeleton" 2020 on New Enforce Power.
  The "onepiece-framework" is insanely great!!
 
