@@ -15,12 +15,20 @@
  */
 namespace OP;
 
-//	Load i18n URL
-if(!Config::Get('i18n')['url'] ?? null ){
+//	Get config.
+$config = OP::Config('translate');
+
+//	Execute?
+if(!$config['execute'] ?? false ){
 	return;
 }
 
+//	Load i18n URL.
+if(!$url = Config::Get('i18n')['url'] ){
+	return;
+}
 ?>
+<script type="text/javascript" src="<?= $url ?>" defer></script>
 <section>
 	<nav>
 		<div id="unit-i18n-language">
