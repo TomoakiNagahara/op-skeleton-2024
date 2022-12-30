@@ -1,0 +1,58 @@
+<?php
+/** op-app-skeleton-2020-nep:/end-point/sub-directory/another.phtml
+ *
+ * @created   2022-12-30
+ * @version   1.0
+ * @package   op-app-skeleton-2020-nep
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+/** Declare strict
+ *
+ */
+declare(strict_types=1);
+
+/** namespace
+ *
+ */
+namespace OP;
+
+/* @var $passed_smart_url_args array */
+
+?>
+<h1>Another page in a Sub directory.</h1>
+<p>This page's end-point file is : <?= __DIR__ ?>/index.php</p>
+<p>
+	Please click the link below.
+	Smart URL arguments to be get is switched.
+</p>
+<ul>
+	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another'         , true)?>">./another</a></li>
+	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/foo'     , true)?>">./another/foo</a></li>
+	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/bar'     , true)?>">./another/bar</a></li>
+	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/foo/bar' , true)?>">./another/bar</a></li>
+	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/xss/<script>alert(1)</script>', true)?>">./another/xss</a></li>
+</ul>
+<hr/>
+<h2>Passed Smart URL arguments</h2>
+<?php
+
+//	...
+foreach( $passed_smart_url_args as $arg ){
+	//	...
+	if( $arg === 'foo' or $arg === 'bar' ){
+		echo "{$arg}!";
+	}
+
+	//	...
+	if( $arg === 'xss' ){
+		$xss = true;
+	}else if( $xss ?? null ){
+		echo $arg;
+	}
+}
+
+//	...
+D( $passed_smart_url_args );
+D( OP::MetaPath('app:/example/sub-directory/another', true) );

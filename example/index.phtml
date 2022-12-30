@@ -1,0 +1,51 @@
+<?php
+/** op-app-skeleton-2020-nep:/example/index.phtml
+ *
+ * @created   2022-12-30
+ * @version   1.0
+ * @package   op-app-skeleton-2020-nep
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+
+/** Declare strict
+ *
+ */
+declare(strict_types=1);
+
+/** namespace
+ *
+ */
+namespace OP;
+
+?>
+<h1>The End Point Sample</h1>
+<p>
+	What is the End-Point, Search the URL backwards towards the document root, looking for index.php file.
+	And the first index.php found will be execute.
+	The directory where index.php file was not found become the SmartURL arguments.
+	Specifically, it is as follows.
+</p>
+<table class="example">
+	<tr><th>URL</th><td>https://example.com/main/sub/foo/bar</td></tr>
+	<tr>
+		<th>Placed index.php file path</th>
+		<td>
+			1. /var/www/htdocs/main/index.php<br/>
+			2. /var/www/htdocs/main/sub/index.php
+		</td>
+	</tr>
+	<tr><th>End-Point         </th><td>/var/www/htdocs/main/sub/index.php</td></tr>
+	<tr><th>SmartURL Arguments</th><td>['foo','bar']                     </td></tr>
+</table>
+<hr/>
+<h2>Please visit sub directory</h2>
+<p>
+
+	<a href="./sub-directory/">sub directory</a>
+</p>
+<style>
+table.example th {
+	padding: 0.5em;
+}
+</style>
