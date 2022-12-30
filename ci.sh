@@ -24,6 +24,10 @@ git submodule foreach git stash save
 
 # CI
 php ci.php display=0
+# Result
+if [ $? -ne 0 ]; then
+  EXIT=1
+fi
 
 # Skeleton
 git stash pop
@@ -33,7 +37,5 @@ git reset
 git submodule foreach git stash pop
 git submodule foreach git reset
 
-# Result
-if [ $? -ne 0 ]; then
-  exit 1
-fi
+# Exit
+exit $EXIT
