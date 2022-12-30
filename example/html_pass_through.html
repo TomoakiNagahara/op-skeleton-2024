@@ -17,23 +17,24 @@ namespace OP;
 ?>
 <section id="html-pass-through">
 	<div data-i18n="true" data-i18n-locale="en:us">
-	<h1  data-i18n="false">HTML PASS THROUGH</h1>
-	<h2>No required controller class, or action method!!</h2>
-	<p>
-		This page is "HTML PASS THROUGH" example page.
-		Did you use an outdated framework?
-		So..., You created an empty controller, and action method. Just for that static pages.
-		"HTML pass through" is directly output an HTML file.
-	</p>
-	<h2>Can run PHP!!</h2>
-	<p>
-		Of course, PHP is run.
-		You can even use framework features. -- timestamp: <?= Env::Timestamp() ?> GMT
-	</p>
+		<h1  data-i18n="false">HTML PASS THROUGH</h1>
+		<h2>This page is "HTML PASS THROUGH" example page.</h2>
+		<p>
+			The onepiece-framework is not required controller class, or action method.
+			"HTML pass through" is output static HTML files directly.
+			Did you use an outdated framework?
+			If so, are you created empty controller or empty action method?
+			Just for that static pages!
+		</p>
+		<h2>Can run PHP!!</h2>
+		<p>
+			Of course, You can run PHP program, and even use framework's features in static HTML file.
+		</p>
+		<p>Timestamp is <?= Env::Timestamp() ?></p>
 	</div>
 </section>
 <style>
 #html-pass-through {
-
+	color: inherit;
 }
 </style>
