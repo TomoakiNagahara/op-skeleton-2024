@@ -14,6 +14,10 @@
  */
 $config = [
 	'execute' => true,
+	'git' => [
+		'display' => '1',
+		'debug'   => '1',
+	],
 ];
 
 //	...
