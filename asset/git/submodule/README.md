@@ -1,6 +1,19 @@
 About each files
 ===
 
+ All submodule repository change.
+
+```
+init.sh   | Init submodules.
+local.sh  | Change to local repository.
+repo.sh   | Change to remote repository.
+github.sh | Change to GitHub user name.
+rename.sh | Remote name chenge. origin --> upstream
+push.sh   | Push.
+update.sh | Fetch and Rebase.
+origin.sh | Old, does not work.
+```
+
 # init.sh
 
  Initializing submodules. Can specify branch name.
