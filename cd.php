@@ -32,11 +32,24 @@ header('Content-Type: text/plain; charset=UTF-8');
 require_once('asset/core/include/json.php');
 
 //	...
-$action = $_POST['action'] ?? null;
+if( null ){
+	//	...
+	$action = $_POST['action'] ?? null;
 
-//	...
-if( $action !== 'completed' ){
-	//	`php 0_action.php branch=2022 workspace=/tmp/workspace origin=TomoakiNagahara upstream=onepiece-framework display=1 debug=1`
+	//	...
+	switch( $action ){
+		//	GitHub action
+		case 'completed':
+		//	`php action.php branch=2022 origin=TomoakiNagahara upstream=onepiece-framework`;
+			break;
+
+		//	op-cd
+		case 'update':
+		//	`sh asset/git/submodule/update.sh`;
+			break;
+
+		default:
+	}
 }
 
 //	...
