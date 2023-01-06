@@ -47,6 +47,63 @@ try {
 	Env::AppID('self-check');
 
 	//	...
+	$display   = OP::Request('display') ?? 1;
+	$app_root  = OP::MetaPath('app:/');
+	$unit_root = OP::MetaPath('unit:/');
+	$configs   = CI::SubmoduleConfig();
+	$configs['op-app-skeleton'] = [
+		'path'   => '',
+		'url'    => '',
+		'branch' => _OP_APP_BRANCH_,
+	];
+
+	//	...
+	foreach( $configs as $key => $config ){
+		//	...
+		$path = $config['path'];
+		if( $display ){ D($key); }
+
+		//	...
+		if(!chdir($app_root.$path) ){
+			throw new \Exception("Change directory failed. ({$app_root}{$path})");
+		}
+
+		//	...
+		if( CI::CheckCommitID($path) ){
+			continue;
+		}
+
+		//	Get each Class path.
+		$list = glob("{$app_root}{$path}/*.class.php");
+
+		//	...
+		foreach( $list as $file ){
+			//	...
+			if( $file[0] === '_' ){
+				continue;
+			}
+
+			//	...
+			$namespace = (0 === strpos($file, $unit_root)) ? 'OP\UNIT\\': 'OP\\';
+
+			//	...
+			$class = $namespace.basename($file, '.class.php');
+			$obj = new $class();
+
+			//	...
+			$obj = new $class();
+			if(!method_exists($obj,'CI') ){
+				throw new \Exception("{$class} not use OP_CI.");
+			}
+			$obj->CI();
+		}
+
+		//	...
+		CI::SaveCommitID($path);
+	}
+
+	/*
+	//	...
 	chdir( RootPath('op') );
 
 	//	Target can be specified.
@@ -73,6 +130,7 @@ try {
 		}
 		$obj->CI();
 	}
+	*/
 
 } catch ( \Throwable $e ){
 	//	...
