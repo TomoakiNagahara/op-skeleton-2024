@@ -47,6 +47,7 @@ try {
 	Env::AppID('self-check');
 
 	//	...
+	$skip      = 0;
 	$display   = OP::Request('display') ?? 1;
 	$app_root  = OP::MetaPath('app:/');
 	$unit_root = OP::MetaPath('unit:/');
@@ -61,11 +62,21 @@ try {
 	foreach( $configs as $key => $config ){
 		//	...
 		$path = $config['path'];
-		if( $display ){ D($key); }
+		if( $display ){ D("{$key} is {$path}"); }
 
 		//	...
 		if(!chdir($app_root.$path) ){
 			throw new \Exception("Change directory failed. ({$app_root}{$path})");
+		}
+
+		//	...
+		if( file_exists('.ci_skip') ){
+			if( $skip > 10 ){
+				throw new \Exception("CI skip is {$skip}. Can not over 10.");
+			}
+			$skip++;
+			D(".ci_skip");
+			continue;
 		}
 
 		//	...
@@ -100,6 +111,11 @@ try {
 
 		//	...
 		CI::SaveCommitID($path);
+	}
+
+	//	...
+	if( $skip ){
+		D("CI skipped is {$skip}.");
 	}
 
 	/*
