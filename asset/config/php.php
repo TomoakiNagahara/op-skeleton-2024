@@ -13,10 +13,12 @@
  */
 namespace OP;
 
+/* asset:/app.php is doing.
 //	PHP Setting
 ini_set('short_open_tag','On' );
 ini_set('display_errors','On' );
 ini_set('log_errors'    ,'Off');
+*/
 
 //	Timezone
 date_default_timezone_set('Asia/Tokyo');
