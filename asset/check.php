@@ -13,6 +13,24 @@
  */
 namespace OP;
 
+//	...
+foreach([
+	'mbstring' => 'mb_language',
+	'openssl'  => 'openssl_encrypt',
+	'apcu'     => 'apcu_add',
+] as $module => $function){
+	//	...
+	if( function_exists($function) ){
+		continue;
+	}
+
+	//	...
+	define('_OP_APP_BOOTSTRAP_', $module);
+	require(__DIR__.'/bootstrap/php/module.php');
+	exit(__LINE__);
+}
+
+/*
 //	Check mbstring installed.
 if(!function_exists('mb_language') ){
 	define('_OP_APP_BOOTSTRAP_', 'mbstring');
@@ -26,6 +44,7 @@ if(!defined('OPENSSL_VERSION_NUMBER') ){
 	require(__DIR__.'/bootstrap/php/module.php');
 	exit(__LINE__);
 };
+*/
 
 //	Checking Shell.
 if( Env::isShell() ){
