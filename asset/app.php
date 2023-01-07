@@ -56,6 +56,14 @@ try {
 	}
 
 } catch ( \Throwable $e ){
-	Notice::Set($e);
+	//	...
+	if( class_exists('OP\Notice', true) ){
+		Notice::Set($e);
+	}else{
+		echo $e->getMessage() . "<br/>\n";
+		var_dump($e->getTrace());
+		return;
+	}
+	//	...
 	require('bootstrap/op/failed.phtml');
 }
