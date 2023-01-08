@@ -25,7 +25,6 @@ if( date('m', Env::Time()) == '10' ){
 	$path = '404_halloween.phtml';
 }else{
 	$path = '404_notfound.phtml';
-	Unit('WebPack')->Auto( ConvertPath('app:/webpack/css/common/404.css') );
 }
 
 //	Display 404 page.
