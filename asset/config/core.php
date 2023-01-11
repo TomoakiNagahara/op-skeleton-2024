@@ -8,10 +8,14 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
-/** Return config array.
+/** Does not used.
  *
  */
 $config = [
+	'name' =>[
+		'asset'    => 'asset',
+		'endpoint' => 'index.php',
+	],
 	'dir' => [
 		'core'     => 'asset:/core/',
 		'unit'     => 'asset:/nunit/',
