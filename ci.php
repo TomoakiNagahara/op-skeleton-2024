@@ -58,18 +58,18 @@ try {
 		'branch' => _OP_APP_BRANCH_,
 	];
 
-	//	...
+	//	Each submodules.
 	foreach( $configs as $key => $config ){
-		//	...
+		//	Get Unit path.
 		$path = $config['path'];
 		if( $display ){ D("{$key} is {$path}"); }
 
-		//	...
+		//	Change Unit directory.
 		if(!chdir($app_root.$path) ){
 			throw new \Exception("Change directory failed. ({$app_root}{$path})");
 		}
 
-		//	...
+		//	Check .ci_skip
 		if( file_exists('.ci_skip') ){
 			if( $skip > 10 ){
 				throw new \Exception("CI skip is {$skip}. Can not over 10.");
@@ -79,7 +79,7 @@ try {
 			continue;
 		}
 
-		//	...
+		//	Check Commit ID.
 		if( CI::CheckCommitID($path) ){
 			if( $display ){ D( CI::CurrentBranchName().' is skiping ID='.CI::CurrentCommitID()); }
 			continue;
@@ -88,21 +88,21 @@ try {
 		//	Get each Class path.
 		$list = glob("{$app_root}{$path}/*.class.php");
 
-		//	...
+		//	Each class file.
 		foreach( $list as $file ){
-			//	...
+			//	Under bar file.
 			if( $file[0] === '_' ){
 				continue;
 			}
 
-			//	...
+			//	Switch namespace.
 			$namespace = (0 === strpos($file, $unit_root)) ? 'OP\UNIT\\': 'OP\\';
 
-			//	...
+			//	Instantiate Object from class.
 			$class = $namespace.basename($file, '.class.php');
 			$obj = new $class();
 
-			//	...
+			//	Do CI.
 			$obj = new $class();
 			if(!method_exists($obj,'CI') ){
 				throw new \Exception("{$class} not use OP_CI.");
@@ -110,11 +110,11 @@ try {
 			$obj->CI();
 		}
 
-		//	...
+		//	Save Commit ID.
 		CI::SaveCommitID($path);
 	}
 
-	//	...
+	//	Display of skip count.
 	if( $skip ){
 		D("CI skipped is {$skip}.");
 	}
