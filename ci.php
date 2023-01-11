@@ -75,12 +75,13 @@ try {
 				throw new \Exception("CI skip is {$skip}. Can not over 10.");
 			}
 			$skip++;
-			D(".ci_skip");
+			if( $display ){ D("SKIP: {$key} is found .ci_skip file."); }
 			continue;
 		}
 
 		//	...
 		if( CI::CheckCommitID($path) ){
+			if( $display ){ D( CI::CurrentBranchName().' is skiping ID='.CI::CurrentCommitID()); }
 			continue;
 		}
 
