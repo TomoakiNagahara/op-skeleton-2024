@@ -14,6 +14,10 @@
  */
 $config = [
 	'execute' => true,
+	'testcase' => [
+		'execute'   => true,
+		'root'    => 'http://local.workspace.com/2022/_develop/testcase/',
+	],
 	'git' => [
 		'display' => '1',
 		'debug'   => '1',
