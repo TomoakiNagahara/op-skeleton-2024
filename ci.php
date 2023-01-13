@@ -110,6 +110,9 @@ try {
 			$obj->CI();
 		}
 
+		//	Do testcase.
+		OP::Template('core:/include/ci_testcase.php', $config);
+
 		//	Save Commit ID.
 		CI::SaveCommitID($path);
 	}
