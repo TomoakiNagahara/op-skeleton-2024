@@ -19,7 +19,7 @@ $version = PHP_MAJOR_VERSION . PHP_MINOR_VERSION;
 $module  = _OP_APP_BOOTSTRAP_;
 
 //	...
-foreach(['port','pkg','yum'] as $pkg){
+foreach(['port','pkg','yum','apt'] as $pkg){
 	if( `command -v $pkg` ){
 		break;
 	}
