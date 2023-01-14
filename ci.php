@@ -154,14 +154,21 @@ try {
 
 } catch ( \Throwable $e ){
 	//	...
-	$file    = $e->getFile();
 	$message = $e->getMessage();
+	/*
+	$file    = $e->getFile();
 	$file    = OP()->MetaPath()->Encode($file);
+	*/
 
 	//	...
+	echo "\n\n";
+	echo "Exception: ".$message."\n\n";
+	foreach( $e->getTrace() as $trace){
+		echo ' * '.OP::DebugBacktraceToString($trace)."\n";
+	}
 	echo "\n";
-	echo $message."\n\n";
-	echo $e->getTraceAsString()."\n\n";
+
+	//	...
 	$exit = __LINE__;
 } // catch
 
