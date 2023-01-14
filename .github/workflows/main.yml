@@ -53,12 +53,12 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      # https://github.com/marketplace/actions/setup-php-action
-      # https://github.com/marketplace/actions/setup-php-environment
       - name: Setup PHP
-        uses: nanasess/setup-php@v3
+        uses: shivammathur/setup-php@v2 # https://github.com/marketplace/actions/setup-php-action
+      # uses: nanasess/setup-php@v3     # https://github.com/marketplace/actions/setup-php-environment
         with:
           php-version: ${{ matrix.php }}
+          extensions: apcu
 
       - run: php app.php
       # https://qiita.com/martini3oz/items/975f2c4cf137e487fc3d
