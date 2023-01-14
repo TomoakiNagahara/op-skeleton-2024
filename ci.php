@@ -49,6 +49,7 @@ try {
 	//	...
 	$skip      = 0;
 	$display   = OP::Request('display') ?? 1;
+	$submodule = OP::Request('submodule');
 	$app_root  = OP::MetaPath('app:/');
 	$unit_root = OP::MetaPath('unit:/');
 	$configs   = CI::SubmoduleConfig();
@@ -60,6 +61,11 @@ try {
 
 	//	Each submodules.
 	foreach( $configs as $key => $config ){
+		//	Specify submodule.
+		if( $submodule and $submodule !== $config['path'] ){
+			continue;
+		}
+
 		//	Get Unit path.
 		$path = $config['path'];
 		if( $display ){ D("{$key} is {$path}"); }
@@ -79,10 +85,13 @@ try {
 			continue;
 		}
 
-		//	Check Commit ID.
-		if( CI::CheckCommitID($path) ){
-			if( $display ){ D( CI::CurrentBranchName().' is skiping ID='.CI::CurrentCommitID()); }
-			continue;
+		//	Specify submodule.
+		if(!$submodule ){
+			//	Check Commit ID.
+			if( CI::CheckCommitID($path) ){
+				if( $display ){ D( CI::CurrentBranchName().' is skiping ID='.CI::CurrentCommitID()); }
+				continue;
+			}
 		}
 
 		//	Get each Class path.
