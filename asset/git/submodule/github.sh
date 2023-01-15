@@ -1,4 +1,7 @@
 
+# Copy backup.
+cp .gitmodules .gitmodules_original
+
 # user name
 USER_NAME=${1}
 
