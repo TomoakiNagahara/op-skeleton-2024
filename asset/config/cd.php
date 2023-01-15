@@ -15,7 +15,7 @@
 $config = [
 	'execute' => true,
 	'github' => [
-		'secret' => 'my secret key',
+		'secret' => $_SERVER['_GITHUB_WEBHOOK_SECRET_'] ?? 'my secret key',
 	],
 ];
 
