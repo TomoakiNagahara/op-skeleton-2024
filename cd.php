@@ -39,14 +39,19 @@ Env::MIME('text/plain');
 //	GitHub -> repository -> Settings -> Webhooks
 if( true ){
 	//	...
-	$action  = OP::Request('action');
-	$secret  = OP::Request('X-Hub-Signature');
-	$account = OP::Request('repository')['owner']['login'] ?? null;
+	$action    = OP::Request('action');
+	$signature = OP::Request('X-Hub-Signature');
+	$account   = OP::Request('repository')['owner']['login'] ?? null;
 
 	//	...
-	$message = "action={$action}, secret={$secret}, account={$account}";
-	var_dump($message);
-	Notice($message);
+	if( $secret = OP::Config('cd')['github']['secret'] ?? null ){
+		$hash   = 'sha1='.hash_hmac('sha1', file_get_contents("php://input"), $secret);
+	}
+
+	//	...
+	$message = "action={$action}, account={$account}, signature={$signature}, secret={$secret}, hash={$hash}";
+	D($message);
+	OP::Notice($message);
 
 	//	...
 	switch( $action ){
@@ -64,6 +69,7 @@ if( true ){
 	}
 }
 
+/*
 //	...
 if( null ){
 	//	...
@@ -78,6 +84,7 @@ if( null ){
 		exit(__LINE__);
 	}
 }
+*/
 
 //	...
 echo $account;
