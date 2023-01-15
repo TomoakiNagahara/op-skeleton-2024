@@ -25,22 +25,28 @@ if(!$_SERVER['REQUEST_TIME_FLOAT'] ?? null ){
 	$_SERVER['REQUEST_TIME_FLOAT'] = microtime(true);
 }
 
+/*
 //	MIME
 header('Content-Type: text/plain; charset=UTF-8');
 
 //	...
 require_once('asset/core/include/json.php');
+*/
+
+//	MIME
+Env::MIME('text/plain');
 
 //	GitHub -> repository -> Settings -> Webhooks
-if( null ){
+if( true ){
 	//	...
-	$action = OP::Request('action');
-	$secret = OP::Request('X-Hub-Signature');
-
+	$action  = OP::Request('action');
+	$secret  = OP::Request('X-Hub-Signature');
+	$account = OP::Request('repository')['owner']['login'] ?? null;
 
 	//	...
-	Notice("action={$action}, secret={$secret}");
-
+	$message = "action={$action}, secret={$secret}, account={$account}";
+	var_dump($message);
+	Notice($message);
 
 	//	...
 	switch( $action ){
@@ -59,7 +65,7 @@ if( null ){
 }
 
 //	...
-if( $account = $_POST['repository']['owner']['login'] ?? $_GET['account'] ?? null ){
+if( null ){
 	//	...
 	if(!apcu_store('account', $account) ){
 		echo "Store account is fail. ({$account})\n";
