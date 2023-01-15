@@ -31,10 +31,16 @@ header('Content-Type: text/plain; charset=UTF-8');
 //	...
 require_once('asset/core/include/json.php');
 
-//	...
+//	GitHub -> repository -> Settings -> Webhooks
 if( null ){
 	//	...
-	$action = $_POST['action'] ?? null;
+	$action = OP::Request('action');
+	$secret = OP::Request('X-Hub-Signature');
+
+
+	//	...
+	Notice("action={$action}, secret={$secret}");
+
 
 	//	...
 	switch( $action ){
