@@ -46,17 +46,21 @@ if( true ){
 	//	...
 	if( $secret = OP::Config('cd')['github']['secret'] ?? null ){
 		$hash   = 'sha1='.hash_hmac('sha1', file_get_contents("php://input"), $secret);
+	}else{
+		$hash   = null;
 	}
 
 	//	...
-	$message = "action={$action}, account={$account}, signature={$signature}, secret={$secret}, hash={$hash}";
-	D($message);
-	OP::Notice($message);
+	if( $signature !== $hash ){
+		$message = "Signature is unmatch.";
+		echo $message;
+	}
 
 	//	...
 	switch( $action ){
 		//	GitHub action
 		case 'completed':
+			OP::Notice('GitHub WebHook is done!');
 		//	`php action.php branch=2022 origin=TomoakiNagahara upstream=onepiece-framework`;
 			break;
 
