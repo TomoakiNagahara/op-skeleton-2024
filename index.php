@@ -39,6 +39,13 @@ if( empty($args) ){
 	 */
 	OP::Template('welcome.phtml');
 
+}else if( $args[0] === 'cd.php' ){
+
+	/** cd.php file is in current directory.
+	 *
+	 */
+	OP::Template('cd.php');
+
 }else{
 
 	/** 404.php file is in current directory.
