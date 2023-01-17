@@ -34,7 +34,7 @@ define('_OP_APP_START_', microtime(true));
  *
  * @created  2019-11-18
  */
-require('asset/app.php');
+require('asset/init.php');
 
 /** Launch application.
  *
