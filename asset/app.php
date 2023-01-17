@@ -61,8 +61,11 @@ try {
 		Notice::Set($e);
 	}else{
 		echo $e->getMessage() . "<br/>\n";
-		var_dump($e->getTrace());
+		foreach( $e->getTrace() as $trace ){
+			echo include(__DIR__.'/include/DebugBacktraceToString.php')."<br/>\n";
+		}
 		return;
+		echo $trace;
 	}
 	//	...
 	require('bootstrap/op/failed.phtml');
