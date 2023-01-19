@@ -54,14 +54,16 @@ if( true ){
 	if( $signature !== $hash ){
 		$message = "Signature is unmatch.";
 		echo $message;
+		return;
 	}
 
 	//	...
 	switch( $action ){
 		//	GitHub action
 		case 'completed':
-			OP::Notice('GitHub WebHook is done!');
-		//	`php action.php branch=2022 origin=TomoakiNagahara upstream=onepiece-framework`;
+			if( $cd = $_SERVER['_OP_CD_'] ?? '_OP_CD_ is empty.' ){
+				OP::Notice("GitHub WebHook: {$cd}");
+			}
 			break;
 
 		//	op-cd
