@@ -61,8 +61,10 @@ if( true ){
 	switch( $action ){
 		//	GitHub action
 		case 'completed':
-			if( $cd = $_SERVER['_OP_CD_'] ?? '_OP_CD_ is empty.' ){
-				OP::Notice("GitHub WebHook: {$cd}");
+			if( $cd = $_SERVER['_OP_CD_'] ?? null ){
+				echo `{$cd}`;
+			}else{
+				OP::Notice('GitHub WebHook: $_SERVER['_OP_CD_'] is empty.');
 			}
 			break;
 
