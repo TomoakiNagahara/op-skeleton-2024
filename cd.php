@@ -64,7 +64,7 @@ if( true ){
 			if( $cd = $_SERVER['_OP_CD_'] ?? null ){
 				echo `{$cd}`;
 			}else{
-				OP::Notice('GitHub WebHook: $_SERVER['_OP_CD_'] is empty.');
+				OP::Notice('GitHub WebHook: $_SERVER[_OP_CD_] is empty.');
 			}
 			break;
 
