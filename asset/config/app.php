@@ -9,6 +9,12 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/** Overwrite to X-Powered-By.
+ *
+ * @created   2023-01-20
+ */
+header("X-Powered-By: The onepiece-framework", true);
+
 /** Return config array.
  *
  * @created   2019-12-12
