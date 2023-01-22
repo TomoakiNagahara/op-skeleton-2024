@@ -19,5 +19,6 @@ namespace OP;
  * @return    array        $config
  */
 return [
-	'execute' => false,
+	'execute' => true,
+	'language-area-id' => 'op-translate-language-area',
 ];
