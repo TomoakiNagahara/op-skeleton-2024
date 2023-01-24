@@ -22,5 +22,6 @@ return [
 	'from' => $from,
 	'to'   => $to,
 	*/
+	'translate' => false,
 	'url'  => $url,
 ];
