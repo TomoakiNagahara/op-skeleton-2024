@@ -26,10 +26,6 @@ $app_root= ConvertURL('app:/');
 $charset = Env::Get('app')   ['charset'] ?? 'utf-8';
 $layout  = Env::Get('layout')['name']    ??  null;
 
-//	...
-$hash_js  = Unit('WebPack')->FileContentHash('js');
-$hash_css = Unit('WebPack')->FileContentHash('css');
-
 ?>
 	<!-- Charset -->
 	<meta charset="<?= $charset ?>" />
@@ -50,12 +46,20 @@ $hash_css = Unit('WebPack')->FileContentHash('css');
 	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>"    rel="apple-touch-icon-precomposed" />
 
 	<!-- Stylesheet -->
-	<link type="text/css" href="<?= "{$app_root}webpack/css/?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
 	<link type="text/css" href="<?= "{$app_root}css/index.css" ?>" rel="stylesheet">
 
 	<!-- JavaScript -->
-	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
 	<script type="text/javascript" src="<?= "{$app_root}/js/index.js" ?>" defer></script>
 
 	<!-- title -->
 	<title><?= App::Title() ?></title>
+
+	<?php if( Env::isAdmin() ): ?>
+	<?php
+	$hash_js  = Unit('WebPack')->FileContentHash('js');
+	$hash_css = Unit('WebPack')->FileContentHash('css');
+	?>
+	<!-- isAdmin -->
+	<link type="text/css" href="<?= "{$app_root}webpack/css/?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
+	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
+	<?php endif; ?>
