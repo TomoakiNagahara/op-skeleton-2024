@@ -19,6 +19,8 @@ namespace OP;
  * @return    array        $config
  */
 return [
-	'execute' => true,
-	'language-area-id' => 'op-translate-language-area',
+	'language-area-id'       => 'op-translate-language-area',
+	'tranlate_language_list' => Hasha1('tranlate_language_list'),
+	'tranlate_language_code' => Hasha1('tranlate_language_code'),
+	'item_language_code'     => Hasha1('item_language_code'),
 ];
