@@ -103,10 +103,10 @@ if( strpos($asset_root, $app_root) === 0 ){
 </section>
 
 <!-- Translate language list -->
-<?php if( OP::Config('translate')['execute'] ?? null ): ?>
+<?php if( OP::Config('execute')['translate'] ?? null ): ?>
 	<section>
 		<h2>Translate service</h2>
-		<div id="<?php echo OP::Config('translate')['language-area-id'] ?>"></div>
+		<div id="<?= OP::Config('translate')['language-area-id'] ?>"></div>
 	</section>
 <?php endif; ?>
 
