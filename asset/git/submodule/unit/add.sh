@@ -22,6 +22,6 @@ fi
 
 # Add git submodule
 git submodule add      $URL $PATH
-git submodule init
-git submodule update
-git submodule checkout $BRANCH
+echo "git submodule init     $PATH"
+echo "git submodule update   $PATH"
+echo "git submodule checkout $BRANCH"
