@@ -59,7 +59,7 @@ Options +FollowSymLinks +ExecCGI -Indexes
 
 ## Deny access this files.
 #
-<Files ~ "\.(dat|log|csv|sql)$">
+<Files ~ "\.(dat|log|csv|sql|md)$">
 	deny from all
 </Files>
 
