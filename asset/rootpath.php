@@ -13,6 +13,9 @@
  */
 namespace OP;
 
+//	Git root.
+$git_root = trim(`git rev-parse --show-superproject-working-tree --show-toplevel | head -1`);
+
 //	__DIR__ is real path. Not alias.
 $asset_root = __DIR__.'/';
 
@@ -32,6 +35,7 @@ if(!$_SERVER['DOCUMENT_ROOT'] ){
 }
 
 //	Entry each root directory.
+RootPath('git'      , $git_root                 );
 RootPath('real'     , realpath($app_root)       );
 RootPath('doc'      , $_SERVER['DOCUMENT_ROOT'] );
 RootPath('app'      , $app_root                 );
