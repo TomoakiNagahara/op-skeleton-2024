@@ -6,6 +6,20 @@
 
  The "onepiece-framework" is insanely great!!
 
+# The "NewWorld" is a new world!!
+
+ * Intuitive file structure
+ * Html path through
+
+## Intuitive file structure
+
+ You will not hesitate.
+
+## Html path through
+
+ HTML file does not need a controller (endpoint).
+ Of course it will be layout.
+
 # 2022 to 2023
 
  * asset:/config/op.php  > `_OP_APP_BRANCH_`
