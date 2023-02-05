@@ -20,6 +20,16 @@
  HTML file does not need a controller (endpoint).
  Of course it will be layout.
 
+# Apology
+
+ * Microsoft Windows products is not support
+
+## Microsoft Windows products is not support
+
+ Our do not support a Microsoft Windows products.
+ Because to keep clean course code.
+ But, Windows Subsystem for Linux should work probably.
+
 # 2022 to 2023
 
  * asset:/config/op.php  > `_OP_APP_BRANCH_`
