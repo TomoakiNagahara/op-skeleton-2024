@@ -21,7 +21,8 @@ if [ -z "$UNIT" ]; then
 fi
 
 # Add git submodule
-git submodule add      $URL $PATH
-echo "git submodule init     $PATH"
-echo "git submodule update   $PATH"
-echo "git submodule checkout $BRANCH"
+#`git submodule add      $URL $PATH`
+echo "git submodule add $URL $PATH"
+#echo "git submodule init     $PATH"
+#echo "git submodule update   $PATH"
+#echo "git submodule checkout $BRANCH"
