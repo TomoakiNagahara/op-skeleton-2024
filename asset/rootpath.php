@@ -29,18 +29,21 @@ if( $_SERVER['SCRIPT_FILENAME'][0] === '/' ){
 }
 $app_root = dirname($app_root);
 
-//	Replace
-$asset_root = str_replace(realpath($app_root), $app_root, $asset_root);
-
 //	Document root
 if(!$_SERVER['DOCUMENT_ROOT'] ){
 	$_SERVER['DOCUMENT_ROOT'] = $app_root;
+}
+$doc_root = $_SERVER['DOCUMENT_ROOT'];
+
+//	Real path --> alias path
+if( strpos($asset_root, realpath(dirname($doc_root))) === 0 ){
+	$asset_root = str_replace(realpath(dirname($doc_root)), dirname($doc_root), $asset_root);
 }
 
 //	Entry each root directory.
 RootPath('git'      , $git_root                 );
 RootPath('real'     , realpath($app_root)       );
-RootPath('doc'      , $_SERVER['DOCUMENT_ROOT'] );
+RootPath('doc'      , $doc_root                 );
 RootPath('app'      , $app_root                 );
 RootPath('asset'    , $asset_root               );
 RootPath('op'       , $asset_root.'core'        );
