@@ -30,18 +30,18 @@ namespace OP;
 			<?php
 			while( $notice = Notice::Get() ){
 				//	...
-				echo '<li>';
-				echo $notice['message'];
+				echo '<li>'.PHP_EOL;
+				echo $notice['message'].PHP_EOL;
 
 				//	...
-				echo '<ol>';
+				echo '<ol>'.PHP_EOL;
 				foreach( $notice['backtrace'] as $backtrace ){
-					$file = ifset($backtrace['file']);
-					$line = ifset($backtrace['line']);
-					$func = ifset($backtrace['function']);
-					$clss = ifset($backtrace['class']);
-					$type = ifset($backtrace['type']);
-					$args = ifset($backtrace['args']);
+					$file = $backtrace['file']     ?? null;
+					$line = $backtrace['line']     ?? null;
+					$func = $backtrace['function'] ?? null;
+					$clss = $backtrace['class']    ?? null;
+					$type = $backtrace['type']     ?? null;
+					$args = $backtrace['args']     ?? null;
 					$join = [];
 					$argument = null;
 
@@ -78,9 +78,9 @@ namespace OP;
 					}
 
 					//	...
-					echo "<li>{$file} #{$line} {$order}($argument)</li>";
+					echo "<li>{$file} #{$line} {$order}($argument)</li>".PHP_EOL;
 				}
-				echo '</ol>';
+				echo '</ol>'.PHP_EOL;
 
 				//	...
 				echo "</li>";
