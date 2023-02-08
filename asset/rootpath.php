@@ -29,6 +29,9 @@ if( $_SERVER['SCRIPT_FILENAME'][0] === '/' ){
 }
 $app_root = dirname($app_root);
 
+//	Replace
+$asset_root = str_replace(realpath($app_root), $app_root, $asset_root);
+
 //	Document root
 if(!$_SERVER['DOCUMENT_ROOT'] ){
 	$_SERVER['DOCUMENT_ROOT'] = $app_root;
