@@ -8,17 +8,30 @@
 
 # The "NewWorld" is a new world!!
 
+ * True MVC Completed
  * Intuitive file structure
  * Html path through
 
+## True MVC Completed
+
+ MVC is not wrong.
+ Until now, the implementation method was wrong.
+ The "NEW WORLD" solved it in a very simple way.
+
+ * Model is `Units`
+ * View is `Templates`
+ * Controller is `index.php` files.
+
 ## Intuitive file structure
 
- You will not hesitate.
+ You won't get lost.
 
-## Html path through
+## What does "Html path through" mean?
 
- HTML file does not need a controller (endpoint).
- Of course it will be layout.
+ "Html path through" is directly output HTML.
+ Until now, Old style MVC is required an empty controller.
+ The onepiece-framework's NEW WORLD is does not need a controller.
+ Of course it will be doing layout.
 
 # Apology
 
