@@ -54,5 +54,11 @@ try {
 	$exit = __LINE__;
 }
 
+//	If display is on.
+if( OP()->Request('display') ?? 1 ){
+	//	...
+	OP()->Template('template:/app.phtml');
+} // Execute time, Usage memory
+
 //	exit
 exit($exit);
