@@ -184,7 +184,7 @@ try {
 //	If display is on.
 if( OP()->Request('display') ?? 1 ){
 	//	...
-	OP()->Sandbox('template:/app.phtml');
+	OP()->Template('template:/app.phtml');
 } // Execute time, Usage memory
 
 //	exit
