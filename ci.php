@@ -164,10 +164,6 @@ try {
 } catch ( \Throwable $e ){
 	//	...
 	$message = $e->getMessage();
-	/*
-	$file    = $e->getFile();
-	$file    = OP()->MetaPath()->Encode($file);
-	*/
 
 	//	...
 	echo "\n\n";
