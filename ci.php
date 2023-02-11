@@ -47,6 +47,11 @@ try {
 	Env::AppID('self-check');
 
 	//	...
+	OP::Unit('CI')->Auto();
+
+	exit($exit);
+
+	//	...
 	$skip      = 0;
 	$display   = OP::Request('display') ?? 1;
 	$submodule = OP::Request('submodule');
