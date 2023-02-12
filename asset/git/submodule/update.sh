@@ -20,3 +20,7 @@ git submodule foreach git fetch    $REMOTE
 git submodule foreach git rebase   $REMOTE/$BRANCH
 git submodule foreach git stash pop
 git submodule foreach git reset
+
+# Update main repository
+git fetch
+git rebase $REMOTE/$BRANCH
