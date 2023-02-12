@@ -15,7 +15,7 @@ namespace OP;
 
 //	...
 $php     = ($_SERVER['_'] ?? null) ? basename($_SERVER['_']): 'php';
-$version = PHP_MAJOR_VERSION . PHP_MINOR_VERSION;
+$version = ($php !== 'php') ? '': PHP_MAJOR_VERSION . PHP_MINOR_VERSION;
 $module  = _OP_APP_BOOTSTRAP_;
 
 //	...
