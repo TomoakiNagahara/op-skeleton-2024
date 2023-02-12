@@ -49,15 +49,19 @@ try {
 	//	...
 	OP::Unit('CI')->Auto();
 
-	exit($exit);
+//	exit($exit);
 
+	/*
 	//	...
 	$skip      = 0;
 	$display   = OP::Request('display') ?? 1;
 	$submodule = OP::Request('submodule');
 	$app_root  = OP::MetaPath('app:/');
 	$unit_root = OP::MetaPath('unit:/');
+	*/
+	/*
 	$configs   = CI::SubmoduleConfig();
+	*/
 	$configs['op-app-skeleton'] = [
 		'path'   => '',
 		'url'    => '',
@@ -65,21 +69,28 @@ try {
 	];
 
 	//	Each submodules.
-	foreach( $configs as $key => $config ){
+	foreach( $configs as /* $key => */ $config ){
+		/*
 		//	Specify submodule.
 		if( $submodule and $submodule !== $config['path'] ){
 			continue;
 		}
+		*/
 
+		/*
 		//	Get Unit path.
 		$path = $config['path'];
 		if( $display ){ D("{$key} is {$path}"); }
+		*/
 
+		/*
 		//	Change Unit directory.
 		if(!chdir($app_root.$path) ){
 			throw new \Exception("Change directory failed. ({$app_root}{$path})");
 		}
+		*/
 
+		/*
 		//	Check .ci_skip
 		if( file_exists('.ci_skip') ){
 			if( $skip > 10 ){
@@ -89,7 +100,9 @@ try {
 			if( $display ){ D("SKIP: {$key} is found .ci_skip file."); }
 			continue;
 		}
+		*/
 
+		/*
 		//	Specify submodule.
 		if(!$submodule ){
 			//	Check Commit ID.
@@ -98,10 +111,14 @@ try {
 				continue;
 			}
 		}
+		*/
 
+		/*
 		//	Get each Class path.
 		$list = glob("{$app_root}{$path}/*.class.php");
+		*/
 
+		/*
 		//	Each class file.
 		foreach( $list as $file ){
 			//	Under bar file.
@@ -123,18 +140,23 @@ try {
 			}
 			$obj->CI();
 		}
+		*/
 
 		//	Do testcase.
 		OP::Template('core:/include/ci_testcase.php', $config);
 
+		/*
 		//	Save Commit ID.
 		CI::SaveCommitID($path);
+		*/
 	}
 
+	/*
 	//	Display of skip count.
 	if( $skip ){
 		D("CI skipped is {$skip}.");
 	}
+	*/
 
 	/*
 	//	...
