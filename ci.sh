@@ -17,6 +17,7 @@ COMMAND=$(ps -ocommand= -p $PPID)
 ARRAY=(${COMMAND//,/ })
 REMOTE=${ARRAY[2]}
 BRANCH=${ARRAY[3]}
+PHP=`php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;"`
 
 # Get current branch name
 #BRANCH=`git rev-parse --abbrev-ref HEAD`
@@ -26,7 +27,7 @@ if [ ! $BRANCH ]; then
 fi
 
 # Set CI saved commit id file name
-CI_FILE=".ci_commit_id_"$BRANCH
+CI_FILE=".ci_commit_id_"$BRANCH"_php"$PHP
 #echo $CI_FILE
 
 # Check if file exists
@@ -45,7 +46,7 @@ COMMIT_ID=`git rev-parse $BRANCH`
 
 #
 if [ $COMMIT_ID != $CI_COMMIT_ID ]; then
-  echo "Unmatch commit id"
+  echo "ci.sh: Unmatch commit id"
   echo $COMMIT_ID branch=$BRANCH
   echo $CI_COMMIT_ID $CI_FILE
   exit 1
