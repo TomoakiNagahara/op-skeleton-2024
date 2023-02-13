@@ -3,15 +3,6 @@
 REMOTE=${1:-origin}
 BRANCH=${2:-2022}
 
-# This file is update submodules. Does not need main repository push.
-# git add .
-# git stash  save
-# git checkout master
-# git fetch  origin
-# git rebase origin/master
-# git stash  pop
-# git reset 
-
 # Update git submodules
 git submodule foreach git add .
 git submodule foreach git stash save
@@ -21,6 +12,14 @@ git submodule foreach git rebase   $REMOTE/$BRANCH
 git submodule foreach git stash pop
 git submodule foreach git reset
 
-# Update main repository
+# Update parent repository
+git add .
+git stash    save
+git checkout master
 git fetch
-git rebase $REMOTE/$BRANCH
+git rebase   master/$BRANCH
+git stash  pop
+git reset 
+
+# Necessary?
+git submodule update --remote
