@@ -1,4 +1,13 @@
 
+ ## op-app-skeleton-2020-nep:/asset/git/submodule/update.sh
+ #
+ # @created    ????
+ # @version    1.0
+ # @package    op-app-skeleton-2020-nep
+ # @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ # @copyright  Tomoaki Nagahara All right reserved.
+ #
+
 # Branch name
 REMOTE=${1:-origin}
 BRANCH=${2:-2022}

@@ -1,4 +1,13 @@
 
+ ## op-app-skeleton-2020-nep:/asset/git/submodule/origin.sh
+ #
+ # @created    ????
+ # @version    1.0
+ # @package    op-app-skeleton-2020-nep
+ # @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ # @copyright  Tomoaki Nagahara All right reserved.
+ #
+
 # WebPack
 cd webpack
 git remote add origin repo:~/repo/op/module/webpack.git
