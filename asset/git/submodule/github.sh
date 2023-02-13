@@ -10,7 +10,7 @@ if [ -z "$USER_NAME" ]; then
 fi
 
 # Copy backup.
-cp .gitmodules .gitmodules_original
+cp .gitmodules .gitmodules_origin
 
 # Replace
 sed -i -e "s/onepiece-framework/${USER_NAME}/g" .gitmodules
