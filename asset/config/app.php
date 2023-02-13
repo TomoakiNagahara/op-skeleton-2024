@@ -9,11 +9,23 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+ /** Declare strict
+ *
+ */
+declare(strict_types=1);
+
+/** namespace
+ *
+ */
+namespace OP;
+
 /** Overwrite to X-Powered-By.
  *
  * @created   2023-01-20
  */
-header("X-Powered-By: The onepiece-framework", true);
+if( Env::isHttp() ){
+	header("X-Powered-By: The onepiece-framework", true);
+}
 
 /** Return config array.
  *
@@ -23,5 +35,5 @@ header("X-Powered-By: The onepiece-framework", true);
 return [
 	'title'     => 'onepiece-framework app skeleton 2020',
 	'copyright' => 'Copyright 2009 All right reserved.',
-	'app.phtml' =>  OP\Env::isAdmin() ? true: false,
+	'app.phtml' =>  Env::isAdmin() ? true: false,
 ];
