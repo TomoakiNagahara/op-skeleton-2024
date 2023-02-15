@@ -55,10 +55,9 @@ try {
 }
 
 //	If display is on.
-if( OP()->Request('display') ?? 1 ){
-	//	...
+if( OP()->Request('display') ){
 	OP()->Template('template:/app.phtml');
-} // Execute time, Usage memory
+}
 
 //	exit
 exit($exit);
