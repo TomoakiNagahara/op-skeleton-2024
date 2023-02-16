@@ -29,13 +29,10 @@ $exit    = 0;
 $display = OP::Request('display') ?? 1;
 $debug   = OP::Request('debug')   ?? 0;
 $remote  = OP::Request('remote');
-$branch  = OP::Request('branch');
 
 //	...
-foreach( ['remote','branch'] as $key ){
-	if( empty(${$key}) ){
-		throw new \Exception("This value is not set. ({$key})");
-	}
+if(!$remote ){
+	$remote = 'origin';
 }
 
 /* @var $git UNIT\Git */
@@ -65,8 +62,10 @@ foreach( $configs as $config ){
 	}
 
 	//	...
+	$branch = $config['branch'] ?? 'master';
+
+	//	...
 	$git->Fetch($remote);
-	$git->Switch($branch);
 	$git->Rebase($remote, $branch);
 }
 
@@ -81,7 +80,6 @@ if( $display ){ D("Change Directory: {$meta}"); }
 //	...
 if( $git->Status() ){
 	$git->Fetch($remote);
-	$git->Switch($branch);
 	$git->Rebase($remote, $branch);
 }else{
 	D("Working tree is not clean. ($meta)");
