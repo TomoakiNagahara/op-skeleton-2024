@@ -80,7 +80,7 @@ if( $display ){ D("Change Directory: {$meta}"); }
 //	...
 if( $git->Status() ){
 	$git->Fetch($remote);
-	$git->Rebase($remote, $branch);
+	$git->Rebase($remote, OP::Request('branch') ?? 'master');
 }else{
 	D("Working tree is not clean. ($meta)");
 	$exit = __LINE__;
