@@ -62,10 +62,5 @@ try {
 	$exit = __LINE__;
 }
 
-//	If display is on.
-if( OP()->Request('display') ){
-	OP()->Template('template:/app.phtml');
-}
-
 //	exit
 exit($exit);
