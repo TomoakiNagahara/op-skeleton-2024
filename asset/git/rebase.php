@@ -64,9 +64,11 @@ foreach( $configs as $config ){
 	//	...
 	$branch = $config['branch'] ?? 'master';
 
+	var_dump($branch);
+
 	//	...
-	$git->Fetch($remote);
-	$git->Rebase($remote, $branch);
+	echo $git->Fetch($remote);
+	echo $git->Rebase($remote, $branch);
 }
 
 //	Git root.
