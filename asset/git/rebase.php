@@ -27,7 +27,6 @@ namespace OP;
 //	...
 $exit    = 0;
 $display = OP::Request('display') ?? 1;
-$debug   = OP::Request('debug')   ?? 0;
 $remote  = OP::Request('remote');
 
 //	...
@@ -40,9 +39,6 @@ $git = OP::Unit('Git');
 
 //	...
 $configs = $git->SubmoduleConfig();
-if( $debug ){
-	D($configs);
-}
 
 //	Submodules
 foreach( $configs as $config ){
@@ -65,8 +61,8 @@ foreach( $configs as $config ){
 	$branch = $config['branch'] ?? 'master';
 
 	//	...
-	echo $git->Fetch($remote);
-	echo $git->Rebase($remote, $branch);
+	$git->Fetch($remote);
+	$git->Rebase($remote, $branch);
 }
 
 //	Git root.
