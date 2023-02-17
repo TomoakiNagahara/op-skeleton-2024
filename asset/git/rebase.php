@@ -64,8 +64,6 @@ foreach( $configs as $config ){
 	//	...
 	$branch = $config['branch'] ?? 'master';
 
-	var_dump($branch);
-
 	//	...
 	echo $git->Fetch($remote);
 	echo $git->Rebase($remote, $branch);
