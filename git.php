@@ -44,7 +44,7 @@ try {
 	}
 
 	//	...
-	OP::Template($endpoint);
+	include($endpoint);
 
 }catch( \Throwable $e ){
 	//	...
