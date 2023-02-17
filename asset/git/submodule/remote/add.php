@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/git/remote/upstream.php
+/** op-app-skeleton-2020-nep:/asset/git/remote/add.php
  *
  * <pre>
  * ```sh
- * php git.php asset/git/remote/upstream.php config=.gitmodules display=1 debug=0 test=1
+ * php git.php asset/git/remote/add.php config=.gitmodules name=upstream display=1 debug=0 test=1
  * ```
  * </pre>
  *
@@ -25,9 +25,17 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-$config  = OP::Request('config')  ?? '.gitmodules';
 $display = OP::Request('display') ?? 1;
 $test    = OP::Request('test')    ?? 1;
+$config  = OP::Request('config');
+$name    = OP::Request('name');
+
+//	...
+foreach( ['config','name'] as $key ){
+	if( empty(${$key}) ){
+		throw new \Exception("This value is empty. ({$key})");
+	}
+}
 
 //	...
 if( $test === '' ){
@@ -57,15 +65,15 @@ foreach( $configs as $config ){
 	if( $display ){ D("Change Directory: $meta"); }
 
 	//	...
-	if( $git->Remote()->isExists('upstream') ){
-		D("This remote name is already exists. (upstream)");
+	if( $git->Remote()->isExists($name) ){
+		D("This remote name is already exists. ({$name})");
 		continue;
 	}
 
 	//	...
 	if( $test ){
-		D("git remote add upstream {$url}");
+		D("git remote add {$name} {$url}");
 	}else{
-		$git->Remote()->Add('upstream',$url);
+		$git->Remote()->Add($name, $url);
 	}
 }
