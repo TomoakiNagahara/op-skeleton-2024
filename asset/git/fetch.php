@@ -26,16 +26,13 @@ namespace OP;
 
 //	...
 $display = OP::Request('display') ?? 1;
-$debug   = OP::Request('debug')   ?? 0;
+$remote  = OP::Request('remote')  ?? 'origin';
 
 /* @var $git UNIT\Git */
 $git = OP::Unit('Git');
 
 //	...
 $configs = $git->SubmoduleConfig();
-if( $debug ){
-	D($configs);
-}
 
 //	...
 foreach( $configs as $config ){
@@ -48,7 +45,7 @@ foreach( $configs as $config ){
 	if( $display ){ D("Change Directory: {$meta}"); }
 
 	//	...
-	$git->Fetch();
+	$git->Fetch($remote);
 }
 
 //	...
@@ -60,4 +57,4 @@ if(!chdir($path) ){
 if( $display ){ D("Change Directory: {$meta}"); }
 
 //	...
-$git->Fetch();
+$git->Fetch($remote);
