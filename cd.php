@@ -37,7 +37,9 @@ try {
 
 	//	...
 	OP::Unit('CD')->Auto();
-	echo "\n";
+	if( OP::Request('display') ){
+		echo "\n";
+	}
 
 }catch( \Throwable $e ){
 	//	...
