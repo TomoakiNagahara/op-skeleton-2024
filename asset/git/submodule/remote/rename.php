@@ -29,11 +29,7 @@ $config  = OP::Request('config')  ?? '.gitmodules';
 $from    = OP::Request('from')    ?? null;
 $to      = OP::Request('to')      ?? null;
 $display = OP::Request('display') ?? 1;
-$debug   = OP::Request('debug')   ?? 0;
 $test    = OP::Request('test')    ?? 1;
-if( $test ){
-	$display = $test;
-}
 
 //	...
 foreach( ['config','from','to'] as $key ){
@@ -43,14 +39,21 @@ foreach( ['config','from','to'] as $key ){
 	}
 }
 
+//	...
+if( $test === '' ){
+	$test = '1';
+}
+//	...
+if( $test ){
+	$display = $test;
+	D('This is test mode. (test=1)');
+}
+
 /* @var $git UNIT\Git */
 $git = OP::Unit('Git');
 
 //	...
 $configs = $git->SubmoduleConfig($config);
-if( $debug ){
-	D($config, $configs);
-}
 
 //	...
 foreach( $configs as $config ){
