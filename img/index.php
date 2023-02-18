@@ -13,10 +13,8 @@
  */
 namespace OP;
 
-/* @var $app \OP\UNIT\App */
-
 //	Get "SmartURL" Arguments.
-$args = $app->Unit('Router')->Args();
+$args = Unit('Router')->Args();
 
 //	Get file name.
 $file = $args[0] ?? '404';
@@ -29,11 +27,12 @@ if( $file === '403' or $file === '404' ){
 //	Get Layout name.
 $layout = Config::Get('layout')['name'] ?? null;
 
-//	Convert to full file path from meta path.
-$path = \OP\ConvertPath("asset:/layout/$layout/img/$file");
-
-//	Is file exists?
-if(!file_exists($path) ){
+//	Check layout img directory.
+if( file_exists( $path = OP::MetaRoot('asset') . "layout/$layout/img/$file" ) ){
+	//	Found
+}else if( file_exists( $path = $file ) ){
+	//	Found
+}else{
 	//	Change http status code.
 	http_response_code('404');
 
@@ -57,13 +56,17 @@ switch( $ext ){
 		$mime = "image/$ext";
 		break;
 
+	case 'ico':
+		$mime = "image/vnd.microsoft.icon";
+		break;
+
 	default:
 		D("This extension is not supported. ($ext)");
 		return;
 }
 
 //	Layout to off.
-$app->Layout(false);
+OP::Layout(false);
 
 //	Set MIME.
 Env::Mime($mime);
