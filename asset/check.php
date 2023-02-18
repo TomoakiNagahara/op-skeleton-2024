@@ -51,9 +51,25 @@ if( Env::isShell() ){
 	return;
 }
 
+/*
 //	Checking rewrite setting.
 if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
 	//	Has not been setting rewrite.
 	require(__DIR__.'/bootstrap/op/rewrite.php');
 	exit(__LINE__);
+}
+*/
+
+//	Branch to each server software.
+switch( strtolower(Env::WebServer()) ){
+	case 'php':
+		break;
+	case 'apaceh':
+		//	Checking rewrite setting.
+		if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
+			//	Has not been setting rewrite.
+			require(__DIR__.'/bootstrap/op/rewrite.php');
+			exit(__LINE__);
+		}
+		break;
 }
