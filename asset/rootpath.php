@@ -20,19 +20,23 @@ $git_root = trim(`git rev-parse --show-superproject-working-tree --show-toplevel
 $asset_root = __DIR__.'/';
 
 //	app root
-if( $_SERVER['SCRIPT_FILENAME'][0] === '/' ){
-	//	Web
-	$app_root = $_SERVER['SCRIPT_FILENAME'];
-}else{
+switch( php_sapi_name() ){
 	//	CLI
-	$app_root = realpath($_SERVER['SCRIPT_FILENAME']);
+	case 'cli':
+		$app_root = dirname(realpath($_SERVER['SCRIPT_FILENAME']));
+		$_SERVER['DOCUMENT_ROOT'] = $app_root;
+		break;
+
+	case 'cli-server':
+		$app_root = $_SERVER['DOCUMENT_ROOT'];
+		break;
+
+	default:
+		$app_root = dirname($_SERVER['SCRIPT_FILENAME']);
+		break;
 }
-$app_root = dirname($app_root);
 
 //	Document root
-if(!$_SERVER['DOCUMENT_ROOT'] ){
-	$_SERVER['DOCUMENT_ROOT'] = $app_root;
-}
 $doc_root = $_SERVER['DOCUMENT_ROOT'];
 
 //	Real path --> alias path
@@ -51,19 +55,3 @@ RootPath('core'     , $asset_root.'core'        );
 RootPath('unit'     , $asset_root.'unit'        );
 RootPath('layout'   , $asset_root.'layout'      );
 RootPath('template' , $asset_root.'template'    );
-
-//	...
-return;
-
-//	Check if symbolic link.
-if( is_link($app_root) ){
-	// Register real path.
-	RootPath('link' , dirname(__DIR__));
-}
-
-//	Alias root.
-$app_root   = ConvertPath('app:/');
-$alias_root = realpath($app_root).'/'; // ConvertPath is automatically add slash to tail.
-if( $app_root !== $alias_root ){
-	RootPath('alias', $alias_root);
-};
