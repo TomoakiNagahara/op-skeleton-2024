@@ -3,7 +3,7 @@
  *
  * <pre>
  * ```sh
- * php git.php asset/git/fetch.php remote=orign display=1 debug=0
+ * php git.php asset/git/push.php remote=orign branch=master display=1 debug=0
  * ```
  * </pre>
  *
