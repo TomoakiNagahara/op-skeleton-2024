@@ -3,7 +3,7 @@
  *
  * <pre>
  * ```sh
- * php git.php asset/git/rebase.php branch=master display=1 debug=0
+ * php git.php asset/git/rebase.php remote=origin branch=master display=1 debug=0
  * ```
  * </pre>
  *
