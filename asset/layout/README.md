@@ -6,25 +6,41 @@ Layout for onepiece-framework
  The layout is placed in the following directory.
 
 ```
-app:/asset/layout
+asset:/layout/
 ```
 
  The layout uses a common template files.
 
 ```
-app:/asset/template/layout
+asset:/template/layout/
 ```
 
  Set the config file in the following path.
 
 ```
-app:/asset/config/layout.php
+asset:/config/layout.php
 ```
 
 # Usage
 
+## Download from URL
+
+```sh
+git submodule add -b BRANCH_NAME URL asset/layout/LAYOUT_NAME
+```
+
+## Configuration
+
+```asset/config/layout.php
+return [
+  'name' => 'LAYOUT_NAME';
+];
+```
+
+## Dynamic layout switch
+
  How to dynamic switch templates.
 
-```
-Config::Set('layout', ['name'=>'layout_name']);
+```php
+OP()->Config('layout', ['name'=>'layout_name']);
 ```
