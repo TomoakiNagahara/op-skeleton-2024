@@ -21,5 +21,4 @@ namespace OP;
  * @return    array        $config
  */
 return [
-	'directory' => 'asset:/template',
 ];
