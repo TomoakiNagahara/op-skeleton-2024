@@ -48,11 +48,9 @@ try {
 	//	Launch application.
 	$app->Auto();
 
-	//	Output memory usage.
-	if( OP::Config('app')['app.phtml'] ?? null ){
-		OP::Template('app.phtml');
-	};
-
 } catch ( \Throwable $e ){
 	Notice::Set($e);
 }
+
+//	Output for developers.
+OP::Template('app.phtml');
