@@ -6,13 +6,40 @@
   <img src="https://www.php.net/images/php8/logo_php8_2.svg" alt="php8.2" height="22" width="60"/>
 </div>
 
- The "onepiece-framework" is insanely great!!
+# The "onepiece-framework" is insanely great!!
+
+## 2022 had a big change!!
+
+ The first is "OP()" function.
+ "OP()" makes it easy to access the same functionality in any namespaces.
+
+ The second is "CI/CD".
+ The onepiece-framework includes its own "CI/CD".
+ "CI" is automatically inspect all your code.
+ Inspected code only will be delivery via "CD".
+ And they work with GitHub Action.
+
+ The third is "The develop module".
+ Integrated everything. There are `selftest`, `admin`, `testcase` and `reference`.
+
+## Download & Start up
+
+ 1. Download: `git clone --recurse-submodules https://github.com/onepiece-framework/op-app-skeleton-2022.git 2022`
+ 2. Change directory: `cd 2022`
+ 3. Do following command: `git submodule foreach git checkout 2022`
+ 4. Start up at PHP Built-in WebServer: `php -S localhost:8000 app.php`
+ 5. Access via the browser: `http://localhost:8000`
+
+## CI/CD
+
+ You using CI/CD is very easy.
+ Just type: `./cicd`
 
 # The "NewWorld" is a new world!!
 
  * True MVC Completed
  * Intuitive file structure
- * Html path through
+ * Html pass through
 
 ## True MVC Completed
 
@@ -20,17 +47,17 @@
  Until now, the implementation method was wrong.
  The "NEW WORLD" solved it in a very simple way.
 
- * Model is `Units`
- * View is `Templates`
- * Controller is `index.php` files.
+ * Model is each `Unit`
+ * View is  each directory located files.
+ * Controller is each directory located `index.php` files.
 
 ## Intuitive file structure
 
  You won't get lost.
 
-## What does "Html path through" mean?
+## What does "Html pass through" mean?
 
- "Html path through" is directly output HTML.
+ "Html pass through" is directly output HTML.
  Until now, Old style MVC is required an empty controller.
  The onepiece-framework's NEW WORLD is does not need a controller.
  Of course it will be doing layout.
@@ -42,15 +69,11 @@
 ## Microsoft Windows products is not support
 
  Our do not support a Microsoft Windows products.
- Because to keep clean course code.
+ Because to keep clean sourse code.
  But, Windows Subsystem for Linux should work probably.
 
 # 2022 to 2023
 
  * asset:/config/op.php  > `_OP_APP_BRANCH_`
  * asset:/config/app.php > `title`
- * asset:/git/submodule/init.sh
- * asset:/git/submodule/push.sh
- * asset:/git/submodule/update.sh
- * asset:/git/submodule/local.sh
- * asset:/git/submodule/unit/add.sh
+ * asset:/git/submodule/*.sh
