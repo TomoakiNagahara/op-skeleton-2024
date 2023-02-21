@@ -15,6 +15,9 @@
  */
 namespace OP;
 
+//	...
+if( OP::Config('app')['app.phtml'] ?? null ){
+
 /* @var integer $st */
 $time = (microtime ( true ) - _OP_APP_START_);
 $used = memory_get_usage () / 1000;
@@ -34,4 +37,23 @@ if( $mime === 'text/html' ){
 	echo PHP_EOL.'/*'.PHP_EOL.$execute_time.PHP_EOL.$memory_usage.PHP_EOL.'*/'.PHP_EOL;
 }else if( $mime === 'text/plain' ){
 	echo "\n{$execute_time}\n{$memory_usage}\n";
+}
+
+};
+
+/** For testcase run by CI
+ *
+ * @created    2023-02-22
+ */
+if( Env::isHttp() ){
+	//	...
+	if( $_SERVER['SERVER_PORT'] == OP::Config('ci')['testcase']['port'] ){
+		//	...
+		if( Env::Mime() === 'text/html' ){
+			//	...
+			$io = Notice::Has() ? '1':'0';
+			//	...
+			echo "<OP Notice=\"{$io}\" />\n";
+		}
+	}
 }
