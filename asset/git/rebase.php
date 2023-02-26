@@ -74,13 +74,10 @@ if(!chdir($path) ){
 if( $display ){ D("Change Directory: {$meta}"); }
 
 //	...
-if( $git->Status() ){
-	$git->Fetch($remote);
-	$git->Rebase($remote, OP::Request('branch') ?? 'master');
-}else{
-	D("Working tree is not clean. ($meta)");
-	$exit = __LINE__;
-}
+$git->Save();
+$git->Fetch($remote);
+$git->Rebase($remote, OP::Request('branch') ?? 'master');
+$git->Pop();
 
 //	...
 exit($exit);
