@@ -12,6 +12,7 @@
 
  The first is "OP()" function.
  "OP()" makes it easy to access the same functionality in any namespaces.
+ For details, please refer to the following URL: develop:/reference/core/OP
 
  The second is "CI/CD".
  The onepiece-framework includes its own "CI/CD".
@@ -34,6 +35,7 @@
 
  You using CI/CD is very easy.
  Just type: `./cicd`
+ If you need more information, please refer to the following URL: develop:/reference/core/CICD
 
 # The "NewWorld" is a new world!!
 
