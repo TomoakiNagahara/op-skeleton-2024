@@ -47,10 +47,22 @@ if( true ){
 	}
 
 	//	...
-	if( $comand = OP::Config('cd')['github'][$action] ?? null ){
-		D($comand);
+	if( $comands = OP::Config('webhook')['github'][$action] ?? null ){
+		//	...
+		chdir( OP::MetaPath('git:/') );
+
+		//	...
+		if(!is_array($comands)){
+			$comands = [$comands];
+		}
+
+		//	...
+		foreach( $comands as $comand ){
+			D($comand);
+			echo `{$comand}`;
+		}
 	}else{
-		D("Empty: config:/cd.php > github > {$action}");
+		echo "Empty: asset > config > webhook.php > github > {$action}\n";
 	}
 
 	/*
