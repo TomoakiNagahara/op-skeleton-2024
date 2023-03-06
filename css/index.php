@@ -25,6 +25,7 @@ namespace OP;
 foreach( glob('*.css') as $file ){
 	//	...
 	if( $file === 'index.css' ){
+		//	Why?
 		continue;
 	}
 
