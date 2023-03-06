@@ -22,6 +22,7 @@ namespace OP;
 foreach( glob('*.js') as $file ){
 	//	...
 	if( $file === 'index.js' ){
+		//	Why?
 		continue;
 	}
 
