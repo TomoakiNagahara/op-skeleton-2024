@@ -8,6 +8,11 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/** namespace
+ *
+ */
+namespace OP;
+
 //	Remove URL Query. /file/path/?foo=bar --> /file/path/
 $rewrite_base = explode('?', $_SERVER['REQUEST_URI'])[0];
 
@@ -55,26 +60,26 @@ while( $line = fgets($file) ){
 <h1>How to boot the onepiece-framework at the Apache web server.</h1>
 <ol>
 	<li>
-		<p>Open <b data-i18n="false">"<?= $app_root ?>.htaccess"</b> file.</p>
-		<p><i><b>Attention!</b> This file is invisible file.</i></p>
+		<p>Open <b>"<?= $app_root ?>.htaccess"</b> file.</p>
+		<p class="red"><i><b class="bold">ATTENTION!</b> This file is invisible file.</i></p>
 	</li>
 	<li>
 		<p>
 			Look for line <?= $n1 ?>.<br/>
-			Change the value of <b data-i18n="false">"RewriteEngine"</b> to <b data-i18n="false">"On"</b> from <b data-i18n="false">"Off"</b>.
+			Change the value of <b>"RewriteEngine"</b> to <b>"On"</b> from <b>"Off"</b>.
 		</p>
 	</li>
 	<?php if( $rewrite_base !== '/' ): ?>
 	<li>
 		<p>
 			Look for line <?= $n2 ?>.<br/>
-			Change the value of <b data-i18n="false">"RewriteBase"</b> to <b data-i18n="false">"<?= $rewrite_base ?>"</b> from <b data-i18n="false">"/"</b>.
+			Change the value of <b>"RewriteBase"</b> to <b>"<?= $rewrite_base ?>"</b> from <b>"/"</b>.
 		</p>
 	</li>
 	<?php endif; ?>
 	<li>
 		<p>
-			Save <b data-i18n="false">.htaccess</b> file.
+			Save <b>.htaccess</b> file.
 		</p>
 	</li>
 	<li>
