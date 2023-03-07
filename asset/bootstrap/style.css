@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-	font-size: 1.5vw;
+	font-size: 3vw;
 }
 
 li {
@@ -30,6 +30,14 @@ pre {
 code {
 	display: block;
 	font-family: "Courier New", Consolas, Courier, Monaco, monospace;
+}
+
+.red {
+	color: red;
+}
+
+.bold {
+	font-weight: bold;
 }
 
 .code {
