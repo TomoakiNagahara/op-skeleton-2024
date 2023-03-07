@@ -7,10 +7,44 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
+
+/** namespace
+ *
+ */
+namespace OP;
+
 ?>
 <hr/>
+<!-- Translate -->
+<section data-translate="popup">
+	<h2>If you want to use translate service, Please select a language from the following.</h2>
+	<div id="<?= OP::Config('translate')['language-area-id'] ?>"></div>
+</section>
+<script>
+<?php
+OP::Template('asset:/webpack/js/d.js');
+OP::Template('asset:/webpack/js/Hash.js');
+OP::Template('asset:/webpack/js/Translate_Language.js');
+OP::Template('asset:/webpack/js/Translate.js');
+OP::Template('asset:/webpack/js/TranslatePopup.js');
+?>
+//	Mouse over translate
+document.querySelectorAll('[data-translate="popup"]').forEach( async function(node){
+	node.querySelectorAll('h1,h2,h3,h4,h5,h6,p,li,th,td').forEach( async function(node){ $OP.Translate.Popup(node) });
+});
+</script>
+<style>
+<?php
+OP::Template('asset:/webpack/css/color.css');
+OP::Template('asset:/webpack/css/Translate_Language.css');
+OP::Template('asset:/develop/develop.css');
+?>
+</style>
+
+<hr/>
+
 <footer>
-	Copyright 2006 onepiece-framework all right reserved
+	Copyright 2006 onepiece-framework all right reserved.
 </footer>
 </body>
 </html>
