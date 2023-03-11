@@ -30,6 +30,13 @@ if( Env::isCI() ){
 	//	...
 	return true;
 }
+
+//	...
+if( Env::isShell() ){
+	echo "Please edit this file: {$path}\n";
+	return false;
+}
+
 ?>
 <?php include(__DIR__.'/../html_head.phtml') ?>
 		<section>
