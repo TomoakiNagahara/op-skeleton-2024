@@ -14,7 +14,8 @@
 namespace OP;
 
 //	Git root.
-$git_root = trim(`git rev-parse --show-superproject-working-tree --show-toplevel | head -1`);
+$git = include(__DIR__.'/unit/git/include/search_path.php');
+$git_root = $git ? trim(`{$git} rev-parse --show-superproject-working-tree --show-toplevel | head -1`): '';
 
 //	__DIR__ is real path. Not alias.
 $asset_root = __DIR__.'/';
