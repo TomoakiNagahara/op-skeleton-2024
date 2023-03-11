@@ -2,6 +2,7 @@
 /**
  * op-app-skeleton-2020-nep:/asset/function/welcome.php
  *
+ * @deprecated 2023-03-12
  * @created   2019-12-09
  * @version   1.0
  * @package   op-app-skeleton-2020-nep
