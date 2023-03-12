@@ -23,7 +23,10 @@ namespace OP;
 		$path = __DIR__.'/core/Bootstrap.php';
 		if(!file_exists($path) ){
 			require(__DIR__.'/bootstrap/app/gitsubmodule.phtml');
+			/* GitHub Workflow will stop.
 			exit(__LINE__);
+			*/
+			exit();
 		}
 		require($path);
 
