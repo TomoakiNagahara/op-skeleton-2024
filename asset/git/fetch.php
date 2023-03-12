@@ -45,7 +45,13 @@ foreach( $configs as $config ){
 	if( $display ){ D("Change Directory: {$meta}"); }
 
 	//	...
-	$git->Fetch($remote);
+	if( $remote === '\*' ){
+		foreach( $git->Remote()->List() as $name ){
+			$git->Fetch($name);
+		}
+	}else{
+		$git->Fetch($remote);
+	}
 }
 
 //	...
@@ -57,4 +63,10 @@ if(!chdir($path) ){
 if( $display ){ D("Change Directory: {$meta}"); }
 
 //	...
-$git->Fetch($remote);
+if( $remote === '\*' ){
+	foreach( $git->Remote()->List() as $name ){
+		$git->Fetch($name);
+	}
+}else{
+	$git->Fetch($remote);
+}
