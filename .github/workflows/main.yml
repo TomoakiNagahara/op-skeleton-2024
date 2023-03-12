@@ -60,7 +60,9 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: apcu
 
-      - run: php app.php
+      - name: Bootstrap module test
+        run: php app.php
+
       # https://qiita.com/martini3oz/items/975f2c4cf137e487fc3d
       - name: Change github account name
         env:
