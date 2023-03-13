@@ -62,7 +62,7 @@ if( true ){
 			echo `{$comand}`;
 		}
 	}else{
-		echo "Empty: asset > config > webhook.php > github > {$action}\n";
+		echo "Empty: asset > config > webhook.php > github > action={$action}\n";
 	}
 
 	/*
