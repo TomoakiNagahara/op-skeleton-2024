@@ -1,7 +1,16 @@
 About each files
 ===
 
- All submodule repository change.
+# Usage
+
+All submodule repository change.
+
+```sh
+sh ./asset/git/submodule/github.sh [Your GitHub account name]
+git submodule sync
+```
+
+# Other files
 
 ```
 init.sh   | Init submodules.
