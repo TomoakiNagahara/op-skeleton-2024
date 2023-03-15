@@ -27,7 +27,6 @@ namespace OP;
 //	...
 $display = OP::Request('display') ?? 1;
 $remote  = OP::Request('remote')  ?? 'origin';
-$branch  = OP::Request('branch')  ?? _OP_APP_BRANCH_;
 $force   = OP::Request('force')    ? true: false;
 
 /* @var $git UNIT\Git */
@@ -47,6 +46,7 @@ foreach( $configs as $config ){
 	if( $display ){ D("Change Directory: {$meta}"); }
 
 	//	...
+	$branch = $config['branch'] ?? 'master';
 	$git->Push($remote, $branch, $force);
 }
 
@@ -59,4 +59,5 @@ if(!chdir($path) ){
 if( $display ){ D("Change Directory: {$meta}"); }
 
 //	...
+$branch = OP::Request('branch') ?? 'master';
 $git->Push($remote, $branch, $force);
