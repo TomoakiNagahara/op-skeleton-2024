@@ -14,6 +14,7 @@
  */
 return [
 	'github' => [
+		'secret'    => $_SERVER['_GITHUB_WEBHOOK_SECRET_'] ?? 'my secret key',
 		'develop'   => [
 			'whoami',
 			'echo $PATH',
