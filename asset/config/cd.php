@@ -13,9 +13,6 @@
  * @return    array        $config
  */
 $config = [
-	'github' => [
-		'secret' => $_SERVER['_GITHUB_WEBHOOK_SECRET_'] ?? 'my secret key',
-	],
 ];
 
 //	...
