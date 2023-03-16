@@ -27,9 +27,10 @@ if( true ){
 	$action    = OP::Request('action');
 	$signature = OP::Request('X-Hub-Signature');
 	$account   = OP::Request('repository')['owner']['login'] ?? null;
+	$config    = OP::Config('webhook')['github'] ?? [];
 
 	//	...
-	if( $secret = OP::Config('cd')['github']['secret'] ?? null ){
+	if( $secret = $config['secret'] ?? null ){
 		$hash   = 'sha1='.hash_hmac('sha1', file_get_contents("php://input"), $secret);
 	}else{
 		$hash   = null;
@@ -47,7 +48,7 @@ if( true ){
 	}
 
 	//	...
-	if( $comands = OP::Config('webhook')['github'][$action] ?? null ){
+	if( $comands = $config[$action] ?? null ){
 		//	...
 		chdir( OP::MetaPath('git:/') );
 
@@ -64,21 +65,6 @@ if( true ){
 	}else{
 		echo "Empty: asset > config > webhook.php > github > action={$action}\n";
 	}
-
-	/*
-	//	...
-	switch( $action ){
-		//	GitHub action
-		case 'completed':
-			break;
-
-		//	op-cd
-		case 'update':
-			break;
-
-		default:
-	}
-	*/
 }
 
 //	...
