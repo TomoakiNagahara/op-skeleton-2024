@@ -47,7 +47,7 @@ Options +FollowSymLinks +ExecCGI -Indexes
 
 	# If the file exists, Dispatch only this extension.
 	RewriteCond %{REQUEST_FILENAME} -f
-	RewriteCond %{REQUEST_URI} (\.php|\.html|\.phtml|\.js|\.css)$
+	RewriteCond %{REQUEST_URI} (\.php|\.html|\.phtml|\.js|\.css|\.png)$
 	RewriteRule . app.php [END]
 </IfModule>
 
