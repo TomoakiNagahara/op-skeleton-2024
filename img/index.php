@@ -72,4 +72,5 @@ OP::Layout(false);
 Env::Mime($mime);
 
 //	Load image file.
-echo file_get_contents($path);
+passthru(`echo cat {$path}`);
+//echo file_get_contents($path);
