@@ -28,6 +28,8 @@ namespace OP;
 $display = OP::Request('display') ?? 1;
 $remote  = OP::Request('remote')  ?? 'origin';
 $force   = OP::Request('force')    ? true: false;
+$output  = null;
+$status  = null;
 
 /* @var $git UNIT\Git */
 $git = OP::Unit('Git');
@@ -47,7 +49,13 @@ foreach( $configs as $config ){
 
 	//	...
 	$branch = $config['branch'] ?? 'master';
-	$git->Push($remote, $branch, $force);
+    if( $git->Switch($branch) ){
+        exec("./cicd remote={$remote} branch={$branch}", $output, $status);
+        if( $status ){
+            echo join("\n", $output);
+        }
+    }
+//  $git->Push($remote, $branch, $force);
 }
 
 //	...
@@ -60,4 +68,6 @@ if( $display ){ D("Change Directory: {$meta}"); }
 
 //	...
 $branch = OP::Request('branch') ?? 'master';
+$git->Switch($branch);
+`php ci.php`;
 $git->Push($remote, $branch, $force);
