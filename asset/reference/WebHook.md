@@ -3,8 +3,8 @@ About WebHook directory.
 
 # What are WebHook?
 
-A WebHook is a mechanism for receiving notifications from servers in different domains.
-App skeleton has example for GitHub WebHook.
+WebHooks is a function that commands a web application by accessing a specified URL.
+App skeleton already has example for GitHub WebHook.
 
 # Equipped with a mechanism to receive GitHub WebHooks
 
