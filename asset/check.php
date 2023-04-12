@@ -61,9 +61,10 @@ if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
 */
 
 //	Branch to each server software.
-switch( strtolower(Env::WebServer()) ){
+switch( $webserver = strtolower(Env::WebServer()) ){
 	case 'php':
 		break;
+
 	case 'apache':
 		//	Checking rewrite setting.
 		if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
@@ -72,4 +73,8 @@ switch( strtolower(Env::WebServer()) ){
 			exit(__LINE__);
 		}
 		break;
+
+    default:
+        echo "This webserver is not supported. ($webserver)\n";
+        exit(__LINE__);
 }
