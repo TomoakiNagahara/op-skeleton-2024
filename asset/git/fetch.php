@@ -32,6 +32,13 @@ $remote  = OP::Request('remote')  ?? 'origin';
 $git = OP::Unit('Git');
 
 //	...
+if( $remote === '\*' ){
+    $remotes = $git->Remote()->List();
+}else{
+    $remotes = [$remote];
+}
+
+//	...
 $configs = $git->SubmoduleConfig();
 
 //	...
@@ -45,11 +52,8 @@ foreach( $configs as $config ){
 	if( $display ){ D("Change Directory: {$meta}"); }
 
 	//	...
-	if( $remote === '\*' ){
-		foreach( $git->Remote()->List() as $name ){
-			$git->Fetch($name);
-		}
-	}else{
+	foreach( $remotes as $remote ){
+		if( $display ){ D("Remote: {$remote}"); }
 		$git->Fetch($remote);
 	}
 }
@@ -63,10 +67,7 @@ if(!chdir($path) ){
 if( $display ){ D("Change Directory: {$meta}"); }
 
 //	...
-if( $remote === '\*' ){
-	foreach( $git->Remote()->List() as $name ){
-		$git->Fetch($name);
-	}
-}else{
+foreach( $remotes as $remote ){
+	if( $display ){ D("Remote: {$remote}"); }
 	$git->Fetch($remote);
 }
