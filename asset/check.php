@@ -66,6 +66,7 @@ switch( $webserver = strtolower(Env::WebServer()) ){
 		break;
 
 	case 'apache':
+	case 'nginx':
 		//	Checking rewrite setting.
 		if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
 			//	Has not been setting rewrite.
