@@ -49,7 +49,7 @@ try {
 
 } catch ( \Throwable $e ){
 	//	...
-	if( class_exists('OP\Notice', true) ){
+	if( RootPath() and class_exists('OP\Notice', true) ){
 		Notice::Set($e);
 	}else{
 		echo $e->getMessage() . "<br/>\n";
@@ -57,7 +57,7 @@ try {
 			echo include(__DIR__.'/include/DebugBacktraceToString.php')."<br/>\n";
 		}
 		return;
-		echo $trace;
+		echo $trace; // For Eclipse notice.
 	}
 	//	...
 	require('bootstrap/op/failed.phtml');
