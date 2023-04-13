@@ -40,6 +40,17 @@ $git = OP::Unit('Git');
 //	...
 $configs = $git->SubmoduleConfig();
 
+//	Fetch
+/*
+foreach( $configs as $config ){
+	chdir(OP::MetaPath("git:/{$config['path']}"));
+	echo `git fetch {$remote} &`; // Challenge of async
+}
+*/
+chdir(OP::MetaPath('git:/'));
+echo `git submodule foreach git fetch github`;
+echo `git fetch {$remote}`;
+
 //	Submodules
 foreach( $configs as $config ){
 	//	...
@@ -62,7 +73,6 @@ foreach( $configs as $config ){
 
 	//	...
 	$git->Save();
-	$git->Fetch($remote);
 	$git->Rebase($remote, $branch);
 	$git->Pop();
 }
@@ -77,7 +87,6 @@ if( $display ){ D("Change Directory: {$meta}"); }
 
 //	...
 $git->Save();
-$git->Fetch($remote);
 $git->Rebase($remote, OP::Request('branch') ?? 'master');
 $git->Pop();
 
