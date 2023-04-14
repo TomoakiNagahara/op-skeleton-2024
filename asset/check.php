@@ -68,11 +68,16 @@ switch( $webserver = strtolower(Env::WebServer()) ){
 	case 'apache':
 	case 'nginx':
 		//	Checking rewrite setting.
-		if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
-			//	Has not been setting rewrite.
-			require(__DIR__.'/bootstrap/op/rewrite.php');
-			exit(__LINE__);
-		}
+        switch( $entry_point = basename($_SERVER['SCRIPT_FILENAME']) ){
+            case 'app.php':
+            case 'dev.php':
+                break;
+            default:
+                //	Has not been setting rewrite.
+                require(__DIR__.'/bootstrap/op/rewrite.php');
+                echo "Entry point is {$entry_point}";
+                exit(__LINE__);
+        }
 		break;
 
     default:
