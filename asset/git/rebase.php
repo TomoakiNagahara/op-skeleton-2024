@@ -27,29 +27,13 @@ namespace OP;
 //	...
 $exit    = 0;
 $display = OP::Request('display') ?? 1;
-$remote  = OP::Request('remote');
-
-//	...
-if(!$remote ){
-	$remote = 'origin';
-}
+$remote  = OP::Request('remote')  ?? 'origin';
 
 /* @var $git UNIT\Git */
 $git = OP::Unit('Git');
 
 //	...
 $configs = $git->SubmoduleConfig();
-
-//	Fetch
-/*
-foreach( $configs as $config ){
-	chdir(OP::MetaPath("git:/{$config['path']}"));
-	echo `git fetch {$remote} &`; // Challenge of async
-}
-*/
-chdir(OP::MetaPath('git:/'));
-echo `git submodule foreach git fetch github`;
-echo `git fetch {$remote}`;
 
 //	Submodules
 foreach( $configs as $config ){
@@ -83,11 +67,12 @@ $path = OP::MetaPath($meta);
 if(!chdir($path) ){
 	throw new \Exception("chdir was failed. ({$meta}, {$path})");
 }
-if( $display ){ D("Change Directory: {$meta}"); }
+if( $display ){ D("Change Directory: {$path}"); }
 
 //	...
+$branch = OP::Request('branch') ?? 'master';
 $git->Save();
-$git->Rebase($remote, OP::Request('branch') ?? 'master');
+$git->Rebase($remote, $branch);
 $git->Pop();
 
 //	...
