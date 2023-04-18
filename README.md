@@ -1,16 +1,5 @@
-The onepice-framework app skeleton 2022
+<img src="https://user-images.githubusercontent.com/1668339/72398593-cb0d1900-3786-11ea-863c-418ff8d48f43.png"/>The onepice-framework app skeleton 2022
 ===
-
-<style>
-h1 {
-    font-size: 20px;
-}
-h1:first-child:before {
-    content: url(https://user-images.githubusercontent.com/1668339/72398593-cb0d1900-3786-11ea-863c-418ff8d48f43.png);
-    vertical-align: middle;
-    margin-right:  0.5rem;
-}
-</style>
 
 <div class="margin bottom 1">
   <img src="https://img.shields.io/badge/PHP-7.0_higher-brightgreen" alt="php7.0 higher"/>
@@ -23,7 +12,7 @@ h1:first-child:before {
 
  The first is "OP()" function.
  "OP()" makes it easy to access the same functionality in any namespaces.
- For details, please refer to the following URL: develop:/reference/core/OP
+ For details, please refer to the following URL: `develop:/reference/core/OP`
 
  The second is "CI/CD".
  The onepiece-framework includes its own "CI/CD".
