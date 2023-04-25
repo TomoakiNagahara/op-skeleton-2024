@@ -44,12 +44,13 @@ try {
 
     //  ...
     if(!OP()->Env()->isAdmin() ){
-        throw new Exception();
+        echo "-1\n";
+        exit(__LINE__);
     }
 
     //  ...
-    if( false ){
-
+    if( $_GET['path'] ){
+        testcase();
     }else{
         file_list();
     }
@@ -112,4 +113,28 @@ function file_list()
 
     //  ...
     echo json_encode($result);
+}
+
+/** Do testcase.
+ *
+ *  @created    2023-04-24
+ */
+function testcase()
+{
+    //  ...
+    OP()->MIME('text/plain');
+    $path = OP()->Request('path');
+    $data = OP()->GetTemplate($path);
+
+    //  ...
+    if( OP()->Notice()->Has() ){
+        echo "{$path}\n\n{$data}\n";
+    }else{
+        echo "1\n";
+    }
+
+    //  ...
+    if( OP()->Request('display') ){
+        echo $data;
+    }
 }
