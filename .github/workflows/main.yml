@@ -60,6 +60,9 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: apcu
 
+      - name: Boot PHP Built-in Server
+        run: php -S localhost:8000 testcase.php &
+
       - name: Bootstrap module test
         run: php app.php
 
