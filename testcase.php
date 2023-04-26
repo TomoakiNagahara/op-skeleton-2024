@@ -24,11 +24,6 @@ declare(strict_types=1);
  */
 namespace OP;
 
-/** use
- *
- */
-use Exception;
-
 /** Execute time.
  *
  */
