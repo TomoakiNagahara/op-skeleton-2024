@@ -25,9 +25,9 @@
 
 ## Download & Start up
 
- 1. Download: `git clone --recurse-submodules https://github.com/onepiece-framework/op-app-skeleton-2022.git 2022`
+ 1. Download: `git clone https://github.com/onepiece-framework/op-app-skeleton-2022.git 2022`
  2. Change directory: `cd 2022`
- 3. Do following command: `git submodule foreach git checkout 2022`
+ 3. Do following command: `sh asset/git/submodule/init.sh`
  4. Start up at PHP Built-in WebServer: `php -S localhost:8000 app.php`
  5. Access via the browser: `http://localhost:8000`
 
