@@ -47,6 +47,9 @@ http {
         #   Application root
         location <?= $app_root ?> {
             #   Inside location at location
+            location ~ \.php$ {
+                try_files   null    @app-skeleton;
+            }
 
             #   Inaccessible pages
             location ~ ([^\w]\.ht<?php if( isset($asset_url) ): ?>>|<?= $asset_url ?><?php endif; ?>) {
