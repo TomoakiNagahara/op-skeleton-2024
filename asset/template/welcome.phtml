@@ -1,10 +1,9 @@
 <?php
-/**
- * app-skeleton-2020-nep:/asset/template/welcome.phtml
+/** app-skeleton-2020:/asset/template/welcome.phtml
  *
  * @created   2017-07-28
  * @version   1.0
- * @package   app-skeleton-2019-nep
+ * @package   app-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -52,8 +51,8 @@ if( strpos($asset_root, $app_root) === 0 ){
 	</p>
 	<h3>The "NEW WORLD" is a new world.</h3>
 	<p>
-		For example, you can easily find the file of the End-Point.
-		Please try to find the running file from the URL of this page.
+		For example, You can easily find the "index.php" file showing this page.
+		Please try to find the "index.php" file from the URL of this page.
 		It should be easy to find.
 		Was it intuitive?
 		You found it right away, right?
@@ -66,10 +65,9 @@ if( strpos($asset_root, $app_root) === 0 ){
 	<section class="float left">
 		<h3>Feature</h3>
 		<ul>
-			<li><a href="example/">End-Point</a></li>
-			<li><a href="example/html_pass_through.html">Html pass through</a></li>
-			<li>Template files are located in <code>asset/template</code>.</li>
-			<li>Layout files are located in <code>asset/layout</code>.</li>
+			<li><a href="<?= OP()->MetaToURL('app:/example/') ?>">Hierarchical controller - About So-called "End-Point"</a></li>
+			<li><a href="<?= OP()->MetaToURL('app:/example/html_pass_through.html') ?>">Html pass through</a></li>
+			<li><a href="<?= OP()->MetaToURL('app:/example/layout_and_template.html') ?>">Separation of layouts and templates</a></li>
 		</ul>
 	</section>
 	<br class="float clear both"/>
