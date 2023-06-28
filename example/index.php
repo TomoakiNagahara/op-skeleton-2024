@@ -19,4 +19,4 @@ declare(strict_types=1);
 namespace OP;
 
 //	Include template file.
-OP::Template('index.phtml');
+OP()->Template('index.phtml');
