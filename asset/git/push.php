@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/git/fetch.php
+/** op-app-skeleton-2020-nep:/asset/git/push.php
  *
  * <pre>
  * ```sh
- * php git.php asset/git/push.php remote=orign branch=master display=1 debug=0
+ * php git.php asset/git/push.php remote=origin display=1 debug=1
  * ```
  * </pre>
  *
@@ -23,6 +23,12 @@ declare(strict_types=1);
  *
  */
 namespace OP;
+
+//  ...
+if(!function_exists('OP') ){
+    echo "Usage: php git.php asset/git/push.php remote=origin display=1 debug=1\n";
+    exit(__LINE__);
+}
 
 //	...
 $display = OP::Request('display') ?? 1;
