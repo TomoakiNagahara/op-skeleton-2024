@@ -55,13 +55,21 @@ foreach( $configs as $config ){
 
 	//	...
 	$branch = $config['branch'] ?? 'master';
-    if( $git->Switch($branch) ){
-        exec("./cicd remote={$remote} branch={$branch}", $output, $status);
-        if( $status ){
-            echo join("\n", $output);
-        }
+
+    // ...
+    if(!$git->Switch($branch) ){
+        echo "Change branch was failed. ({$branch})\n";
+        continue;
     }
-//  $git->Push($remote, $branch, $force);
+
+    //  ...
+    exec("./cicd remote={$remote} branch={$branch}", $output, $status);
+    if( $status ){
+        echo join("\n", $output);
+    }
+
+    //  ...
+    $git->Push($remote, $branch, $force);
 }
 
 //	...
