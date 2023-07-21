@@ -3,7 +3,7 @@
  *
  * <pre>
  * ```sh
- * php git.php asset/git/remote/add.php config=.gitmodules name=upstream display=1 debug=0 test=1
+ * php git.php asset/git/submodule/remote/add.php  config=.gitmodules name=upstream display=1 debug=0 test=1
  * ```
  * </pre>
  *
@@ -23,6 +23,12 @@ declare(strict_types=1);
  *
  */
 namespace OP;
+
+//  ...
+if(!function_exists('OP') ){
+    echo "Usage: php git.php asset/git/submodule/remote/add.php config=.gitmodules name=upstream display=1 debug=0 test=1\n";
+    exit(__LINE__);
+}
 
 //	...
 $display = OP::Request('display') ?? 1;
