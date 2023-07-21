@@ -24,6 +24,12 @@ declare(strict_types=1);
  */
 namespace OP;
 
+//  ...
+if(!function_exists('OP') ){
+    echo "Usage: php git.php asset/git/push.php remote=origin display=1 debug=1\n";
+    exit(__LINE__);
+}
+
 //	...
 $display = OP::Request('display') ?? 1;
 $remote  = OP::Request('remote')  ?? 'origin';
