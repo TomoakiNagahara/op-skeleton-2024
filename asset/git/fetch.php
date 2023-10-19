@@ -32,17 +32,10 @@ if(!function_exists('OP') ){
 
 //	...
 $display = OP::Request('display') ?? 1;
-$remote  = OP::Request('remote')  ?? 'origin';
+$_remote = OP::Request('remote')  ?? 'origin';
 
 /* @var $git UNIT\Git */
 $git = OP::Unit('Git');
-
-//	...
-if( $remote === '\*' ){
-    $remotes = $git->Remote()->List();
-}else{
-    $remotes = [$remote];
-}
 
 //	...
 $configs = $git->SubmoduleConfig();
@@ -56,6 +49,13 @@ foreach( $configs as $config ){
 		throw new \Exception("chdir was failed. ({$meta}, {$path})");
 	}
 	if( $display ){ D("Change Directory: {$meta}"); }
+
+    //  ...
+    if( $_remote === '\*' ){
+        $remotes = $git->Remote()->List();
+    }else{
+        $remotes = [$_remote];
+    }
 
 	//	...
 	foreach( $remotes as $remote ){
@@ -71,6 +71,13 @@ if(!chdir($path) ){
 	throw new \Exception("chdir was failed. ({$meta}, {$path})");
 }
 if( $display ){ D("Change Directory: {$meta}"); }
+
+//  ...
+if( $_remote === '\*' ){
+    $remotes = $git->Remote()->List();
+}else{
+    $remotes = [$_remote];
+}
 
 //	...
 foreach( $remotes as $remote ){
