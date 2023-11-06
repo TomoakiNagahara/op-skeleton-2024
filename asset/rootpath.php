@@ -63,7 +63,7 @@ if( strpos($asset_root, realpath(dirname($doc_root))) === 0 ){
 
 //	Entry each root directory.
 RootPath('git'      , $git_root                 );
-RootPath('real'     , realpath($app_root)       );
+RootPath('real'     , realpath($git_root)       );
 RootPath('doc'      , $doc_root                 );
 RootPath('app'      , $app_root                 );
 RootPath('asset'    , $asset_root               );
