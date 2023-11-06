@@ -42,7 +42,7 @@ try {
 		//	Include file into closure.
 		if( file_exists($file) ){
 			call_user_func(function($file){
-				require_once($file);
+				include($file);
 			}, $file);
 		}
 	}
