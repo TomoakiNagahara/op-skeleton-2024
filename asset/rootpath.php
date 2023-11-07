@@ -53,6 +53,9 @@ switch( php_sapi_name() ){
 		break;
 }
 
+//  App root
+$app_root = $_SERVER['APP_ROOT'];
+
 //	Document root
 $doc_root = $_SERVER['DOCUMENT_ROOT'];
 
