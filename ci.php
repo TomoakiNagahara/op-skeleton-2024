@@ -57,7 +57,10 @@ try {
 	echo "\n\n";
 	echo "Exception: ".$message."\n\n";
 	foreach( $e->getTrace() as $trace){
+        /*
 		echo ' * '.OP::DebugBacktraceToString($trace)."\n";
+        */
+	    echo ' * ' . DebugBacktrace::Numerator($trace) . "\n";
 	}
 	echo "\n";
 
