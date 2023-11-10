@@ -36,6 +36,7 @@ if( file_exists( $git_root = dirname(__DIR__).'/.git/' ) ){
 //	__DIR__ is real path. Not alias.
 $asset_root = __DIR__.'/';
 
+/*
 //	app root
 switch( php_sapi_name() ){
 	//	CLI
@@ -51,6 +52,46 @@ switch( php_sapi_name() ){
 	default:
 		$app_root = dirname($_SERVER['SCRIPT_FILENAME']);
 		break;
+}
+*/
+
+//  Branch per each SAPI.
+switch( $sapi = php_sapi_name() ){
+    //  Web Servers
+    case 'apache2handler':
+        //  App root.
+        if( empty($_SERVER['APP_ROOT']) ){
+            $_SERVER['APP_ROOT'] = dirname($_SERVER['SCRIPT_FILENAME']).'/';
+        }
+        break;
+
+        //  CLI
+    case 'cli':
+        //  App root.
+        if( empty($_SERVER['APP_ROOT']) ){
+            //  Get current directory.
+            $pwd = $_SERVER['PWD'];
+            do{
+                //  Find the directory where app.php file exists.
+                if( file_exists( $pwd . '/app.php' ) ){
+                    //  Found.
+                    break;
+                }
+                //  Trim to upper directory.
+                $pwd = dirname($pwd);
+            }while( $pwd !== '/' );
+            //  Assignment.
+            $_SERVER['APP_ROOT'] = $pwd;
+        }
+
+        //  Document root.
+        if( empty($_SERVER['DOCUMENT_ROOT']) ){
+            $_SERVER['DOCUMENT_ROOT'] = $_SERVER['APP_ROOT'];
+        }
+        break;
+
+    default:
+        exit("Undefined SAPI. ($sapi)");
 }
 
 //  App root
