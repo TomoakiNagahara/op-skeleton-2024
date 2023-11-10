@@ -24,6 +24,7 @@ namespace OP;
 $git = include(__DIR__.'/unit/git/include/search_path.php');
 $git_root = $git ? trim(`{$git} rev-parse --show-superproject-working-tree --show-toplevel | head -1`): '';
 */
+/*
 if( file_exists( $git_root = dirname(__DIR__).'/.git/' ) ){
 	$git_root = dirname($git_root);
 }else if( file_exists( $git_root = dirname($git_root).'/.git/' ) ){
@@ -32,6 +33,7 @@ if( file_exists( $git_root = dirname(__DIR__).'/.git/' ) ){
 	echo __FILE__.' #'.__LINE__;
 	exit(1);
 }
+*/
 
 //	__DIR__ is real path. Not alias.
 $asset_root = __DIR__.'/';
@@ -99,6 +101,15 @@ $app_root = $_SERVER['APP_ROOT'];
 
 //	Document root
 $doc_root = $_SERVER['DOCUMENT_ROOT'];
+
+//  Git root
+if( file_exists("{$app_root}/.git") ){
+    $git_root = $app_root;
+}else if( file_exists(dirname($app_root).'/.git') ){
+    $git_root = dirname($app_root);
+}else{
+    exit('Does not found .git directory.('.__FILE__.')');
+}
 
 //	Real path --> alias path
 if( strpos($asset_root, realpath(dirname($doc_root))) === 0 ){
