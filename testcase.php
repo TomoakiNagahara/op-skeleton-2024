@@ -34,6 +34,9 @@ $exit = 0;
 
 //  ...
 try {
+    //  Set app:/
+    $_SERVER['APP_ROOT'] = realpath(__DIR__).'/';
+
     //  ...
     include(__DIR__.'/asset/init.php');
 
