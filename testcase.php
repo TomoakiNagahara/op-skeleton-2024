@@ -43,6 +43,9 @@ try {
     //  ...
     if(!OP()->Env()->isAdmin() ){
         echo "-1\n";
+        if( OP()->Request('display') ){
+            echo "You are not admin.";
+        }
         exit(__LINE__);
     }
 
