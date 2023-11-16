@@ -15,4 +15,5 @@ BRANCH=${1:-2022}
 # git submodule init
 # git submodule update
 git submodule update --init --recursive
-git submodule foreach git checkout $BRANCH
+# git submodule foreach git checkout $BRANCH
+
