@@ -9,10 +9,10 @@
  #
 
 # Check command
-if !(which realpath >/dev/null 2>&1); then
-    echo "The following command is not installed: realpath";
-    exit 1;
-fi
+# if !(which realpath >/dev/null 2>&1); then
+#     echo "The following command is not installed: realpath";
+#     exit 1;
+# fi
 
 # user name
 USER_NAME=${1}
