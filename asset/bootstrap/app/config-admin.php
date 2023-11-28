@@ -14,8 +14,9 @@
 namespace OP;
 
 //	Check if set admin.
-if( Env::_ADMIN_IP_ and Env::_ADMIN_MAIL_ ){
-	return;
+$config = Config::Get('admin');
+if( isset($config[Env::_ADMIN_IP_]) and isset($config[Env::_ADMIN_MAIL_]) ){
+	return true;
 }
 
 //	Source file.
