@@ -66,11 +66,11 @@ foreach( $configs as $config ){
 
 	//	...
 	$branch = $config['branch'] ?? $git->Branch()->Main();
+	$follow = $config['follow'] ?? '';
 
 	//	...
-	$git->Save();
 	$git->Rebase($remote, $branch);
-	$git->Pop();
+	if( $follow ){ $git->Rebase($remote, $follow); }
 }
 
 //	Git root.
