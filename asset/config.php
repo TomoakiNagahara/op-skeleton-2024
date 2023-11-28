@@ -43,6 +43,7 @@ foreach( [Env::_ADMIN_IP_, Env::_ADMIN_MAIL_] as $key ){
 	if( empty($config[$key]) ){
 		//	...
 		if(!include(__DIR__.'/bootstrap/app/config-admin.phtml') ){
+            echo '<!-- '.__FILE__.' #'.__LINE__." --> \n";
 			exit(2);
 		}
 	}
