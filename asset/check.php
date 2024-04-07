@@ -66,6 +66,7 @@ switch( $webserver = strtolower(Env::WebServer()) ){
 		break;
 
 	case 'apache':
+	case 'apache2handler':
 	case 'nginx':
 		//	Checking rewrite setting.
         switch( $entry_point = basename($_SERVER['SCRIPT_FILENAME']) ){
