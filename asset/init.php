@@ -47,6 +47,9 @@ try {
 		}
 	}
 
+	//	...
+	unset($file);
+
 } catch ( \Throwable $e ){
 	//	...
 	if( RootPath() and class_exists('OP\Notice', true) ){
