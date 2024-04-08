@@ -19,6 +19,8 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
+if( _OP_APP_BRANCH_ < 2024 ){
+//	...
 foreach( glob('*.js') as $file ){
 	//	...
 	if( $file === 'index.js' ){
@@ -33,4 +35,30 @@ foreach( glob('*.js') as $file ){
 
 	//	...
 	echo OP::Template($file);
+}
+}else{
+	//	Get extension.
+	$extension = basename(__DIR__);
+
+	//	Set MIME from extension.
+	OP()->Env()->MIME($extension);
+
+	//	Get Layout name.
+	$layout = OP()->Request('layout') ?? OP()->Layout()->Name();
+
+	//	Set each layout default config.
+	if( $path   = OP()->MetaPath("asset:/layout/{$layout}/config.php") ){
+		$config = include( $path );
+		OP()->Config($layout, $config);
+	}
+
+	//	Set directories.
+	OP()->WebPack()->Auto("asset:/layout/{$layout}/{$extension}/");
+	OP()->WebPack()->Auto('./');
+	if( OP()->Env()->isAdmin() ){
+		OP()->WebPack()->Auto("asset:/webpack/{$extension}/");
+	}
+
+	//	Output codes.
+	OP()->WebPack()->Auto();
 }
