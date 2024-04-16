@@ -1,5 +1,5 @@
 <?php
-/** op-app-skeleton-2020:/asset/git/branch.php
+/** op-skeleton-2020:/asset/git/branch.php
  *
  * <pre>
  * ```sh
@@ -9,7 +9,7 @@
  *
  * @created    2023-11-30
  * @version    1.0
- * @package    op-app-skeleton-2020
+ * @package    op-skeleton-2020
  * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright  Tomoaki Nagahara All right reserved.
  */

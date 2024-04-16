@@ -1,17 +1,17 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/git/fetch.php
+/** op-skeleton-2020:/asset/git/fetch.php
  *
  * Git fetch main repository and submodule repositories.
  *
  * <pre>
  * ```sh
- * php git.php asset/git/fetch.php remote=orign display=1 debug=0
+ * php git.php asset/git/fetch.php remote=origin display=1 debug=0
  * ```
  * </pre>
  *
  * @created    2023-02-15
  * @version    1.0
- * @package    op-app-skeleton-2020-nep
+ * @package    op-skeleton-2020
  * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright  Tomoaki Nagahara All right reserved.
  */

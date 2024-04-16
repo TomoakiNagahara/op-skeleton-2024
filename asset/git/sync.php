@@ -1,5 +1,5 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/git/sync.php
+/** op-skeleton-2020:/asset/git/sync.php
  *
  * <pre>
  * ```sh
@@ -9,7 +9,7 @@
  *
  * @created    2023-07-21
  * @version    1.0
- * @package    op-app-skeleton-2020
+ * @package    op-skeleton-2020
  * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright  Tomoaki Nagahara All right reserved.
  */
@@ -35,7 +35,7 @@ $configs = $git->SubmoduleConfig();
 
 //  Loop each submodules.
 foreach( $configs as $config ){
-    //  Chnage directory.
+    //  Change directory.
     $meta = 'git:/'.$config['path'];
     $path = OP::MetaPath($meta);
     if(!chdir($path) ){
