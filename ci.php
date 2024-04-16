@@ -35,8 +35,11 @@ namespace OP;
  */
 define('_OP_APP_START_', microtime(true));
 
-//	...
-$exit = 0;
+/** CI AppID
+ *
+ * @created    2024-03-15
+ */
+define('_OP_APP_ID_CI_', 'CI');
 
 //	...
 try {
@@ -44,7 +47,7 @@ try {
 	include(__DIR__.'/asset/init.php');
 
 	//	...
-	Env::AppID('self-check');
+	Env::AppID( _OP_APP_ID_CI_ );
 
 	//	...
 	if(!OP::Unit('CI')->Auto() ){
@@ -54,16 +57,15 @@ try {
 } catch ( \Throwable $e ){
 	//	...
 	$message = $e->getMessage();
+	$file    = $e->getFile();
+	$line    = $e->getLine();
+	$file    = OP()->MetaPath($file);
 
 	//	...
-	echo "\n\n";
+	echo "\n";
 	echo "Exception: ".$message."\n\n";
-	foreach( $e->getTrace() as $trace){
-        /*
-		echo ' * '.OP::DebugBacktraceToString($trace)."\n";
-        */
-	    echo ' * ' . DebugBacktrace::Numerator($trace) . "\n";
-	}
+	echo "{$file} #{$line}\n";
+	DebugBacktrace::Auto($e->getTrace());
 	echo "\n";
 
 	//	...
@@ -71,4 +73,4 @@ try {
 }
 
 //	exit
-exit($exit);
+exit($exit ?? 0);
