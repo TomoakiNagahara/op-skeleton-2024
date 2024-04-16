@@ -1,7 +1,7 @@
 [submodule "asset/core"]
 	path = asset/core
 	url = https://github.com/onepiece-framework/op-core.git
-	branch = 2022
+	branch = 2024
 [submodule "webpack"]
 	path = webpack
 	url = https://github.com/onepiece-framework/op-module-webpack.git
