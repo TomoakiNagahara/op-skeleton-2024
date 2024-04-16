@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+echo 'asset/git/hooks/pre-commit'
+
+#	Get global hooks directory
+HOOKS_PATH=`git config --get --global core.hooksPath`
+
+#	Check if it is set
+if [ -z $HOOKS_PATH ]; then
+	exit
+fi
+
+#	Beginning of string is tilda?
+if [[ $HOOKS_PATH == "~"* ]]; then
+	HOOKS_PATH=$(echo "$HOOKS_PATH" | sed "s/^~//")
+fi
+
+#	Generate path
+HOOK="${HOME}${HOOKS_PATH}pre-commit"
+$HOOK
+
+#	Check if status
+if [ $? -ne 0 ]; then
+   exit 1
+fi

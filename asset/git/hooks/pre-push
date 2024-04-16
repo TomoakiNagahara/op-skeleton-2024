@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+#  Search ci.sh
+if [ -e "ci.sh" ]; then
+  SOURCE="ci.sh"
+elif [ -e ".ci.sh" ]; then
+  SOURCE=".ci.sh"
+else
+  echo "ci.sh does not exist."
+  echo `pwd`
+  exit 1
+fi
+
+#  Include ci.sh
+source $SOURCE
+
+#  Result
+if [ $? -ne 0 ]; then
+  exit 1
+fi
