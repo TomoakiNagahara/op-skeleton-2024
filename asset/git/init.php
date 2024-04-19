@@ -37,3 +37,6 @@ chdir($git_root);
 
 //	Set local hooks.
 `git config core.hooksPath assets/git/hooks/`;
+
+//	Set local hooks to submodules.
+`git config core.hooksPath assets/git/hooks/`;
