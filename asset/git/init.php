@@ -29,6 +29,9 @@ namespace OP;
 //	Get git root.
 $git_root = trim(`git rev-parse --show-toplevel`);
 
+//	Set hooks path.
+$hooks_path = "{$git_root}/assets/git/hooks/";
+
 //	Change directory to git root.
 chdir($git_root);
 
@@ -36,7 +39,7 @@ chdir($git_root);
 `git submodule update --init --recursive`;
 
 //	Set local hooks.
-`git config core.hooksPath assets/git/hooks/`;
+`git config core.hooksPath {$hooks_path}`;
 
 //	Set local hooks to submodules.
-`git config core.hooksPath assets/git/hooks/`;
+`git submodule foreach git config core.hooksPath {$hooks_path}`;
