@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+# hook-the-hooks
+GIT_ROOT=`git rev-parse --show-toplevel`
+HOOK_NAME=`basename $0`
+${GIT_ROOT}/asset/git/hooks/hook-the-hooks.sh ${HOOK_NAME}
+
+# Check if status
+if [ $? -ne 0 ]; then
+   exit 1
+fi
+
 #  Search ci.sh
 if [ -e "ci.sh" ]; then
   SOURCE="ci.sh"
@@ -12,7 +22,8 @@ else
 fi
 
 #  Include ci.sh
-source $SOURCE
+echo "execute --> $SOURCE"
+source "$SOURCE"
 
 #  Result
 if [ $? -ne 0 ]; then
