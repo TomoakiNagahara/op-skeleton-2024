@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+# hook-the-hooks
+GIT_ROOT=`git rev-parse --show-toplevel`
+HOOK_NAME=`basename $0`
+${GIT_ROOT}/asset/git/hooks/hook-the-hooks.sh ${HOOK_NAME}
+
+# Check if status
+if [ $? -ne 0 ]; then
+   exit 1
+fi
+
 exit 0
 
 #	Get global hooks directory
@@ -7,7 +17,7 @@ HOOKS_PATH=`git config --get --global core.hooksPath`
 
 #	Check if it is set
 if [ -z $HOOKS_PATH ]; then
-	exit
+	exit 0
 fi
 
 #	Beginning of string is tilda?
@@ -17,7 +27,8 @@ fi
 
 #	Generate path
 HOOK="${HOME}${HOOKS_PATH}pre-commit"
-$HOOK
+echo "Execute --> $HOOK";
+source "$HOOK"
 
 #	Check if status
 if [ $? -ne 0 ]; then
