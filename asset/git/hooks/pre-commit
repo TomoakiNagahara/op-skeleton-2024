@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-echo 'asset/git/hooks/pre-commit'
+
+exit 0
 
 #	Get global hooks directory
 HOOKS_PATH=`git config --get --global core.hooksPath`
