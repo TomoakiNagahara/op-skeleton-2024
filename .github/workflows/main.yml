@@ -35,7 +35,8 @@ jobs:
         # ACCOUNT: secrets.ACCOUNT
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      # v3 --> v4 @see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+      - uses: actions/checkout@v4
 
       # https://tech.fusic.co.jp/posts/2021-11-17-github-actions-cache/
       # - uses: actions/cache@v2
