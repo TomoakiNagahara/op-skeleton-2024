@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
+# Calc git root
+GIT_ROOT=`git rev-parse --show-superproject-working-tree`
+if [ -z "$GIT_ROOT" ]; then
+	GIT_ROOT=`git rev-parse --show-toplevel`
+fi
+
 # hook-the-hooks
-GIT_ROOT=`git rev-parse --show-toplevel`
 HOOK_NAME=`basename $0`
 ${GIT_ROOT}/asset/git/hooks/hook-the-hooks.sh ${HOOK_NAME}
 
