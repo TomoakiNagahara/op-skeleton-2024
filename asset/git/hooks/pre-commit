@@ -9,28 +9,3 @@ ${GIT_ROOT}/asset/git/hooks/hook-the-hooks.sh ${HOOK_NAME}
 if [ $? -ne 0 ]; then
    exit 1
 fi
-
-exit 0
-
-#	Get global hooks directory
-HOOKS_PATH=`git config --get --global core.hooksPath`
-
-#	Check if it is set
-if [ -z $HOOKS_PATH ]; then
-	exit 0
-fi
-
-#	Beginning of string is tilda?
-if [[ $HOOKS_PATH == "~"* ]]; then
-	HOOKS_PATH=$(echo "$HOOKS_PATH" | sed "s/^~//")
-fi
-
-#	Generate path
-HOOK="${HOME}${HOOKS_PATH}pre-commit"
-echo "Execute --> $HOOK";
-source "$HOOK"
-
-#	Check if status
-if [ $? -ne 0 ]; then
-   exit 1
-fi
