@@ -30,7 +30,7 @@ namespace OP;
 $git_root = trim(`git rev-parse --show-toplevel`);
 
 //	Set hooks path.
-$hooks_path = "{$git_root}/assets/git/hooks/";
+$hooks_path = "{$git_root}/asset/git/hooks/";
 
 //	Change directory to git root.
 chdir($git_root);
