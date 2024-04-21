@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/1668339/72398593-cb0d1900-3786-11ea-863c-418ff8d48f43.png"/>The onepice-framework app skeleton 2022
+<img src="https://user-images.githubusercontent.com/1668339/72398593-cb0d1900-3786-11ea-863c-418ff8d48f43.png"/>The onepice-framework app skeleton 2024
 ===
 
 <div class="margin bottom 1">
@@ -11,7 +11,7 @@
 ## 2022 had a big change!!
 
  The first is "OP()" function.
- "OP()" makes it easy to access the same functionality in any namespaces.
+ "OP()" makes it easy to access the same functionality in any namespace.
  For details, please refer to the following URL: `develop:/reference/core/OP`
 
  The second is "CI/CD".
@@ -25,9 +25,9 @@
 
 ## Download & Start up
 
- 1. Download: `git clone https://github.com/onepiece-framework/op-app-skeleton-2022.git 2022`
- 2. Change directory: `cd 2022`
- 3. Do following command: `sh asset/git/submodule/init.sh`
+ 1. Download: `git clone https://github.com/onepiece-framework/op-skeleton-2024.git 2024`
+ 2. Change directory: `cd 2024`
+ 3. Do following command: `php asset/git/init.php`
  4. Start up at PHP Built-in WebServer: `php -S localhost:8000 app.php`
  5. Access via the browser: `http://localhost:8000`
 
@@ -41,7 +41,7 @@
 
  * True MVC Completed
  * Intuitive file structure
- * Html pass through
+ * HTML pass through
 
 ## True MVC Completed
 
@@ -57,9 +57,9 @@
 
  You won't get lost.
 
-## What does "Html pass through" mean?
+## What does "HTML pass through" mean?
 
- "Html pass through" is directly output HTML.
+ "HTML pass through" is directly output HTML.
  Until now, Old style MVC is required an empty controller.
  The onepiece-framework's NEW WORLD is does not need a controller.
  Of course it will be doing layout.
@@ -71,10 +71,10 @@
 ## Microsoft Windows products is not support
 
  Our do not support a Microsoft Windows products.
- Because to keep clean sourse code.
+ Because to keep clean source code.
  But, Windows Subsystem for Linux should work probably.
 
-# 2022 to 2023
+# 2022 to 2024
 
  * asset:/config/op.php  > `_OP_APP_BRANCH_`
  * asset:/config/app.php > `title`
