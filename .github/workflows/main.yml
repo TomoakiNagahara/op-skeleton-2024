@@ -73,5 +73,5 @@ jobs:
         if: ${{ env.ACCOUNT != '' }}
       # run: echo '${{ env.ACCOUNT }}' # For debug
         run: sh asset/git/submodule/github.sh ${{ secrets.ACCOUNT }}
-      - run: sh asset/git/submodule/init.sh   2022
+      - run: php git.php asset/git/init.php
       - run: php ci.php display=1
