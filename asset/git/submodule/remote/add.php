@@ -1,5 +1,5 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/git/remote/add.php
+/** op-skeleton-2020:/asset/git/remote/add.php
  *
  * <pre>
  * ```sh
@@ -9,7 +9,7 @@
  *
  * @created    2023-02-13
  * @version    1.0
- * @package    op-app-skeleton-2020-nep
+ * @package    op-skeleton-2020
  * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright  Tomoaki Nagahara All right reserved.
  */
