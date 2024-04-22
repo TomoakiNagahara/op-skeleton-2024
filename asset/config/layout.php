@@ -1,17 +1,15 @@
 <?php
-/**
- * app-skeleton-2020-nep:/asset/config/layout.php
+/** op-skeleton-2020:/asset/config/layout.php
  *
  * @created   2019-02-22
  * @version   1.0
- * @package   app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
 /** namespace
  *
- * @created   2019-02-22
  */
 namespace OP;
 
@@ -22,6 +20,6 @@ namespace OP;
  */
 return [
 	'execute'   =>  true,
-	'name'      => 'white',
+	'name'      => 'flexbox',
 	'darkmode'  =>  true,
 ];
