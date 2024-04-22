@@ -3,7 +3,10 @@
 
 <div class="margin bottom 1">
   <img src="https://img.shields.io/badge/PHP-7.0_higher-brightgreen" alt="php7.0 higher"/>
+  <img src="https://www.php.net/images/php8/logo_php8.svg"   alt="php8"   height="22" width="60"/>
+  <img src="https://www.php.net/images/php8/logo_php8_1.svg" alt="php8.1" height="22" width="60"/>
   <img src="https://www.php.net/images/php8/logo_php8_2.svg" alt="php8.2" height="22" width="60"/>
+  <img src="https://www.php.net/images/php8/logo_php8_3.svg" alt="php8.3" height="22" width="60"/>
 </div>
 
 # The "onepiece-framework" is insanely great!!
