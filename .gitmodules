@@ -62,3 +62,7 @@
 	path = asset/webpack/js
 	url = https://github.com/onepiece-framework/op-webpack-js.git
 	branch = 2022
+[submodule "asset/layout/flexbox"]
+	path = asset/layout/flexbox
+	url = https://github.com/onepiece-framework/op-layout-flexbox.git
+	branch = 2022
