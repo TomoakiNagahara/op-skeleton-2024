@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/config/env.php
+/** op-skeleton-2020:/asset/config/env.php
  *
  * @created   2022-10-18
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -12,8 +12,10 @@
  *
  * @return    array        $config
  */
-$config = [
+return [
+	'locale' => [
+		'country'  => 'us',
+		'language' => 'en',
+		'separate' => ':',
+	]
 ];
-
-//	...
-return $config;
