@@ -13,9 +13,6 @@
  * @return    array        $config
  */
 $config = [
-	'testcase' => [
-		'port' => '8000',
-	],
 ];
 
 //	...
