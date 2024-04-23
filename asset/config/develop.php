@@ -12,7 +12,7 @@
  *
  */
 $config = [
-	'layout' => 'white',
+	'layout' => 'flexbox',
 ];
 
 //	...
