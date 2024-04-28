@@ -23,8 +23,8 @@ use OP\UNIT\App;
 
 //	...
 $app_root= ConvertURL('app:/');
-$charset = Env::Get('app')   ['charset'] ?? 'utf-8';
-$layout  = Env::Get('layout')['name']    ??  null;
+$charset = Config::Get('app')   ['charset'] ?? 'utf-8';
+$layout  = Config::Get('layout')['name']    ??  null;
 
 ?>
 	<!-- Charset -->
