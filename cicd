@@ -31,12 +31,16 @@ $argv2 = $_SERVER['argv'][2] ?? '';
 $argv3 = $_SERVER['argv'][3] ?? '';
 $argv4 = $_SERVER['argv'][4] ?? '';
 $argv5 = $_SERVER['argv'][5] ?? '';
+$argv6 = $_SERVER['argv'][6] ?? '';
+$argv7 = $_SERVER['argv'][7] ?? '';
+$argv8 = $_SERVER['argv'][8] ?? '';
+$argv9 = $_SERVER['argv'][9] ?? '';
 
 //  ...
 foreach( ['ci','cd'] as $cicd ){
     $output = null;
     $status = null;
-    $comand = "{$php} {$cicd}.php {$argv1} {$argv2} {$argv3} {$argv4} {$argv5}";
+    $comand = "{$php} {$cicd}.php {$argv1} {$argv2} {$argv3} {$argv4} {$argv5} {$argv6} {$argv7} {$argv8} {$argv9}";
     exec($comand, $output, $status);
     //  ...
     if( $output ){
