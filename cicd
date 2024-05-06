@@ -38,6 +38,17 @@ $argv9 = $_SERVER['argv'][9] ?? '';
 
 //  ...
 foreach( ['ci','cd'] as $cicd ){
+	//	...
+	if(!file_exists("{$cicd}.php") ){
+		if( file_exists(".{$cicd}.php") ){
+			$cicd = ".{$cicd}";
+		}else{
+			echo "File does not exists. ({$cicd})\n";
+			exit(__LINE__);
+		}
+	}
+
+	//	...
     $output = null;
     $status = null;
     $comand = "{$php} {$cicd}.php {$argv1} {$argv2} {$argv3} {$argv4} {$argv5} {$argv6} {$argv7} {$argv8} {$argv9}";
