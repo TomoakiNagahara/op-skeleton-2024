@@ -18,44 +18,8 @@ declare(strict_types=1);
  */
 namespace OP;
 
-
-//	Git root.
-/* Does not work linux.
-$git = include(__DIR__.'/unit/git/include/search_path.php');
-$git_root = $git ? trim(`{$git} rev-parse --show-superproject-working-tree --show-toplevel | head -1`): '';
-*/
-/*
-if( file_exists( $git_root = dirname(__DIR__).'/.git/' ) ){
-	$git_root = dirname($git_root);
-}else if( file_exists( $git_root = dirname($git_root).'/.git/' ) ){
-	$git_root = dirname($git_root);
-}else{
-	echo __FILE__.' #'.__LINE__;
-	exit(1);
-}
-*/
-
 //	__DIR__ is real path. Not alias.
 $asset_root = __DIR__.'/';
-
-/*
-//	app root
-switch( php_sapi_name() ){
-	//	CLI
-	case 'cli':
-		$app_root = dirname(realpath($_SERVER['SCRIPT_FILENAME']));
-		$_SERVER['DOCUMENT_ROOT'] = $app_root;
-		break;
-
-	case 'cli-server':
-		$app_root = $_SERVER['DOCUMENT_ROOT'];
-		break;
-
-	default:
-		$app_root = dirname($_SERVER['SCRIPT_FILENAME']);
-		break;
-}
-*/
 
 //  Branch per each SAPI.
 switch( $sapi = php_sapi_name() ){
