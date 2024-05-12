@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/app.php
+/** op-skeleton-2020:/asset/app.php
  *
  * @created   2018-03-27
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -20,8 +20,8 @@ try {
 	 *
 	 * @created   2016-11-22   Creation config.php at app-skeleton.
 	 * @updated   2017-??-??   Generate _config.php at app-skeleton2.
-	 * @updated   2019-12-16   Rebirth by app-skeleton-2020-nep.
-	 * @moved     2019-12-27   app-skeleton-2020-nep:/app.php --> asset/app.php
+	 * @updated   2019-12-16   Rebirth by app-skeleton-2020.
+	 * @moved     2019-12-27   app-skeleton-2020:/app.php --> asset/app.php
 	 * @moved     2022-10-30   bootstrap.php | Initialize onepiece-framework application.
 	 * @added     2022-10-30   rootpath.php  | Set meta root path file.
 	 * @added     2022-12-17   check.php     | Check php module install and apache setting.
