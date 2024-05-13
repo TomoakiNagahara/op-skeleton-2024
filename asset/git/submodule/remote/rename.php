@@ -1,15 +1,21 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/git/remote/upstream.php
+/** op-skeleton-2020:/asset/git/remote/rename.php
+ *
+ *  Rename remote name to all submodules.
  *
  * <pre>
+ * config : Specify the .gitmodules file to reference.
+ * from   : Specify which remote name to change.
+ * to     : Specify the remote name to change.
+ * test   : Specify 1 explicitly to execute.
  * ```sh
- * php git.php asset/git/remote/rename.php config=.gitmodules from=orign to=upstream display=1 debug=0 test=1
+ * php git.php asset/git/remote/rename.php config=.gitmodules from=origin to=upstream display=1 debug=0 test=1
  * ```
  * </pre>
  *
  * @created    2023-02-13
  * @version    1.0
- * @package    op-app-skeleton-2020-nep
+ * @package    op-skeleton-2020
  * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright  Tomoaki Nagahara All right reserved.
  */
