@@ -1,9 +1,14 @@
 <?php
 /** op-skeleton-2020:/asset/git/remote/add.php
  *
+ *  Add remote to all submodules.
+ *
  * <pre>
+ * config : Specify the .gitmodules file to reference.
+ * name   : Specify the remote name to add.
+ * test   : Specify 1 explicitly to execute.
  * ```sh
- * php git.php asset/git/submodule/remote/add.php  config=.gitmodules name=upstream display=1 debug=0 test=1
+ * php git.php asset/git/submodule/remote/add.php config=.gitmodules name=upstream display=1 debug=0 test=1
  * ```
  * </pre>
  *
