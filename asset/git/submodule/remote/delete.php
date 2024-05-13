@@ -1,15 +1,15 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/git/remote/add.php
+/** op-skeleton-2020:/asset/git/remote/delete.php
  *
  * <pre>
  * ```sh
- * php git.php asset/git/submodule/remote/delete.php  config=.gitmodules name=upstream display=1 debug=0 test=1
+ * php git.php asset/git/submodule/remote/delete.php config=.gitmodules name=upstream display=1 debug=0 test=1
  * ```
  * </pre>
  *
  * @created    2023-02-13
  * @version    1.0
- * @package    op-app-skeleton-2020-nep
+ * @package    op-skeleton-2020
  * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright  Tomoaki Nagahara All right reserved.
  */
