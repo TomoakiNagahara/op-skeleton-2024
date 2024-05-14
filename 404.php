@@ -28,7 +28,7 @@ if( date('m', Env::Time()) == '10' ){
 OP::Template($path);
 
 //	404 Error notice.
-if( Config::Get('notfound')['execute'] ?? null ){
+if( Unit::isInstalled('NotFound') ){
 	Unit('NotFound')->Auto();
 }else{
 	//	...
