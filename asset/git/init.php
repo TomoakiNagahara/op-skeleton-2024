@@ -43,3 +43,8 @@ chdir($git_root);
 
 //	Set local hooks to submodules.
 `git submodule foreach git config core.hooksPath {$hooks_path}`;
+
+//	Switch main branch.
+/* @var $name     string */
+/* @var $branch   string */
+`git submodule foreach 'branch=$(git config -f .gitmodules submodule.$name.branch); git checkout $branch;'`;
