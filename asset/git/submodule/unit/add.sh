@@ -10,9 +10,10 @@
 
 # branch name
 UNIT=${1}
+unit=$(echo "$UNIT" | tr 'A-Z' 'a-z')
 BRANCH=${2:-2022}
-URL=https://github.com/onepiece-framework/op-unit-$UNIT.git
-PATH=asset/unit/$UNIT
+URL=https://github.com/onepiece-framework/op-unit-$unit.git
+PATH=asset/unit/$unit
 
 # Validation
 if [ -z "$UNIT" ]; then
