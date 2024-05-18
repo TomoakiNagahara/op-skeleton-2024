@@ -13,7 +13,7 @@ UNIT=${1}
 unit=$(echo "$UNIT" | tr 'A-Z' 'a-z')
 BRANCH=${2:-2022}
 URL=https://github.com/onepiece-framework/op-unit-$unit.git
-PATH=asset/unit/$unit
+DIR=asset/unit/$unit
 
 # Validation
 if [ -z "$UNIT" ]; then
@@ -23,7 +23,7 @@ fi
 
 # Add git submodule
 #`git submodule add      $URL $PATH`
-echo "git submodule add -b $BRANCH $URL $PATH"
+git submodule add --force -b $BRANCH $URL $DIR
 #echo "git submodule init     $PATH"
 #echo "git submodule update   $PATH"
 #echo "git submodule checkout $BRANCH"
