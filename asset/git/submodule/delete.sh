@@ -18,8 +18,8 @@ if [ -z "$PATH" ]; then
 fi
 
 # Do
-git stash save
+#git stash save
 git submodule deinit $DIR
 git rm $DIR
 rm -rf .git/modules/$DIR
-git stash pop
+#git stash pop
