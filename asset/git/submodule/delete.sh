@@ -9,7 +9,7 @@
  #
 
 # path
-PATH=${1}
+DIR=${1}
 
 # Check path.
 if [ -z "$PATH" ]; then
@@ -19,7 +19,7 @@ fi
 
 # Do
 git stash save
-git submodule deinit $PATH
-git rm $PATH
-rm -rf .git/modules/$PATH
+git submodule deinit $DIR
+git rm $DIR
+rm -rf .git/modules/$DIR
 git stash pop
