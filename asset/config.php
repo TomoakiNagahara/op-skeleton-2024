@@ -30,7 +30,7 @@ Env::AppID($app_id);
 
 //	ci.php or git.php is skip.
 $basename = basename($_SERVER['SCRIPT_NAME']);
-if( $basename === 'ci.php' or $basename === 'git.php' ){
+if( /* $basename === 'ci.php' or */ $basename === 'git.php' ){
 	return;
 }
 
