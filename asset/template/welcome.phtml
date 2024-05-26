@@ -65,9 +65,9 @@ if( strpos($asset_root, $app_root) === 0 ){
 	<section class="float left">
 		<h3>Feature</h3>
 		<ul>
-			<li><a href="<?= OP()->MetaToURL('app:/example/') ?>">Hierarchical controller - About So-called "End-Point"</a></li>
-			<li><a href="<?= OP()->MetaToURL('app:/example/html_pass_through.html') ?>">Html pass through</a></li>
-			<li><a href="<?= OP()->MetaToURL('app:/example/layout_and_template.html') ?>">Separation of layouts and templates</a></li>
+			<li><a href="<?= OP()->MetaPath('app:/example/', 1) ?>">Hierarchical controller - About So-called "End-Point"</a></li>
+			<li><a href="<?= OP()->MetaPath('app:/example/html_pass_through.html', 1) ?>">Html pass through</a></li>
+			<li><a href="<?= OP()->MetaPath('app:/example/layout_and_template.html', 1) ?>">Separation of layouts and templates</a></li>
 		</ul>
 	</section>
 	<br class="float clear both"/>
