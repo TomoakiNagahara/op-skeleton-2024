@@ -47,4 +47,4 @@ chdir($git_root);
 //	Switch main branch.
 /* @var $name     string */
 /* @var $branch   string */
-`git submodule foreach 'branch=$(git config -f .gitmodules submodule.$name.branch); git checkout $branch;'`;
+//`git submodule foreach 'branch=$(git config -f .gitmodules submodule.$name.branch); git checkout $branch;'`;
