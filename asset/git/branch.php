@@ -45,5 +45,5 @@ foreach( $configs as $config ){
 	//	...
 	chdir($git_root.$path);
 	//	...
-	$git->Switch($branch);
+	`git switch origin/{$branch} -b {$branch}`;
 }
