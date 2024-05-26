@@ -54,7 +54,7 @@ $layout  = Config::Get('layout')['name']    ??  null;
 	<!-- title -->
 	<title><?= App::Title() ?></title>
 
-	<?php if( Env::isAdmin() ): ?>
+	<?php if( Env::isAdmin() and false ): ?>
 	<?php
 	$hash_js  = Unit('WebPack')->FileContentHash('js');
 	$hash_css = Unit('WebPack')->FileContentHash('css');
