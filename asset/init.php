@@ -56,11 +56,14 @@ try {
 		Notice::Set($e);
 	}else{
 		echo $e->getMessage() . "<br/>\n";
+		/* op-core is not loading.
 		foreach( $e->getTrace() as $trace ){
 			echo include(__DIR__.'/include/DebugBacktraceToString.php')."<br/>\n";
 		}
 		return;
 		echo $trace; // For Eclipse notice.
+		*/
+		echo $e->getTraceAsString();
 	}
 	//	...
 	require('bootstrap/op/failed.phtml');
