@@ -48,3 +48,4 @@ chdir($git_root);
 /* @var $name     string */
 /* @var $branch   string */
 //`git submodule foreach 'branch=$(git config -f .gitmodules submodule.$name.branch); git checkout $branch;'`;
+`php git.php asset/git/branch.php`;
