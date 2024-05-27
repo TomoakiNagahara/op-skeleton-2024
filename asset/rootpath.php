@@ -24,7 +24,11 @@ $asset_root = __DIR__.'/';
 //  Branch per each SAPI.
 switch( $sapi = php_sapi_name() ){
     //  Web Servers
-	case 'cli-server':
+	case 'cli-server': // PHP Built-in Server
+		$_SERVER['APP_ROOT']      = dirname($_SERVER['SCRIPT_FILENAME']);
+		$_SERVER['DOCUMENT_ROOT'] = dirname($_SERVER['SCRIPT_FILENAME']);
+		break;
+
     case 'fpm-fcgi':
     case 'apache2handler':
         //  App root.
