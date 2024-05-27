@@ -20,7 +20,7 @@ $c1 = 'cd '.dirname($_SERVER['SCRIPT_FILENAME']);
 $c2 = 'sh ./asset/git/submodule/init.sh ' . _OP_APP_BRANCH_;
 
 //	...
-if( basename($_SERVER['SCRIPT_FILENAME']) === 'ci.php' ){
+if( Env::isCI() ){
 	echo '0' . PHP_EOL;
 	echo $c1 . PHP_EOL;
 	echo $c2 . PHP_EOL;
