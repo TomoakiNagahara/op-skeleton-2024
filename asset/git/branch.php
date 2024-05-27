@@ -42,8 +42,14 @@ foreach( $configs as $config ){
 	//	...
 	$path   = $config['path'];
 	$branch = $config['branch'];
+
 	//	...
 	chdir($git_root.$path);
+
 	//	...
-	`git checkout origin/{$branch} -b {$branch}`;
+	if( false === array_search($branch, $git->Branch()->List()) ){
+		`git checkout origin/{$branch}`;
+	}else{
+		`git switch {$branch}`;
+	}
 }
