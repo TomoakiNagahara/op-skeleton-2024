@@ -52,7 +52,7 @@ try {
 
 } catch ( \Throwable $e ){
 	//	...
-	if( RootPath() and class_exists('OP\Notice', true) ){
+	if( function_exists('OP') ){
 		Notice::Set($e);
 	}else{
 		echo $e->getMessage() . "<br/>\n";
