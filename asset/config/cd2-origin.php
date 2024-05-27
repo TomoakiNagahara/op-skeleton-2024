@@ -27,7 +27,7 @@ $config['gitmodules']=[ // Which .gitmodules file.
 ];
 $config['display']   = '0';
 $config['debug']     = '0';
-$config['version']   = '74, 80, 81, 82'; // PHP version to inspect.
+$config['version']   = '74, 80, 81, 82, 83'; // PHP version to inspect.
 
 //	...
 return $config;
