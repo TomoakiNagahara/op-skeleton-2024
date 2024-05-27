@@ -1,9 +1,9 @@
 
- ## op-app-skeleton-2020-nep:/asset/git/submodule/init.sh
+ ## op-skeleton-2020:/asset/git/submodule/init.sh
  #
  # @created    ????
  # @version    1.0
- # @package    op-app-skeleton-2020-nep
+ # @package    op-skeleton-2020
  # @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  # @copyright  Tomoaki Nagahara All right reserved.
  #
@@ -16,4 +16,3 @@ BRANCH=${1:-2022}
 # git submodule update
 git submodule update --init --recursive
 # git submodule foreach git checkout $BRANCH
-
