@@ -13,8 +13,8 @@
 
 ## 2022 had a big change!!
 
- The first is "OP()" function.
- "OP()" makes it easy to access the same functionality in any namespace.
+ The first is `OP()` function.
+ `OP()` makes it easy to access the same functionality in any namespace.
  For details, please refer to the following URL: `develop:/reference/core/OP`
 
  The second is "CI/CD".
@@ -40,7 +40,7 @@
  Just type: `./cicd`
  If you need more information, please refer to the following URL: develop:/reference/core/CICD
 
-# The "NewWorld" is a new world!!
+# The "NEW WORLD" is a new world!!
 
  * True MVC Completed
  * Intuitive file structure
@@ -68,8 +68,6 @@
  Of course it will be doing layout.
 
 # Apology
-
- * Microsoft Windows products is not support
 
 ## Microsoft Windows products is not support
 
