@@ -25,8 +25,7 @@ $asset_root = __DIR__.'/';
 switch( $sapi = php_sapi_name() ){
     //  Web Servers
 	case 'cli-server': // PHP Built-in Server
-		$_SERVER['APP_ROOT']      = dirname($_SERVER['SCRIPT_FILENAME']);
-		$_SERVER['DOCUMENT_ROOT'] = dirname($_SERVER['SCRIPT_FILENAME']);
+		$_SERVER['APP_ROOT'] = $_SERVER['DOCUMENT_ROOT'];
 		break;
 
     case 'fpm-fcgi':
