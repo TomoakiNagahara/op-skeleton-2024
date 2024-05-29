@@ -32,7 +32,7 @@ namespace OP;
 	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/foo'     , true)?>">./another/foo</a></li>
 	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/bar'     , true)?>">./another/bar</a></li>
 	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/foo/bar' , true)?>">./another/bar</a></li>
-	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/xss/<script>alert(1)</script>', true)?>">./another/xss</a></li>
+	<li><a href="<?= OP::MetaPath('app:/example/sub-directory/another/xss/<script>alert(1)<&#x2F;script>', true)?>">./another/xss</a></li>
 </ul>
 <hr/>
 <h2>Passed Smart URL arguments</h2>
@@ -49,6 +49,7 @@ foreach( $passed_smart_url_args as $arg ){
 	if( $arg === 'xss' ){
 		$xss = true;
 	}else if( $xss ?? null ){
+		D($arg);
 		echo $arg;
 	}
 }
