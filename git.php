@@ -1,5 +1,5 @@
 <?php
-/** op-app-skeleton-2020-nep:/git.php
+/** op-skeleton-2020:/git.php
  *
  # <pre>
  # How to use: `php git.php asset/git/remote.php`
@@ -7,7 +7,7 @@
  #
  * @created    2023-02-13
  * @version    1.0
- * @package    op-app-skeleton-2020-nep
+ * @package    op-skeleton-2020
  * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright  Tomoaki Nagahara All right reserved.
  */

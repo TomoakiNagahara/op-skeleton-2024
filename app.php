@@ -1,11 +1,11 @@
 <?php
-/** op-app-skeleton-2020-nep:/app.php
+/** op-skeleton-2020:/app.php
  *
  * @created   2014-02-24
  * @updated   2016-11-22
  * @updated   2019-11-18
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
