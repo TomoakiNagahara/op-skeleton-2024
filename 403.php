@@ -13,4 +13,4 @@
 $path = '403_forbidden.phtml';
 
 //	...
-$app->Template($path);
+OP()->Template($path);
