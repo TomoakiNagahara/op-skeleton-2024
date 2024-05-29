@@ -1,1 +1,2 @@
-<?php echo 'html-pass-through!!' ?>
+This is plain text.
+<?= 'Can execute PHP!' ?>
