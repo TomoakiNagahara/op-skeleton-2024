@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/js/index.php
+/** op-skeleton-2020:/js/index.php
  *
  * @created   2023-01-22
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -55,9 +55,12 @@ foreach( glob('*.js') as $file ){
 	//	Set directories.
 	OP()->WebPack()->Auto("asset:/layout/{$layout}/{$extension}/");
 	OP()->WebPack()->Auto('./');
+
+	/*
 	if( OP()->Env()->isAdmin() ){
 		OP()->WebPack()->Auto("asset:/webpack/{$extension}/");
 	}
+	*/
 
 	//	Output codes.
 	OP()->WebPack()->Auto();
