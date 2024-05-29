@@ -19,8 +19,8 @@ $charset = Config::Get('html')  ['charset'] ?? 'utf-8';
 $layout  = Config::Get('layout')['name']    ??  null;
 
 //	...
-$hash_js  = Unit('WebPack')->FileContentHash('js');
-$hash_css = Unit('WebPack')->FileContentHash('css');
+$hash_js  = Unit('WebPack')->Hash('js');
+$hash_css = Unit('WebPack')->Hash('css');
 ?>
 	<!-- Charset -->
 	<meta charset="<?= $charset ?>" />
