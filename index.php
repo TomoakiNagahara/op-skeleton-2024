@@ -56,4 +56,5 @@ if( empty($args) ){
 }
 
 //	...
+OP()->WebPack()->Auto("asset:/webpack/js/");
 OP()->WebPack()->Auto("asset:/webpack/css/");
