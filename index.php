@@ -54,3 +54,6 @@ if( empty($args) ){
 	OP::Template('404.php');
 
 }
+
+//	...
+OP()->WebPack()->Auto("asset:/webpack/css/");
