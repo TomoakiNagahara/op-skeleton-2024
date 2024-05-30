@@ -1,10 +1,9 @@
 <?php
-/**
- * app-skeleton-2020-nep:/asset/template/layout/header.phtml
+/** op-skeleton-2020:/asset/template/layout/header.phtml
  *
  * @creation  2018-04-12
  * @version   1.0
- * @package   app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -15,8 +14,12 @@
  */
 namespace OP;
 
-/* @var $app UNIT\App */
+//	...
+if( Env::isAdmin() ){
+	echo '<!-- '.ConvertURL(__FILE__).' -->';
+}
+
 ?>
 <header>
-	<a href="<?= ConvertURL('app:/') ?>"><?= Env::Get('app')['title'] ?? 'TOP' ?></a>
+	<a href="<?= ConvertURL('app:/') ?>"><?= Config::Get('app')['title'] ?? 'TOP' ?></a>
 </header>
