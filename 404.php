@@ -14,9 +14,6 @@
  */
 namespace OP;
 
-/* @var $app     UNIT\App     */
-/* @var $webpack UNIT\WebPack */
-
 //	Change http status code.
 http_response_code(404);
 
