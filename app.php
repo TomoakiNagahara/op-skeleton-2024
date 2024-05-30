@@ -42,11 +42,9 @@ require('asset/init.php');
  * @moved     2019-12-12   asset:/app.php --> app:/app.php
  */
 try {
-	/* @var $app UNIT\App */
-	$app = Unit('App');
 
 	//	Launch application.
-	$app->Auto();
+	OP()->App()->Auto();
 
 } catch ( \Throwable $e ){
 	Notice::Set($e);
