@@ -60,13 +60,21 @@ if( 'app.php' !== basename($_SERVER['SCRIPT_FILENAME']) ){
 }
 */
 
+//	...
+$webserver = strtolower($_SERVER['SERVER_SOFTWARE'] ?? '');
+foreach( ['php','apache','nginx'] as $key ){
+	if( strpos($webserver, $key) === 0 ){
+		$webserver = $key;
+		break;
+	}
+}
+
 //	Branch to each server software.
-switch( $webserver = strtolower(Env::WebServer()) ){
+switch( $webserver ){
 	case 'php':
 		break;
 
 	case 'apache':
-	case 'apache2handler':
 	case 'nginx':
 		//	Checking rewrite setting.
         switch( $entry_point = basename($_SERVER['SCRIPT_FILENAME']) ){
