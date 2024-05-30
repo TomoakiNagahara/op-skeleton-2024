@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/testcase/Asset.php
+/** op-skeleton-2020:/asset/testcase/Asset.php
  *
  * @created   2023-01-08
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
