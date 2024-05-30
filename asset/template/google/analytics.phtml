@@ -1,10 +1,10 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/template/google/analytics.phtml
+/** op-skeleton-2020:/asset/template/google/analytics.phtml
  *
  * @created   2017-07-28
  * @updated   2019-04-03
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -15,19 +15,18 @@
  */
 namespace OP;
 
-/* @var $app UNIT\App */
-
-//	...
-if(!$tracking_id = Env::Get('google')['analytics']['id'] ?? null ){
-	echo '<!-- Google analytics tracking id is empty. -->'.PHP_EOL;
-	return;
-};
-
 //	...
 if( Env::isLocalhost() ){
 	echo '<!-- Google analytics tracking is skipped. (localhost) -->'.PHP_EOL;
 	return;
 }
+
+//	...
+if(!$tracking_id = Config::Get('google')['analytics']['id'] ?? null ){
+	echo '<!-- Google analytics tracking id is empty. -->'.PHP_EOL;
+	return;
+};
+
 ?>
 <!-- Google analytics -->
 <script>
@@ -41,8 +40,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create','<?= $tracking_id ?>','auto');
 ga('send','pageview');
 
-<?php /* user traccking */ ?>
-<? if( $user_id = $app->UserID() ): ?>
+<?php /* user tracking */ ?>
+<? if( $user_id = Cookie::UserID() ): ?>
 ga('set','&uid','<?= $user_id ?>');
 <? endif; ?>
 </script>
