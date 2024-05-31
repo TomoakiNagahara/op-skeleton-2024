@@ -17,9 +17,6 @@ namespace OP;
 /** use
  *
  */
-use OP\UNIT\App;
-
-/* @var $app UNIT\App */
 
 //	...
 $app_root= ConvertURL('app:/');
@@ -38,7 +35,7 @@ $layout  = Config::Get('layout')['name']    ??  null;
 	<meta name="format-detection"    content="telephone=no" />
 
 	<!-- Canonical -->
-	<link rel="canonical" href="<?= App::Canonical() ?>" />
+	<link rel="canonical" href="" />
 
 	<!-- Icon -->
 	<link type="image/x-icon" href="<?= "{$app_root}img/favicon.ico" ?>" rel="icon" />
@@ -52,7 +49,6 @@ $layout  = Config::Get('layout')['name']    ??  null;
 	<script type="text/javascript" src="<?= "{$app_root}js/index.js" ?>" defer></script>
 
 	<!-- title -->
-	<title><?= App::Title() ?></title>
 
 	<?php if( Env::isAdmin() and false ): ?>
 	<?php
@@ -63,3 +59,4 @@ $layout  = Config::Get('layout')['name']    ??  null;
 	<link type="text/css" href="<?= "{$app_root}webpack/css/?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
 	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
 	<?php endif; ?>
+	<title><?= OP()->App()->Title() ?></title>
