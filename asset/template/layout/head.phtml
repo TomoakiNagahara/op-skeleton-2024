@@ -18,6 +18,9 @@ $app_root= ConvertURL('app:/');
 $charset = Config::Get('html')  ['charset'] ?? 'utf-8';
 $layout  = Config::Get('layout')['name']    ??  null;
 
+//	...
+$hash_js  = Unit('WebPack')->FileContentHash('js');
+$hash_css = Unit('WebPack')->FileContentHash('css');
 ?>
 	<!-- Charset -->
 	<meta charset="<?= $charset ?>" />
@@ -38,10 +41,10 @@ $layout  = Config::Get('layout')['name']    ??  null;
 	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>"    rel="apple-touch-icon-precomposed" />
 
 	<!-- Stylesheet -->
-	<link type="text/css" href="<?= "{$app_root}css/index.css" ?>" rel="stylesheet">
+	<link type="text/css" href="<?= "{$app_root}css/index.css?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
 
 	<!-- JavaScript -->
-	<script type="text/javascript" src="<?= "{$app_root}js/index.js" ?>" defer></script>
+	<script type="text/javascript" src="<?= "{$app_root}js/index.js?layout={$layout}&hash={$hash_js}" ?>" defer></script>
 
 	<!-- title -->
 	<title><?= OP()->App()->Title() ?></title>
