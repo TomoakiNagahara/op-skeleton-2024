@@ -44,14 +44,4 @@ $layout  = Config::Get('layout')['name']    ??  null;
 	<script type="text/javascript" src="<?= "{$app_root}js/index.js" ?>" defer></script>
 
 	<!-- title -->
-
-	<?php if( Env::isAdmin() and false ): ?>
-	<?php
-	$hash_js  = Unit('WebPack')->FileContentHash('js');
-	$hash_css = Unit('WebPack')->FileContentHash('css');
-	?>
-	<!-- isAdmin -->
-	<link type="text/css" href="<?= "{$app_root}webpack/css/?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
-	<script type="text/javascript" src="<?= "{$app_root}webpack/js/?layout={$layout}&hash={$hash_js}" ?>" defer></script>
-	<?php endif; ?>
 	<title><?= OP()->App()->Title() ?></title>
