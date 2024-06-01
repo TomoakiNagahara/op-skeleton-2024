@@ -56,12 +56,6 @@ foreach( glob('*.js') as $file ){
 	OP()->WebPack()->Auto("asset:/layout/{$layout}/{$extension}/");
 	OP()->WebPack()->Auto('./');
 
-	/*
-	if( OP()->Env()->isAdmin() ){
-		OP()->WebPack()->Auto("asset:/webpack/{$extension}/");
-	}
-	*/
-
 	//	Output codes.
 	OP()->WebPack()->Auto();
 }
