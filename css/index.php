@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/css/index.php
+/** op-skeleton-2020:/css/index.php
  *
  * @created   2023-01-22
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
@@ -17,8 +17,6 @@ declare(strict_types=1);
  *
  */
 namespace OP;
-
-//echo "Could load index.php\n*/\n";
 
 //	...
 if( _OP_APP_BRANCH_ < 2024 ){
@@ -64,5 +62,3 @@ foreach( glob('*.css') as $file ){
 	//	Output codes.
 	OP()->WebPack()->Auto();
 }
-
-//echo "\n/*\nFinish index.php\n";
