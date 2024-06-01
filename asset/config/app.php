@@ -24,7 +24,7 @@ namespace OP;
  * @return    array        $config
  */
 return [
-	'title'     => 'onepiece-framework app skeleton 2020',
+	'title'     => 'The onepiece-framework app skeleton '._OP_APP_BRANCH_,
 	'copyright' => 'Copyright 2009 All right reserved.',
 	'app.phtml' =>  Env::isAdmin() ? true: false,
 ];
