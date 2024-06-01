@@ -25,7 +25,4 @@ namespace OP;
 return [
 	'lang' => 'en',
 	'charset' => 'utf-8',
-	'head' => [
-		'title' => 'The onepiece-framework app skeleton '._OP_APP_BRANCH_,
-	],
 ];
