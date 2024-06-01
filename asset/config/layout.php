@@ -21,5 +21,4 @@ namespace OP;
 return [
 	'execute'   =>  true,
 	'name'      => 'flexbox',
-	'darkmode'  =>  true,
 ];
