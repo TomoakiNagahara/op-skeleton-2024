@@ -18,14 +18,6 @@ declare(strict_types=1);
  */
 namespace OP;
 
-/** Overwrite to X-Powered-By.
- *
- * @created   2023-01-20
- */
-if( Env::isHttp() ){
-	header("X-Powered-By: The onepiece-framework", true);
-}
-
 /** Return config array.
  *
  * @created   2019-12-12
