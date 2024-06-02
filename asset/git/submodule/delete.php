@@ -42,13 +42,13 @@ if(!file_exists($path) ){
 	exit(__LINE__);
 }
 
-//	Backup and Recovery original .gitmodules file.
-`mv .gitmodules _gitmodules`;
-`git checkout .gitmodules`;
+//	Recovery original .gitmodules file.
+`git stash save`;
+
 //	Uninstall submodule.
 `git submodule deinit {$path}`;
 `git rm {$path}`;
 `rm -rf .git/modules/{$path}`;
+
 //	Recovery backup .gitmodules file.
-`rm .gitmodules`;
-`mv _gitmodules .gitmodules`;
+`git stash pop`;
