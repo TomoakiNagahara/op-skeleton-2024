@@ -69,6 +69,10 @@
 
 # Apology
 
+## UTF-8 only
+
+ Only UTF-8 is supported.
+
 ## Microsoft Windows products is not support
 
  Our do not support a Microsoft Windows products.
