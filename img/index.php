@@ -13,22 +13,22 @@
  */
 namespace OP;
 
+//	Layout is off.
+OP::Layout(false);
+
 //	Get "SmartURL" Arguments.
 $args = Unit('Router')->Args();
 
-//	Get file name.
-$file = $args[0] ?? '404';
-
-//	Support default status image.
-if( $file === '403' or $file === '404' ){
-	$file .= '.png'; // Add file extension.
+//	Generate file path.
+if(!$file = join('/', $args) ){
+	$file = '404.png';
 }
 
 //	Get Layout name.
 $layout = Config::Get('layout')['name'] ?? null;
 
 //	Check layout img directory.
-if( file_exists( $path = OP::MetaRoot('asset') . "layout/$layout/img/$file" ) ){
+if( file_exists( $path = RootPath('asset') . "layout/{$layout}/img/{$file}" ) ){
 	//	Found
 }else if( file_exists( $path = $file ) ){
 	//	Found
@@ -41,36 +41,11 @@ if( file_exists( $path = OP::MetaRoot('asset') . "layout/$layout/img/$file" ) ){
 }
 
 //	Get extension.
-$tmp = explode('.', $file);
-$ext = strtolower(array_pop($tmp));
-
-//	Generate MIME.
-switch( $ext ){
-	case 'jpg':
-		$mime = 'jpeg';
-	//	break;
-
-	case 'gif':
-	case 'png':
-	case 'jpeg':
-		$mime = "image/$ext";
-		break;
-
-	case 'ico':
-		$mime = "image/vnd.microsoft.icon";
-		break;
-
-	default:
-		D("This extension is not supported. ($ext)");
-		return;
-}
-
-//	Layout to off.
-OP::Layout(false);
+$ext  = OP::GetExtension($path);
+$mime = OP::GetMimeFromExtension($ext);
 
 //	Set MIME.
 Env::Mime($mime);
 
 //	Load image file.
-passthru(`echo cat {$path}`);
-//echo file_get_contents($path);
+echo file_get_contents($path);
