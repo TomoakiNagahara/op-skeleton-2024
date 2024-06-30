@@ -11,6 +11,14 @@
 
 # The "onepiece-framework" is insanely great!!
 
+## 2024 is not yet THE PEAK!!
+
+### The hook-the-hooks
+
+ OP is hooks the `git push` command. If you don't have CI/CD running, `git push` will fail.
+ This trick is set up when you run `php assets/git/init.php`.
+ Please do not worry. If you have configured your own git hooks, the hook-the-hooks won't get in the way.
+
 ## 2022 had a big change!!
 
  The first is `OP()` function.
