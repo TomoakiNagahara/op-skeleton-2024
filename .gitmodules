@@ -29,7 +29,7 @@
 [submodule "asset/unit/webpack"]
 	path = asset/unit/webpack
 	url = https://github.com/onepiece-framework/op-unit-webpack.git
-	branch = 2024
+	branch = 2025
 [submodule "asset/unit/dump"]
 	path = asset/unit/dump
 	url = https://github.com/onepiece-framework/op-unit-dump.git
