@@ -73,6 +73,7 @@ $app_root = $_SERVER['APP_ROOT'];
 $doc_root = $_SERVER['DOCUMENT_ROOT'];
 
 //  Git root
+//	$app_root is alias path. Not real path.
 if( file_exists("{$app_root}/.git") ){
     $git_root = $app_root;
 }else if( file_exists(dirname($app_root).'/.git') ){
@@ -82,13 +83,14 @@ if( file_exists("{$app_root}/.git") ){
 }
 
 //	Real path --> alias path
-if( strpos($asset_root, realpath(dirname($doc_root))) === 0 ){
-	$asset_root = str_replace(realpath(dirname($doc_root)), dirname($doc_root), $asset_root);
+$real_root = realpath($git_root);
+if( strpos($asset_root, $real_root) === 0 ){
+	$asset_root = str_replace($real_root, $git_root, $asset_root);
 }
 
 //	Entry each root directory.
 RootPath('git'      , $git_root                 );
-RootPath('real'     , realpath($git_root)       );
+RootPath('real'     , $real_root                );
 RootPath('doc'      , $doc_root                 );
 RootPath('app'      , $app_root                 );
 RootPath('asset'    , $asset_root               );
