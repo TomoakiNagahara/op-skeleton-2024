@@ -49,6 +49,9 @@ try {
 	//	...
 	Env::AppID( _OP_APP_ID_CI_ );
 
+	//	Time is frozen - ICE AGE
+	Env::Time(false, '2024-01-01 23:45:60');
+
 	//	...
 	if(!OP::Unit('CI')->Auto() ){
 		$exit = __LINE__;
