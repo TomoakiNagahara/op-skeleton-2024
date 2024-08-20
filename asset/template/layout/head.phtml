@@ -41,10 +41,10 @@ $hash_css = Unit('WebPack')->Hash('css');
 	<link type="image/png"    href="<?= "{$app_root}img/icon.png" ?>"    rel="apple-touch-icon-precomposed" />
 
 	<!-- Stylesheet -->
-	<link type="text/css" href="<?= "{$app_root}/webpack/css/index.css?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
+	<link type="text/css" href="<?= "{$app_root}webpack/css/index.css?layout={$layout}&hash={$hash_css}" ?>" rel="stylesheet">
 
 	<!-- JavaScript -->
-	<script type="text/javascript" src="<?= "{$app_root}/webpack/js/index.js?layout={$layout}&hash={$hash_js}" ?>" defer></script>
+	<script type="text/javascript" src="<?= "{$app_root}webpack/js/index.js?layout={$layout}&hash={$hash_js}" ?>" defer></script>
 
 	<!-- title -->
 	<title><?= OP()->App()->Title() ?></title>
