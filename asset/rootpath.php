@@ -74,6 +74,10 @@ $doc_root = $_SERVER['DOCUMENT_ROOT'];
 
 //  Git root
 //	$app_root is alias path. Not real path.
+/*
+$git = include(__DIR__.'/unit/git/include/search_path.php');
+$git_root = $git ? trim(`{$git} rev-parse --show-toplevel): '';
+*/
 if( file_exists("{$app_root}/.git") ){
     $git_root = $app_root;
 }else if( file_exists(dirname($app_root).'/.git') ){
