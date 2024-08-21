@@ -18,10 +18,6 @@
 	path = asset/unit/router
 	url = https://github.com/onepiece-framework/op-unit-router.git
 	branch = 2022
-[submodule "asset/unit/template"]
-	path = asset/unit/template
-	url = https://github.com/onepiece-framework/op-unit-template.git
-	branch = 2022
 [submodule "asset/unit/webpack"]
 	path = asset/unit/webpack
 	url = https://github.com/onepiece-framework/op-unit-webpack.git
