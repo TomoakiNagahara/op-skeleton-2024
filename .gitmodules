@@ -5,7 +5,7 @@
 [submodule "asset/unit/app"]
 	path = asset/unit/app
 	url = https://github.com/onepiece-framework/op-unit-app.git
-	branch = 2024
+	branch = 2025
 [submodule "asset/unit/layout"]
 	path = asset/unit/layout
 	url = https://github.com/onepiece-framework/op-unit-layout.git
