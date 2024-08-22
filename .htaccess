@@ -77,11 +77,12 @@ Options +FollowSymLinks +ExecCGI -Indexes
 	deny from all
 </FilesMatch>
 
-## For CDN cache setting.
-# 
-<Files ~ "\.(gif|jpe?g|png|ico)$">
-	Header set Cache-Control "s-maxage=86400, public"
-</Files>
+# Cache setting.
+<IfModule mod_headers.c>
+  <Files ~ "\.(gif|jpe?g|png|ico)$">
+    Header set Cache-Control "max-age=3600, s-maxage=86400, public"
+  </Files>
+</IfModule>
 
 ## Google mSpeed Hacks Digital Sheeters Packet JP Jul18_v01 HR.pdf
 # SetOutputFilter DEFLATE
