@@ -13,6 +13,11 @@
  */
 namespace OP;
 
+//	Checking Shell.
+if( Env::isShell() ){
+	return;
+}
+
 //	...
 foreach([
 	'mbstring' => 'mb_language',
