@@ -62,7 +62,7 @@ foreach( $configs as $config ){
 	//	...
 	foreach( $remotes as $remote ){
 		if( $display ){ D("Remote: {$remote}"); }
-		$git->Fetch($remote);
+		$git->Remote()->Fetch($remote);
 	}
 }
 
@@ -84,5 +84,5 @@ if( $_remote === '\*' ){
 //	...
 foreach( $remotes as $remote ){
 	if( $display ){ D("Remote: {$remote}"); }
-	$git->Fetch($remote);
+	$git->Remote()->Fetch($remote);
 }
