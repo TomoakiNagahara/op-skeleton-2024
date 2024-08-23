@@ -61,7 +61,7 @@
 [submodule "asset/layout/flexbox"]
 	path = asset/layout/flexbox
 	url = https://github.com/onepiece-framework/op-layout-flexbox.git
-	branch = 2022
+	branch = 2024
 [submodule "asset/unit/notfound"]
 	path = asset/unit/notfound
 	url = https://github.com/onepiece-framework/op-unit-notfound.git
