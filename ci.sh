@@ -7,7 +7,8 @@
  # @updated    2023-02-09 v2.0
  # @updated    2023-02-14 v2.1
  # @updated    2023-04-13 v2.2
- # @version    2.2.0
+ # @updated    2024-08-24 v2.2.1
+ # @version    2.2.1
  # @package    op-core
  # @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  # @copyright  Tomoaki Nagahara All right reserved.
@@ -16,7 +17,15 @@
 COMMAND=$(ps -ocommand= -p $PPID)
 
 # Parse
-ARRAY=(${COMMAND//,/ })
+ARRAY=(${COMMAND})
+
+# Check if is git command
+if [ "${ARRAY[0]}" != "git" ]; then
+	echo "Not git command."
+	exit 1
+fi
+
+# Get remote and branch name
 REMOTE=${ARRAY[2]}
 BRANCH=${ARRAY[3]}
 PHP=`php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;"`
