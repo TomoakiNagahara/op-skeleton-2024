@@ -19,16 +19,19 @@ COMMAND=$(ps -ocommand= -p $PPID)
 # Parse
 ARRAY=(${COMMAND})
 
-# Check if is git command
-if [ "${ARRAY[0]}" != "git" ]; then
-	echo "Not git command."
-	exit 1
-fi
-
 # Get remote and branch name
 REMOTE=${ARRAY[2]}
 BRANCH=${ARRAY[3]}
 PHP=`php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;"`
+
+# Check if is git command
+if [ "${ARRAY[0]}" != "git" ]; then
+	# Branch name is read from stdin.
+	while read local_ref local_sha remote_ref remote_sha
+	do
+		BRANCH=$(echo $local_ref | sed 's|^refs/heads/||')
+	done
+fi
 
 # Get current branch name
 #BRANCH=`git rev-parse --abbrev-ref HEAD`
