@@ -1,60 +1,60 @@
 [submodule "asset/core"]
 	path = asset/core
-	url = https://github.com/onepiece-framework/op-core.git
+	url = git@github.com:onepiece-framework/op-core.git
 	branch = 2025
 [submodule "asset/unit/app"]
 	path = asset/unit/app
-	url = https://github.com/onepiece-framework/op-unit-app.git
+	url = git@github.com:onepiece-framework/op-unit-app.git
 	branch = 2025
 [submodule "asset/unit/layout"]
 	path = asset/unit/layout
-	url = https://github.com/onepiece-framework/op-unit-layout.git
+	url = git@github.com:onepiece-framework/op-unit-layout.git
 	branch = 2022
 [submodule "asset/unit/notice"]
 	path = asset/unit/notice
-	url = https://github.com/onepiece-framework/op-unit-notice.git
+	url = git@github.com:onepiece-framework/op-unit-notice.git
 	branch = 2024
 [submodule "asset/unit/router"]
 	path = asset/unit/router
-	url = https://github.com/onepiece-framework/op-unit-router.git
+	url = git@github.com:onepiece-framework/op-unit-router.git
 	branch = 2022
 [submodule "asset/unit/webpack"]
 	path = asset/unit/webpack
-	url = https://github.com/onepiece-framework/op-unit-webpack.git
+	url = git@github.com:onepiece-framework/op-unit-webpack.git
 	branch = 2025
 [submodule "asset/unit/dump"]
 	path = asset/unit/dump
-	url = https://github.com/onepiece-framework/op-unit-dump.git
+	url = git@github.com:onepiece-framework/op-unit-dump.git
 	branch = 2024
 [submodule "asset/unit/git"]
 	path = asset/unit/git
-	url = https://github.com/onepiece-framework/op-unit-git
+	url = git@github.com:onepiece-framework/op-unit-git
 	branch = 2022
 [submodule "asset/unit/ci"]
 	path = asset/unit/ci
-	url = https://github.com/onepiece-framework/op-unit-ci.git
+	url = git@github.com:onepiece-framework/op-unit-ci.git
 	branch = 2024
 [submodule "asset/unit/cd"]
 	path = asset/unit/cd
-	url = https://github.com/onepiece-framework/op-unit-cd.git
+	url = git@github.com:onepiece-framework/op-unit-cd.git
 	branch = 2024
 [submodule "asset/develop"]
 	path = asset/develop
-	url = https://github.com/onepiece-framework/op-module-develop.git
+	url = git@github.com:onepiece-framework/op-module-develop.git
 	branch = 2024
 [submodule "asset/webpack/css"]
 	path = asset/webpack/css
-	url = https://github.com/onepiece-framework/op-webpack-css.git
+	url = git@github.com:onepiece-framework/op-webpack-css.git
 	branch = 2022
 [submodule "asset/webpack/js"]
 	path = asset/webpack/js
-	url = https://github.com/onepiece-framework/op-webpack-js.git
+	url = git@github.com:onepiece-framework/op-webpack-js.git
 	branch = 2022
 [submodule "asset/layout/flexbox"]
 	path = asset/layout/flexbox
-	url = https://github.com/onepiece-framework/op-layout-flexbox.git
+	url = git@github.com:onepiece-framework/op-layout-flexbox.git
 	branch = 2024
 [submodule "asset/unit/notfound"]
 	path = asset/unit/notfound
-	url = https://github.com/onepiece-framework/op-unit-notfound.git
+	url = git@github.com:onepiece-framework/op-unit-notfound.git
 	branch = 2024
