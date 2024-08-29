@@ -12,20 +12,24 @@
  */
 
 //	...
-$branch = '2024';
+require_once(__DIR__.'/op.php');
+
+//	...
+$branch = _OP_APP_BRANCH_;
+$year   = date('Y');
 
 //	...
 $config = [];
 $config['path']      = "/www/workspace/{$branch}/github/";
 $config['origin']    = "~/repo/op/skeleton/{$branch}.git";
-$config['upstream']  = "git@github.com:TomoakiNagahara/op-skeleton-{$branch}.git";
+$config['upstream']  = "git@github.com:TomoakiNagahara/op-skeleton-{$year}.git";
 $config['github']    = 'TomoakiNagahara'; // GitHub account (user name)
 $config['branch']    = $branch; // This is parent branch. Each submodules branch is .gitmodules.
 $config['gitmodules']=[ // Which .gitmodules file.
 	'origin'   => 'local',
 	'upstream' => 'github',
 ];
-$config['display']   = '0';
+$config['display']   = '1';
 $config['debug']     = '0';
 $config['version']   = '74, 80, 81, 82, 83'; // PHP version to inspect.
 
