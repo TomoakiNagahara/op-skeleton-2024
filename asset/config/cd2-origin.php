@@ -12,22 +12,24 @@
  */
 
 //	...
-$branch = '2024';
+$branch = _OP_APP_BRANCH_;
+$year   = date('Y');
 
 //	...
 $config = [];
+$config['pat' ]      = ''; // Personal access token
 $config['path']      = "/www/workspace/{$branch}/origin/";
-$config['origin']    = "https://github.com/TomoakiNagahara/op-skeleton-{$branch}.git";
-$config['upstream']  = "https://github.com/onepiece-framework/op-skeleton-{$branch}.git";
+$config['origin']    = "git@github.com:TomoakiNagahara/op-skeleton-{$year}.git";
+$config['upstream']  = "git@github.com:onepiece-framework/op-skeleton-{$year}.git";
 $config['github']    = 'TomoakiNagahara'; // GitHub account (user name)
 $config['branch']    = $branch; // This is parent branch. Each submodules branch is .gitmodules.
 $config['gitmodules']=[ // Which .gitmodules file.
 	'origin'   => 'github',
 	'upstream' => 'origin',
 ];
-$config['display']   = '0';
+$config['display']   = '1';
 $config['debug']     = '0';
-$config['version']   = '74, 80, 81, 82, 83'; // PHP version to inspect.
+$config['version']   = '74, 80, 81, 82, 83'; // The PHP version to the CI for...
 
 //	...
 return $config;
