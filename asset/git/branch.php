@@ -1,5 +1,7 @@
 <?php
-/** op-skeleton-2020:/asset/git/branch.php
+/**	op-skeleton-2020:/asset/git/branch.php
+ *
+ * Switch to default branch by .gitmodules file.
  *
  * <pre>
  * ```sh
@@ -14,20 +16,20 @@
  * @copyright  Tomoaki Nagahara All right reserved.
  */
 
-/** Declare strict
+/**	Declare strict
  *
  */
 declare(strict_types=1);
 
-/** namespace
+/**	namespace
  *
  */
 namespace OP;
 
-//  ...
+//	...
 if(!function_exists('OP') ){
-    echo "Usage: php git.php asset/git/branch.php remote=origin display=1 debug=1\n";
-    exit(__LINE__);
+	echo "Usage: php git.php asset/git/branch.php\n";
+	exit(__LINE__);
 }
 
 /* @var $git UNIT\Git */
@@ -41,11 +43,16 @@ $configs = $git->SubmoduleConfig();
 foreach( $configs as $config ){
 	//	...
 	$path   = $config['path'];
-	$branch = $config['branch'];
+	$branch = $config['branch'] ?? null;
+
+	//	...
+	if( empty($branch) ){
+		continue;
+	}
 
 	//	...
 	chdir($git_root.$path);
 
 	//	...
-	`git switch {$branch}`;
+	$git->Switch($branch);
 }
