@@ -22,18 +22,11 @@ $file = preg_replace(['|//\t|','|\t|','|\n+|','|,\n|','|,\n\n\]|'], ['//  ','   
 
 //	...
 if( Env::isCI() ){
-	/*
-	//	...
-	if(!file_put_contents(OP::MetaPath('asset:/config/').'_admin.php',  OP::Decode($file)) ){
-		echo 'Could not write to this file. (asset:/config/_admin.php)';
-		return false;
+	//	Create admin config file.
+	if(!$io = file_put_contents($path = OP::MetaPath('asset:/config/').'_admin.php',  OP::Decode($file)) ){
+		echo "Could not write to this file. ({$path})";
 	}
-	//	...
-	return true;
-	*/
-
-	//	...
-	return include(__DIR__.'/config-admin.php');
+	return $io ? true: false;
 }
 
 //	...
