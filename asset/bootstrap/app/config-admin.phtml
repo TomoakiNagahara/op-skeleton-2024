@@ -16,9 +16,10 @@ $path = OP::MetaPath('asset:/config/admin.php');
 
 //	...
 $file = file_get_contents($path);
-$file = Encode($file);
-$file = preg_replace(['|\/\*\* .+|','| \*.+|','| \*|','|\n/\*|','|\n\*/|'], '', $file);
-$file = preg_replace(['|//\t|','|\t|','|\n+|','|,\n|','|,\n\n\]|'], ['//  ','    ',"\n",",\n\n",",\n]"], $file);
+//	Remove only 1st multi line comment.
+$file = preg_replace('/\/\*\*[\s\S]*?\*\/\n/', '', $file, 1);
+//	Remove /* and */
+$file = str_replace(["\n/*\n","\n*/\n"], "\n", $file);
 
 //	...
 if( Env::isCI() ){
@@ -44,7 +45,7 @@ if( Env::isShell() ){
 			<div class="code"><code><?= $path ?></code></div>
 
 			<p>Configuration is</p>
-			<div class="code"><pre><code><?= $file ?></code></pre></div>
+			<div class="code"><pre><code><?= OP::Encode($file) ?></code></pre></div>
 		</section>
 <?php include(__DIR__.'/../html_foot.phtml') ?>
 <?php
