@@ -33,4 +33,7 @@ return [
 
 	//	This is used in the title tag.
 	'title'   => $title,
+
+	//	This is assigned by OP()->Content().
+	'content' => null,
 ];
