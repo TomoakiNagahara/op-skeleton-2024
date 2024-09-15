@@ -23,6 +23,8 @@ namespace OP;
  * @return    array        $config
  */
 return [
-	'lang' => 'en',
+	/*
+	'lang'    => 'en',
 	'charset' => 'utf-8',
+	*/
 ];
