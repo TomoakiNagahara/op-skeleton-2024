@@ -15,7 +15,6 @@ namespace OP;
 
 //	...
 $app_root= ConvertURL('app:/');
-$charset = Config::Get('html')  ['charset'] ?? 'utf-8';
 $layout  = Config::Get('layout')['name']    ??  null;
 
 //	...
@@ -23,8 +22,8 @@ $hash_js  = Unit('WebPack')->Hash('js');
 $hash_css = Unit('WebPack')->Hash('css');
 ?>
 	<!-- Charset -->
-	<meta charset="<?= $charset ?>" />
-	<meta http-equiv="Content-Type"  content="text/html; charset=<?= $charset ?>" />
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />
 
 	<!-- For SmartPhone -->
 	<!-- Disable auto scaling -->
