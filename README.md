@@ -19,6 +19,10 @@
  This trick is set up when you run `php assets/git/init.php`.
  Please do not worry. If you have configured your own git hooks, the hook-the-hooks won't get in the way.
 
+### The PICK
+
+ The PICK is easy to the pick of commit.
+
 ## 2022 had a big change!!
 
  The first is `OP()` function.
