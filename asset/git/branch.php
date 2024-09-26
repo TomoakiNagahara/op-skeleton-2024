@@ -63,5 +63,6 @@ foreach( $configs as $config ){
 	}
 
 	//	...
-	echo `git checkout origin/{$branch}`;
+	echo `git branch {$branch}`;
+	echo `git rebase origin/{$branch}`;
 }
