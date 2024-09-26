@@ -57,11 +57,11 @@ foreach( $configs as $config ){
 	$branches = $git->Branch()->List();
 
 	//	...
-	if( array_search($branch, $branches) === false ){
-		echo "This branch does not exist: branch={$branch}, path={$path}\n";
+	if( array_search($branch, $branches) !== false ){
+		$git->Switch($branch);
 		continue;
 	}
 
 	//	...
-	$git->Switch($branch);
+	echo `git checkout origin/{$branch}`;
 }
