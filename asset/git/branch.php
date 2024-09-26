@@ -54,5 +54,14 @@ foreach( $configs as $config ){
 	chdir($git_root.$path);
 
 	//	...
+	$branches = $git->Branch()->List();
+
+	//	...
+	if( array_search($branch, $branches) === false ){
+		echo "This branch does not exist: branch={$branch}, path={$path}\n";
+		continue;
+	}
+
+	//	...
 	$git->Switch($branch);
 }
