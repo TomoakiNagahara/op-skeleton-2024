@@ -46,6 +46,7 @@ $branch = OP()->Request('branch');
 
 //	Check request value.
 if( empty($path) or empty($branch) ){
+	echo "Empty file path or branch name: path={$path}, branch={$branch}\n";
 	echo $usage;
 	exit(__LINE__);
 }
@@ -75,7 +76,7 @@ foreach( array_reverse(explode("\n", $list)) as $commit_id ){
 
 	//	...
 	if( $test ){
-	//	$commit_id = substr($commit_id, 0, 8);
+		$commit_id = substr($commit_id, 0, 10);
 		echo "{$io}:{$commit_id} $comment\n";
 		continue;
 	}
@@ -103,7 +104,7 @@ function isPick($current_branch, $commit_id) : bool
 {
 	//	...
 	static $_skip;
-	if( $_skip ){
+	if(!$_skip ){
 		$_skip = OP()->Request('skip');
 		$_skip = strtolower($_skip);
 		$_skip = ' wip,'.$_skip;
