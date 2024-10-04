@@ -12,7 +12,7 @@
 namespace OP;
 
 //	...
-$path = OP::MetaPath('asset:/config/admin.php');
+$path = OP::MetaPath('asset:/config/.admin.php');
 
 //	...
 $file = file_get_contents($path);
@@ -42,7 +42,7 @@ if( Env::isShell() ){
 			<h1>The admin config file has not been set.</h1>
 
 			<p>File path is</p>
-			<div class="code"><code><?= $path ?></code></div>
+			<div class="code"><code><?= OP::MetaPath('asset:/config/admin.php') ?></code></div>
 
 			<p>Configuration is</p>
 			<div class="code"><pre><code><?= OP::Encode($file) ?></code></pre></div>
