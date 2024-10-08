@@ -1,5 +1,5 @@
 <?php
-/** op-skeleton-2025:/asset/git/include/GetConfig.php
+/** op-skeleton-2025:/asset/git/include/GetSubmoduleConfig.php
  *
  * Get submodules config from .gitmodule.
  * This program is independent from OP.
@@ -7,7 +7,7 @@
  * <pre>
  * ```php
  * <?php
- * $config = include('asset/git/include/GetConfig.php');
+ * $config = include('asset/git/include/GetSubmoduleConfig.php');
  * ```
  * </pre>
  *
