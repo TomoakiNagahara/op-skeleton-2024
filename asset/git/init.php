@@ -70,7 +70,9 @@ foreach( $configs as $config ){
 	Execute("git stash save");
 	Execute("git stash clear");
 	Execute("git checkout {$commit_id} -b root");
-	Execute("git branch -D {$branch}");
+	if( `git show-ref --verify refs/heads/{$branch} 2>/dev/null` ){
+		Execute("git branch -D {$branch}");
+	}
 	Execute("git checkout origin/{$branch} -b {$branch}");
 	Execute("git branch -D root");
 }
