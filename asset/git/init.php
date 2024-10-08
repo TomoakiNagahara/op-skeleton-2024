@@ -44,8 +44,47 @@ chdir($git_root);
 //	Set local hooks to submodules.
 `git submodule foreach git config core.hooksPath {$hooks_path}`;
 
-//	Switch main branch.
-/* @var $name     string */
-/* @var $branch   string */
-//`git submodule foreach 'branch=$(git config -f .gitmodules submodule.$name.branch); git checkout $branch;'`;
-//`php git.php asset/git/branch.php`;
+//	Get submodule configs.
+$configs = include(__DIR__.'/include/GetSubmoduleConfig.php');
+
+//	Switch branch.
+foreach( $configs as $config ){
+	//	...
+	$path   = $config['path'];
+	$branch = $config['branch'] ?? 'master';
+
+	//	...
+	chdir($git_root.$path);
+	echo getcwd() . PHP_EOL;
+
+	//	...
+	$commit_id = trim(`git rev-list --max-parents=0 HEAD` ?? '');
+	Execute("git stash save");
+	Execute("git stash clear");
+	Execute("git checkout {$commit_id} -b root");
+	Execute("git branch -D {$branch}");
+	Execute("git checkout origin/{$branch} -b {$branch}");
+	Execute("git branch -D root");
+}
+
+/** Execute command.
+ *
+ * @created    2024-10-08
+ * @param      string     $comand
+ * @return     bool
+ */
+function Execute(string $comand) : bool
+{
+	/* @var $output array */
+	/* @var $status int   */
+	exec("{$comand} 2>&1", $output, $status);
+
+	//	...
+	if( $status ){
+		echo "\n{$comand} --> {$status}\n\n";
+		echo join("\n", $output) . PHP_EOL . PHP_EOL;
+	}
+
+	//	...
+	return empty($status) ? true: false;
+}
