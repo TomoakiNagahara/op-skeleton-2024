@@ -36,7 +36,8 @@ $hooks_path = "{$git_root}/asset/git/hooks/";
 chdir($git_root);
 
 //	Clone submodules.
-`git submodule update --init --recursive`;
+`git submodule init`;
+`git submodule update --recursive`;
 
 //	Set local hooks.
 `git config core.hooksPath {$hooks_path}`;
