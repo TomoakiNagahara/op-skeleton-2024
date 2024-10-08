@@ -55,8 +55,15 @@ foreach( $configs as $config ){
 	$branch = $config['branch'] ?? 'master';
 
 	//	...
-	chdir($git_root.$path);
-	echo getcwd() . PHP_EOL;
+	chdir($git_root);
+	chdir($path);
+	echo getcwd() ." --> {$branch}". PHP_EOL;
+
+	//	...
+	if(!Execute("git show-ref --verify refs/remotes/origin/{$branch}") ){
+		echo "\n * This branch has not been exist: {$branch} \n\n";
+		continue;
+	}
 
 	//	...
 	$commit_id = trim(`git rev-list --max-parents=0 HEAD` ?? '');
