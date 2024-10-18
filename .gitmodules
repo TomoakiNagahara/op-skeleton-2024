@@ -1,7 +1,7 @@
 [submodule "asset/core"]
 	path = asset/core
 	url = https://github.com/onepiece-framework/op-core.git
-	branch = 2024
+	branch = php70
 [submodule "asset/unit/app"]
 	path = asset/unit/app
 	url = https://github.com/onepiece-framework/op-unit-app.git
