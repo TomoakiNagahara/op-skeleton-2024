@@ -1,12 +1,17 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/config/php.php
+/** op-skeleton-2020:/asset/config/php.php
  *
  * @created   2022-11-09
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
+
+/**	Declare strict
+ *
+ */
+declare(strict_types=1);
 
 /** namespace
  *

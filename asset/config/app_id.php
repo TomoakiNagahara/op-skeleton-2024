@@ -1,9 +1,9 @@
 <?php
-/** op-app-skeleton-2020-nep:/asset/config/app_id.php
+/** op-skeleton-2020:/asset/config/app_id.php
  *
  * @created   2022-10-20
  * @version   1.0
- * @package   op-app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
