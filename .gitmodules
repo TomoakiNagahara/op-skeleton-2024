@@ -33,7 +33,7 @@
 [submodule "asset/unit/ci"]
 	path = asset/unit/ci
 	url = https://github.com/onepiece-framework/op-unit-ci.git
-	branch = 2024
+	branch = php70
 [submodule "asset/unit/cd"]
 	path = asset/unit/cd
 	url = https://github.com/onepiece-framework/op-unit-cd.git
