@@ -11,6 +11,13 @@
 
 # The "onepiece-framework" is insanely great!!
 
+## php70 branch how to use
+
+ 1. `git checkout origin/php70 -b php70`
+ 2. `git submodule sync`
+ 3. `php git.php asset/git/branch.php `
+ 4. `php git.php asset/git/update.php `
+
 ## 2024 is not yet THE PEAK!!
 
 ### The hook-the-hooks
