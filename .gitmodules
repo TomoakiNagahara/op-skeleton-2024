@@ -2,6 +2,7 @@
 	path = asset/core
 	url = https://github.com/onepiece-framework/op-core.git
 	branch = php70
+	follow = 2024
 [submodule "asset/unit/app"]
 	path = asset/unit/app
 	url = https://github.com/onepiece-framework/op-unit-app.git
