@@ -1,15 +1,19 @@
 <?php
-/**
- * app-skeleton-2020-nep:/asset/config/translate.php
+/** op-skeleton-2020:/asset/config/translate.php
  *
  * @created   2022-12-30
  * @version   1.0
- * @package   app-skeleton-2020-nep
+ * @package   op-skeleton-2020
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
- /** namespace
+/**	Declare strict
+ *
+ */
+declare(strict_types=1);
+
+/**	namespace
  *
  */
 namespace OP;

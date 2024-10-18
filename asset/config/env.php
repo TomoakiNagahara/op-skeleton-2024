@@ -8,6 +8,16 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/**	Declare strict
+ *
+ */
+declare(strict_types=1);
+
+/**	namespace
+ *
+ */
+namespace OP;
+
 /** Return config array.
  *
  * @return    array        $config

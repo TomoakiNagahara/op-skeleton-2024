@@ -1,9 +1,9 @@
 <?php
-/** skeleton:/asset/config/core.php
+/** op-skeleton-2022:/asset/config/core.php
  *
  * @created   2022-10-04
  * @version   1.0
- * @package   skeleton
+ * @package   op-skeleton-2022
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
