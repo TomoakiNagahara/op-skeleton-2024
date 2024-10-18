@@ -31,6 +31,7 @@
 	path = asset/unit/git
 	url = https://github.com/onepiece-framework/op-unit-git
 	branch = php70
+	follow = 2024
 [submodule "asset/unit/ci"]
 	path = asset/unit/ci
 	url = https://github.com/onepiece-framework/op-unit-ci.git
