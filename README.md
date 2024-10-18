@@ -81,6 +81,10 @@
 
 # Apology
 
+## About English
+
+ Our do not care about the strictness of English.
+
 ## UTF-8 only
 
  Only UTF-8 is supported.
